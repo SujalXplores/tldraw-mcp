@@ -1,0 +1,248 @@
+2025-08-08 01:58:02 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-08 01:58:02 [info]: ✅ [Singleton] Instances created: 
+2025-08-08 01:58:02 [info]: 📦 shapeStorage: true 
+2025-08-08 01:58:02 [info]: 🔌 webSocketService: true 
+2025-08-08 01:58:02 [info]: 🚀 Initializing WebSocket server... 
+2025-08-08 01:58:02 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-08 01:58:02 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-08 01:58:02 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-08 01:58:02 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-08 01:58:02 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-08 01:58:02 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-08 01:58:03 [info]: 🚀 Starting Claude Desktop MCP server with validation... 
+2025-08-08 01:58:03 [info]: 🌐 Target Next.js server: http://localhost:3000 
+2025-08-08 01:58:03 [info]: 🎨 Valid colors: black, grey, white, blue, light-blue, green, light-green, red, light-red, orange, yellow, violet, light-violet 
+2025-08-08 01:58:03 [info]: 🎯 Architecture: Claude Desktop → MCP Server → API → WebSocket → Browser 
+2025-08-08 01:58:03 [info]: ✅ MCP Server ready - Claude Desktop can now control the canvas 
+2025-08-08 01:58:03 [info]: 🎨 Browser clients will receive shapes automatically 
+2025-08-08 01:58:03 [info]: 🧹 All shape properties will be validated and sanitized 
+2025-08-08 01:58:08 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-08 01:58:08 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 01:58:08 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:03:50 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-08 02:03:50 [info]: ✅ [Singleton] Instances created: 
+2025-08-08 02:03:50 [info]: 📦 shapeStorage: true 
+2025-08-08 02:03:50 [info]: 🔌 webSocketService: true 
+2025-08-08 02:03:51 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:03:51 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:03:51 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:04:33 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:04:35 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:04:35 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:04:35 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:04:41 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:04:42 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:04:42 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:04:42 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:04:49 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:04:50 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:04:50 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:04:50 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:04:54 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:04:55 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:04:55 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:04:55 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:05:55 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:05:56 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:05:56 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:05:56 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:06:16 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:06:17 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:06:17 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:06:17 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:06:33 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:06:34 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:06:34 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:06:34 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:06:38 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:06:39 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:06:39 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:06:39 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:06:57 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:06:58 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:06:58 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:06:58 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:07:07 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:07:08 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:07:08 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:07:08 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:07:14 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:07:16 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:07:16 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:07:16 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:07:35 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:07:36 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:07:36 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:07:36 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:07:53 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:07:54 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:07:54 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:07:54 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:08:00 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:08:01 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:08:01 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:08:01 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:08:34 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:08:36 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:08:36 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:08:36 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:08:43 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:08:44 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:08:44 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:08:44 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:10:27 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:10:29 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:10:29 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:10:29 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:10:36 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:10:38 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:10:38 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:10:38 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:10:52 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:10:53 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:10:53 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:10:53 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:10:59 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:11:00 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:11:00 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:11:00 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:11:51 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:11:52 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:11:52 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:11:52 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:12:32 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 1 
+2025-08-08 02:12:33 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:12:33 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:12:33 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 02:42:10 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 1 
+2025-08-08 02:42:14 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 02:42:14 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 02:42:14 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 03:17:54 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-08 03:17:54 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 2 browsers 
+2025-08-08 03:17:54 [info]: [WebSocket] 📊 AI broadcast complete: 2 browsers received message 
+2025-08-08 03:17:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 2 browsers 
+2025-08-08 03:18:50 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
+2025-08-08 03:18:50 [info]: [WebSocket] 🔄 Closing WebSocket server... 
+2025-08-08 03:18:50 [info]: [WebSocket] ✅ WebSocket server closed 
+2025-08-08 03:19:04 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-08 03:19:04 [info]: ✅ [Singleton] Instances created: 
+2025-08-08 03:19:04 [info]: 📦 shapeStorage: true 
+2025-08-08 03:19:04 [info]: 🔌 webSocketService: true 
+2025-08-08 03:19:04 [info]: 🚀 Initializing WebSocket server... 
+2025-08-08 03:19:04 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-08 03:19:04 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-08 03:19:04 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-08 03:19:04 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-08 03:19:04 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-08 03:19:04 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-08 03:19:04 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-08 03:19:04 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 03:19:04 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 03:19:05 [info]: 🚀 Starting Claude Desktop MCP server with validation... 
+2025-08-08 03:19:05 [info]: 🌐 Target Next.js server: http://localhost:3000 
+2025-08-08 03:19:05 [info]: 🎨 Valid colors: black, grey, white, blue, light-blue, green, light-green, red, light-red, orange, yellow, violet, light-violet 
+2025-08-08 03:19:05 [info]: 🎯 Architecture: Claude Desktop → MCP Server → API → WebSocket → Browser 
+2025-08-08 03:19:05 [info]: ✅ MCP Server ready - Claude Desktop can now control the canvas 
+2025-08-08 03:19:05 [info]: 🎨 Browser clients will receive shapes automatically 
+2025-08-08 03:19:05 [info]: 🧹 All shape properties will be validated and sanitized 
+2025-08-08 03:19:06 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 03:19:06 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 03:19:06 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 03:19:50 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 1 
+2025-08-08 03:19:55 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 03:19:55 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 03:19:55 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 03:19:55 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-08 03:19:55 [info]: ✅ [Singleton] Instances created: 
+2025-08-08 03:19:55 [info]: 📦 shapeStorage: true 
+2025-08-08 03:19:55 [info]: 🔌 webSocketService: true 
+2025-08-08 03:21:45 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-08 03:21:45 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 2 browsers 
+2025-08-08 03:21:45 [info]: [WebSocket] 📊 AI broadcast complete: 2 browsers received message 
+2025-08-08 03:21:45 [info]: [WebSocket] ✅ HTTP broadcast sent to 2 browsers 
+2025-08-08 03:25:51 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-08 03:25:51 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 2 browsers 
+2025-08-08 03:25:51 [info]: [WebSocket] 📊 AI broadcast complete: 2 browsers received message 
+2025-08-08 03:25:51 [info]: [WebSocket] ✅ HTTP broadcast sent to 2 browsers 
+2025-08-08 03:33:48 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
+2025-08-08 03:33:48 [info]: [WebSocket] 🔄 Closing WebSocket server... 
+2025-08-08 03:33:48 [info]: [WebSocket] ✅ WebSocket server closed 
+2025-08-08 03:34:07 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-08 03:34:07 [info]: ✅ [Singleton] Instances created: 
+2025-08-08 03:34:07 [info]: 📦 shapeStorage: true 
+2025-08-08 03:34:07 [info]: 🔌 webSocketService: true 
+2025-08-08 03:34:07 [info]: 🚀 Initializing WebSocket server... 
+2025-08-08 03:34:07 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-08 03:34:07 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-08 03:34:07 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-08 03:34:07 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-08 03:34:07 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-08 03:34:07 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-08 03:34:07 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-08 03:34:07 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 03:34:07 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 03:34:09 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 03:34:09 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 03:34:09 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 03:34:35 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 1 
+2025-08-08 03:34:39 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 03:34:39 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 03:34:39 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 03:34:40 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-08 03:34:40 [info]: ✅ [Singleton] Instances created: 
+2025-08-08 03:34:40 [info]: 📦 shapeStorage: true 
+2025-08-08 03:34:40 [info]: 🔌 webSocketService: true 
+2025-08-08 03:36:20 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-08 03:36:20 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 2 browsers 
+2025-08-08 03:36:20 [info]: [WebSocket] 📊 AI broadcast complete: 2 browsers received message 
+2025-08-08 03:36:20 [info]: [WebSocket] ✅ HTTP broadcast sent to 2 browsers 
+2025-08-08 03:39:09 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-08 03:39:09 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 2 browsers 
+2025-08-08 03:39:09 [info]: [WebSocket] 📊 AI broadcast complete: 2 browsers received message 
+2025-08-08 03:39:09 [info]: [WebSocket] ✅ HTTP broadcast sent to 2 browsers 
+2025-08-08 03:39:35 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-08 03:39:35 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 2 browsers 
+2025-08-08 03:39:35 [info]: [WebSocket] 📊 AI broadcast complete: 2 browsers received message 
+2025-08-08 03:39:35 [info]: [WebSocket] ✅ HTTP broadcast sent to 2 browsers 
+2025-08-08 04:05:20 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-08 04:05:20 [info]: ✅ [Singleton] Instances created: 
+2025-08-08 04:05:20 [info]: 📦 shapeStorage: true 
+2025-08-08 04:05:20 [info]: 🔌 webSocketService: true 
+2025-08-08 04:05:20 [info]: 🚀 Initializing WebSocket server... 
+2025-08-08 04:05:20 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-08 04:05:20 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-08 04:05:21 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-08 04:05:21 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-08 04:05:21 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-08 04:05:21 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-08 04:05:21 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-08 04:05:21 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 04:05:21 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 04:05:23 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 04:05:23 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 04:05:23 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 04:05:50 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 1 
+2025-08-08 04:05:54 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 04:05:54 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 04:05:54 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 04:05:55 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-08 04:05:55 [info]: ✅ [Singleton] Instances created: 
+2025-08-08 04:05:55 [info]: 📦 shapeStorage: true 
+2025-08-08 04:05:55 [info]: 🔌 webSocketService: true 
+2025-08-08 04:06:33 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 1 
+2025-08-08 04:07:50 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-08 04:07:50 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 04:07:50 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 04:09:30 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-08 04:09:30 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 2 browsers 
+2025-08-08 04:09:30 [info]: [WebSocket] 📊 AI broadcast complete: 2 browsers received message 
+2025-08-08 04:09:30 [info]: [WebSocket] ✅ HTTP broadcast sent to 2 browsers 
+2025-08-08 04:09:57 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-08 04:09:57 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 2 browsers 
+2025-08-08 04:09:57 [info]: [WebSocket] 📊 AI broadcast complete: 2 browsers received message 
+2025-08-08 04:09:57 [info]: [WebSocket] ✅ HTTP broadcast sent to 2 browsers 
+2025-08-08 04:12:33 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
