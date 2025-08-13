@@ -4,6 +4,8 @@
 
 ---
 
+![Banner Picture](https://i.postimg.cc/LXBV3FGs/image.png)
+
 ## ✨ Project Highlights
 
 - 🤖 **Unrestricted AI Generation**: No API limits or quotas — generate infinite diagrams with local agents.
@@ -49,24 +51,10 @@ Think of it as Excalidraw without limits — no paywalls, no request caps, and f
 
 ---
 
-## 🌟 Features
-
-- 🤖 Unrestricted diagram generation via MCP clients (AI, code, scripts)
-- ✍️ Interactive canvas with full drawing/annotation support (powered by Tldraw)
-- 🚫 No external API limits, no subscriptions, no nonsense
-- 💡 Local agent support (e.g., Ollama, GPT4All, or your custom script)
-- ⚖️ Schema validation with Zod
-- 🧱 Modular backend architecture (MCP + WebSocket server)
-- 🔗 HTTP endpoints for status checks and broadcasting
-- 🤜 Tailored for researchers, AI agents, dev tools, and HCI prototyping
-
----
-
 ## 🧱 Architecture
 
-```
-MCP Client (AI or manual) ↔ MCP Server ↔ API/WebSocket ↔ Next.js Frontend (Tldraw)
-```
+![Architecture Diagram](https://i.postimg.cc/DZfGF3JR/image.png)
+
 
 - **Frontend**: Next.js 15 with App Router and Tldraw canvas
 - **Backend**: Node.js MCP server using WebSockets and HTTP
@@ -134,7 +122,7 @@ npm run canvas
 ```
 
 - Frontend: [http://localhost:3000](http://localhost:3000)
-- MCP Server: ws\://localhost:4000
+- MCP Server: [ws://localhost:4000](ws://localhost:4000)
 
 ### 🚪 Development Scripts
 
@@ -164,7 +152,7 @@ npm run canvas
 - [Node.js](https://nodejs.org/)
 - [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
 - [Winston](https://github.com/winstonjs/winston)
-- [Tailwind CSS](https://tailwindcss.com/) (optional)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ---
 
@@ -201,4 +189,4 @@ Contributions are welcome! Please open issues or submit PRs.
 
 This is an experimental, local-first project. Multi-user collaboration and production readiness are not supported (yet).
 
-> Let your AI draw. Let your code paint. Welcome to CogniCanvas.
+> Let your AI draw. Let your code paint. Welcome to Prompt2Sketch.
