@@ -23,7 +23,6 @@
   - [✨ Project Highlights](#-project-highlights)
   - [📅 Table of Contents](#-table-of-contents)
   - [📆 Overview](#-overview)
-  - [🌟 Features](#-features)
   - [🧱 Architecture](#-architecture)
   - [⚙️ Getting Started](#️-getting-started)
     - [✅ Prerequisites](#-prerequisites)
