@@ -1,4 +1,4 @@
-// frontend-types-bridge.ts - Proper bridge between Tldraw's real types and our local types
+// src/frontend-types-bridge.ts - Proper bridge between Tldraw's real types and our local types
 
 import type { IndexKey as TldrawIndexKey } from "@tldraw/utils";
 import type {

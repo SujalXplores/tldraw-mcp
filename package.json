@@ -4,9 +4,10 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "dev:ws": "tsx watch server/ws-server.ts",
+    "frontend": "npm run dev && npm run dev:ws",
     "canvas": "concurrently \"npm run dev\" \"npm run dev:ws\" \"npm run mcp-server\"",
+    "server": "set DANGEROUSLY_OMIT_AUTH=true && npx @modelcontextprotocol/inspector tsx src/mcp-server.ts",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production tsx server/ws-server.ts",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "mcp-server": "tsx src/mcp-server.ts",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@modelcontextprotocol/inspector": "^0.15.0",
     "@tailwindcss/postcss": "^4",
     "@types/jest": "^29.5.0",
     "@types/node": "^20",

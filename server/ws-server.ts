@@ -1,4 +1,4 @@
-// 1. server/ws-server.ts - WebSocket server with HTTP endpoints
+// server/ws-server.ts - WebSocket server with HTTP endpoints
 import { createServer } from "http";
 import { webSocketService } from "../src/services/singleton";
 import logger from "../src/services/logger";

@@ -47,7 +47,7 @@ function TldrawController({
 
       <button
         onClick={clearCanvas}
-        className="z-10 w-full mt-3 px-3 py-2 bg-red-500 dark:bg-red-800 text-white text-sm hover:bg-red-700 transition-colors disabled:opacity-50 rounded-md"
+        className="z-[9999] w-full mt-3 px-3 py-2 bg-red-500 dark:bg-red-800 text-white text-sm hover:bg-red-700 transition-colors disabled:opacity-50 rounded-md"
         disabled={!editor || isLoading}
       >
         Clear All
@@ -275,20 +275,6 @@ export default function TldrawCanvas() {
     };
   }, [editor, connectWebSocket]);
 
-  // Load AI shapes on mount - ONLY when editor becomes available
-  useEffect(() => {
-    if (
-      editor &&
-      mountedRef.current &&
-      !hasLoadedRef.current &&
-      !isLoadingRef.current
-    ) {
-      console.log("[Canvas] 🎯 Loading existing AI shapes...");
-      loadExistingShapes();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [editor]); // Only depend on editor - loadExistingShapes intentionally excluded
-
   const clearCanvas = useCallback(async (): Promise<void> => {
     if (!editor) return;
 
@@ -344,7 +330,7 @@ export default function TldrawCanvas() {
         </div>
       )}
 
-      <Tldraw onMount={handleMount} persistenceKey="tldraw-standalone">
+      <Tldraw onMount={handleMount} persistenceKey="tldraw-standalone1">
         <TldrawController
           onEditorReady={setEditor}
           isConnected={isConnected}

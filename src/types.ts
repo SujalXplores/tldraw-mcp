@@ -1,13 +1,13 @@
-// types.ts - Self-contained types independent of Tldraw package
+// src/types.ts
 
 // Base ID types (branded strings for type safety)
 export type TLShapeId = string & { __type__: "TLShapeId" };
 export type TLParentId = string & { __type__: "TLParentId" };
+export type TLAssetId = string & { __type__: "TLAssetId" };
 export type IndexKey = string & { __type__: "IndexKey" };
 export type VecLike = { x: number; y: number; z?: number };
 export type JsonObject = Record<string, any>;
 
-// Core Tldraw shape types
 export type TldrawShapeType =
   | "geo"
   | "text"
@@ -23,7 +23,34 @@ export type TldrawShapeType =
   | "line"
   | "group";
 
-// Tldraw style types
+// ===== OFFICIAL TLDRAW STYLE TYPES =====
+
+export type TldrawColor =
+  | "black"
+  | "blue"
+  | "green"
+  | "grey"
+  | "light-blue"
+  | "light-green"
+  | "light-red"
+  | "light-violet"
+  | "orange"
+  | "red"
+  | "violet"
+  | "white"
+  | "yellow";
+
+export type TldrawSize = "s" | "m" | "l" | "xl";
+
+export type TldrawFill = "none" | "semi" | "solid" | "pattern";
+
+export type TldrawDash = "draw" | "dashed" | "dotted" | "solid";
+
+export type TldrawFont = "draw" | "sans" | "serif" | "mono";
+
+export type TldrawAlign = "start" | "middle" | "end";
+export type TldrawVerticalAlign = "start" | "middle" | "end";
+
 export type TldrawGeoType =
   | "rectangle"
   | "ellipse"
@@ -44,27 +71,6 @@ export type TldrawGeoType =
   | "cloud"
   | "heart";
 
-export type TldrawColor =
-  | "black"
-  | "grey"
-  | "white"
-  | "blue"
-  | "light-blue"
-  | "green"
-  | "light-green"
-  | "red"
-  | "light-red"
-  | "orange"
-  | "yellow"
-  | "violet"
-  | "light-violet";
-
-export type TldrawFill = "none" | "semi" | "solid" | "pattern";
-export type TldrawDash = "draw" | "dashed" | "dotted" | "solid";
-export type TldrawSize = "s" | "m" | "l" | "xl";
-export type TldrawFont = "draw" | "sans" | "serif" | "mono";
-export type TldrawAlign = "start" | "middle" | "end";
-export type TldrawVerticalAlign = "start" | "middle" | "end";
 export type TldrawArrowheadType =
   | "none"
   | "arrow"
@@ -76,7 +82,10 @@ export type TldrawArrowheadType =
   | "inverted"
   | "bar";
 
-// Rich text types (for Text shapes)
+// Line spline style
+export type TldrawLineSplineStyle = "line" | "cubic";
+
+// ===== RICH TEXT TYPES - OFFICIAL STRUCTURE =====
 export interface TLRichText {
   type: "doc";
   content: TLRichTextNode[];
@@ -88,6 +97,7 @@ export interface TLParagraph {
   type: "paragraph";
   content: TLTextSpan[];
 }
+
 export interface TLTextSpan {
   type: "text";
   text: string;
@@ -96,47 +106,83 @@ export interface TLTextSpan {
 
 export type TLTextStyle = "bold" | "italic" | "underline" | "strike" | "code";
 
-// Shape-specific prop interfaces
+// ===== SHAPE CROP INTERFACE =====
+export interface TLShapeCrop {
+  topLeft: VecLike;
+  bottomRight: VecLike;
+}
+
+// ===== LINE SHAPE POINT =====
+export interface TldrawLinePoint {
+  id: string;
+  index: string;
+  x: number;
+  y: number;
+}
+
+// ===== SHAPE-SPECIFIC PROPS - FROM OFFICIAL DOCS =====
+
 export interface TldrawGeoShapeProps {
-  geo: TldrawGeoType;
-  w: number;
-  h: number;
-  color: TldrawColor;
-  labelColor: TldrawColor;
-  fill: TldrawFill;
-  dash: TldrawDash;
-  size: TldrawSize;
-  font: TldrawFont;
-  text: string;
   align: TldrawAlign;
-  verticalAlign: TldrawVerticalAlign;
+  color: TldrawColor;
+  dash: TldrawDash;
+  fill: TldrawFill;
+  font: TldrawFont;
+  geo: TldrawGeoType;
   growY: number;
+  h: number;
+  labelColor: TldrawColor;
+  richText?: TLRichText;
+  scale: number;
+  size: TldrawSize;
+  url: string;
+  verticalAlign: TldrawVerticalAlign;
+  w: number;
 }
 
 export interface TldrawTextShapeProps {
   autoSize: boolean;
   color: TldrawColor;
   font: TldrawFont;
-  size: TldrawSize;
+  richText: TLRichText;
   scale: number;
+  size: TldrawSize;
   textAlign: TldrawAlign;
   w: number;
-  richText: TLRichText;
 }
 
 export interface TldrawArrowShapeProps {
-  color: TldrawColor;
-  fill: TldrawFill;
-  dash: TldrawDash;
-  size: TldrawSize;
-  arrowheadStart: TldrawArrowheadType;
   arrowheadEnd: TldrawArrowheadType;
-  start: VecLike;
-  end: VecLike;
+  arrowheadStart: TldrawArrowheadType;
   bend: number;
-  text: string;
-  labelColor: TldrawColor;
+  color: TldrawColor;
+  dash: TldrawDash;
+  elbowMidPoint: number;
+  end: VecLike;
+  fill: TldrawFill;
   font: TldrawFont;
+  kind: "arc" | "elbow";
+  labelColor: TldrawColor;
+  labelPosition: number;
+  scale: number;
+  size: TldrawSize;
+  start: VecLike;
+  text: string;
+}
+
+export interface TldrawHighlightShapeProps {
+  color: TldrawColor;
+  isComplete: boolean;
+  isPen: boolean;
+  scale: number;
+  segments: TldrawDrawShapeSegment[];
+  size: TldrawSize;
+}
+
+// Draw shape segments
+export interface TldrawDrawShapeSegment {
+  type: "free" | "straight";
+  points: VecLike[];
 }
 
 export interface TldrawDrawShapeProps {
@@ -148,92 +194,75 @@ export interface TldrawDrawShapeProps {
   isComplete: boolean;
   isClosed: boolean;
   isPen: boolean;
-}
-
-export interface TldrawDrawShapeSegment {
-  type: "free" | "straight";
-  points: VecLike[];
-}
-
-export interface TldrawHighlightShapeProps {
-  color: TldrawColor;
-  size: TldrawSize;
-  segments: TldrawDrawShapeSegment[];
-  isComplete: boolean;
-  isPen: boolean;
+  scale: number;
 }
 
 export interface TldrawNoteShapeProps {
-  color: TldrawColor;
-  size: TldrawSize;
-  font: TldrawFont;
   align: TldrawAlign;
-  verticalAlign: TldrawVerticalAlign;
+  color: TldrawColor;
+  font: TldrawFont;
+  fontSizeAdjustment: number;
   growY: number;
+  labelColor: TldrawColor;
+  richText: TLRichText; // NOTE: Uses richText, NOT simple text!
+  scale: number;
+  size: TldrawSize;
   url: string;
-  text: string;
+  verticalAlign: TldrawVerticalAlign;
 }
 
 export interface TldrawFrameShapeProps {
-  w: number;
+  color: TldrawColor;
   h: number;
   name: string;
+  w: number;
 }
 
-export interface TldrawGroupShapeProps {
-  // Group shapes typically don't have additional props
-}
+export interface TldrawGroupShapeProps {}
 
 export interface TldrawEmbedShapeProps {
-  w: number;
   h: number;
   url: string;
-  doesResize: boolean;
-  overridePermissions: boolean;
-  tmpOldUrl: string;
+  w: number;
 }
 
 export interface TldrawBookmarkShapeProps {
-  assetId: string | null;
+  assetId: TLAssetId | null;
+  h: number;
   url: string;
+  w: number;
 }
 
 export interface TldrawImageShapeProps {
-  assetId: string | null;
-  w: number;
+  altText: string;
+  assetId: TLAssetId | null;
+  crop: TLShapeCrop | null;
+  flipX: boolean;
+  flipY: boolean;
   h: number;
   playing: boolean;
   url: string;
-  crop: TldrawImageCrop | null;
-}
-
-export interface TldrawImageCrop {
-  topLeft: VecLike;
-  bottomRight: VecLike;
+  w: number;
 }
 
 export interface TldrawVideoShapeProps {
-  assetId: string | null;
-  w: number;
+  altText: string;
+  assetId: TLAssetId | null;
+  autoplay: boolean;
   h: number;
-  time: number;
   playing: boolean;
+  time: number;
   url: string;
+  w: number;
 }
 
 export interface TldrawLineShapeProps {
   color: TldrawColor;
   dash: TldrawDash;
-  size: TldrawSize;
-  spline: "line" | "cubic";
   points: Record<string, TldrawLinePoint>;
-}
-
-export interface TldrawLinePoint {
-  id: string;
-  index: string;
-  x: number;
-  y: number;
+  scale: number;
+  size: TldrawSize;
+  spline: TldrawLineSplineStyle;
 }
 
 // Generic shape props type
@@ -316,17 +345,7 @@ export type TLShape =
   | TLVideoShape
   | TLLineShape;
 
-// Shape partial type for updates
-export type TLShapePartial<T extends TLShape = TLShape> = T extends T
-  ? {
-      id: TLShapeId;
-      type: T["type"];
-      props?: Partial<T["props"]>;
-      meta?: Partial<T["meta"]>;
-    } & Partial<Omit<T, "type" | "id" | "props" | "meta">>
-  : never;
-
-// MCP Shape interface - using local types
+// MCP Shape interface
 export interface MCPShape<T extends TldrawShapeType = TldrawShapeType> {
   id: string;
   type: T;
@@ -433,26 +452,26 @@ export const TLDRAW_SHAPE_TYPES: readonly TldrawShapeType[] = [
 
 export const SHAPE_DEFAULTS = {
   geo: (): TldrawGeoShapeProps => ({
-    geo: "rectangle",
-    w: 100,
-    h: 100,
-    color: "black",
-    labelColor: "black",
-    fill: "none",
-    dash: "draw",
-    text: "",
-    size: "m",
-    font: "draw",
     align: "middle",
-    verticalAlign: "middle",
-    growY: 0,
-  }),
-  text: (): TldrawTextShapeProps => ({
     color: "black",
-    size: "m",
+    dash: "draw",
+    fill: "none",
     font: "draw",
-    w: 8,
-    textAlign: "start",
+    geo: "rectangle",
+    growY: 0,
+    h: 100,
+    labelColor: "black",
+    scale: 1,
+    size: "m",
+    url: "",
+    verticalAlign: "middle",
+    w: 100,
+  }),
+
+  text: (): TldrawTextShapeProps => ({
+    autoSize: true,
+    color: "black",
+    font: "draw",
     richText: {
       type: "doc",
       content: [
@@ -463,22 +482,30 @@ export const SHAPE_DEFAULTS = {
       ],
     },
     scale: 1,
-    autoSize: true,
-  }),
-  arrow: (): TldrawArrowShapeProps => ({
-    color: "black",
-    fill: "none",
-    dash: "draw",
     size: "m",
-    arrowheadStart: "none",
-    arrowheadEnd: "arrow",
-    start: { x: 0, y: 0 },
-    end: { x: 100, y: 100 },
-    bend: 0,
-    text: "",
-    labelColor: "black",
-    font: "draw",
+    textAlign: "start",
+    w: 8,
   }),
+
+  arrow: (): TldrawArrowShapeProps => ({
+    arrowheadEnd: "arrow",
+    arrowheadStart: "none",
+    bend: 0,
+    color: "black",
+    dash: "draw",
+    elbowMidPoint: 0,
+    end: { x: 100, y: 100 },
+    fill: "none",
+    font: "draw",
+    kind: "arc",
+    labelColor: "black",
+    labelPosition: 0.5,
+    scale: 1,
+    size: "m",
+    start: { x: 0, y: 0 },
+    text: "",
+  }),
+
   draw: (): TldrawDrawShapeProps => ({
     color: "black",
     fill: "none",
@@ -488,63 +515,92 @@ export const SHAPE_DEFAULTS = {
     isComplete: false,
     isClosed: false,
     isPen: false,
+    scale: 1,
   }),
+
   highlight: (): TldrawHighlightShapeProps => ({
     color: "yellow",
-    size: "m",
-    segments: [],
     isComplete: false,
     isPen: false,
-  }),
-  note: (): TldrawNoteShapeProps => ({
-    color: "black",
+    scale: 1,
+    segments: [],
     size: "m",
-    font: "draw",
-    align: "middle",
-    verticalAlign: "middle",
-    growY: 0,
-    url: "",
-    text: "",
   }),
+
+  note: (): TldrawNoteShapeProps => ({
+    align: "middle",
+    color: "black",
+    font: "draw",
+    fontSizeAdjustment: 0,
+    growY: 0,
+    labelColor: "black",
+    richText: {
+      type: "doc",
+      content: [
+        {
+          type: "paragraph",
+          content: [{ type: "text", text: "", styles: [] }],
+        },
+      ],
+    },
+    scale: 1,
+    size: "m",
+    url: "",
+    verticalAlign: "middle",
+  }),
+
   frame: (): TldrawFrameShapeProps => ({
-    w: 160,
+    color: "black",
     h: 90,
     name: "",
+    w: 160,
   }),
+
   group: (): TldrawGroupShapeProps => ({}),
+
   embed: (): TldrawEmbedShapeProps => ({
-    w: 300,
     h: 300,
     url: "",
-    doesResize: true,
-    overridePermissions: false,
-    tmpOldUrl: "",
+    w: 300,
   }),
+
+  // CORRECTED: Bookmark shapes include h and w
   bookmark: (): TldrawBookmarkShapeProps => ({
     assetId: null,
+    h: 100,
     url: "",
+    w: 200,
   }),
+
   image: (): TldrawImageShapeProps => ({
+    altText: "",
     assetId: null,
-    w: 100,
+    crop: null,
+    flipX: false,
+    flipY: false,
     h: 100,
     playing: true,
     url: "",
-    crop: null,
-  }),
-  video: (): TldrawVideoShapeProps => ({
-    assetId: null,
     w: 100,
-    h: 100,
-    time: 0,
-    playing: false,
-    url: "",
   }),
+
+  video: (): TldrawVideoShapeProps => ({
+    altText: "",
+    assetId: null,
+    autoplay: false,
+    h: 100,
+    playing: false,
+    time: 0,
+    url: "",
+    w: 100,
+  }),
+
   line: (): TldrawLineShapeProps => ({
     color: "black",
     dash: "draw",
+    points: {},
+    scale: 1,
     size: "m",
     spline: "line",
-    points: {},
   }),
 } as const;

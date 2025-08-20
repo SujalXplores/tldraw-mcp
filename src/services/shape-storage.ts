@@ -1,3 +1,5 @@
+// src/services/shape-storage.ts
+
 import { customAlphabet } from "nanoid";
 import type {
   MCPShape,

@@ -246,3 +246,2325 @@
 2025-08-08 04:09:57 [info]: [WebSocket] ✅ HTTP broadcast sent to 2 browsers 
 2025-08-08 04:12:33 [info]: 
 🔄 Received SIGINT, shutting down gracefully... 
+2025-08-08 04:26:20 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-08 04:26:20 [info]: ✅ [Singleton] Instances created: 
+2025-08-08 04:26:20 [info]: 📦 shapeStorage: true 
+2025-08-08 04:26:20 [info]: 🔌 webSocketService: true 
+2025-08-08 04:26:20 [info]: 🚀 Initializing WebSocket server... 
+2025-08-08 04:26:20 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-08 04:26:20 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-08 04:26:20 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-08 04:26:20 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-08 04:26:20 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-08 04:26:20 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-08 04:26:23 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-08 04:26:23 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 04:26:23 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 04:26:28 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-08 04:26:42 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-08 04:26:42 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 04:26:42 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 04:26:43 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-08 04:26:43 [info]: ✅ [Singleton] Instances created: 
+2025-08-08 04:26:43 [info]: 📦 shapeStorage: true 
+2025-08-08 04:26:43 [info]: 🔌 webSocketService: true 
+2025-08-08 04:27:56 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-08 04:27:56 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-08 04:27:56 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-08 04:27:56 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-08 04:30:45 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-08 04:30:45 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-08 04:30:45 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-08 04:30:45 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-08 04:31:57 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-08 04:32:00 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-08 04:32:00 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 04:32:00 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 04:32:01 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-08 04:32:08 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-08 04:32:08 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 04:32:08 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 04:38:51 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-08 16:11:28 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-08 16:11:28 [info]: ✅ [Singleton] Instances created: 
+2025-08-08 16:11:28 [info]: 📦 shapeStorage: true 
+2025-08-08 16:11:28 [info]: 🔌 webSocketService: true 
+2025-08-08 16:11:28 [info]: 🚀 Initializing WebSocket server... 
+2025-08-08 16:11:28 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-08 16:11:28 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-08 16:11:28 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-08 16:11:28 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-08 16:11:28 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-08 16:11:28 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-08 16:12:09 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-08 16:12:09 [info]: ✅ [Singleton] Instances created: 
+2025-08-08 16:12:09 [info]: 📦 shapeStorage: true 
+2025-08-08 16:12:09 [info]: 🔌 webSocketService: true 
+2025-08-08 16:12:09 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-08 16:12:09 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-08 16:12:09 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-08 16:39:40 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-08 16:39:40 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-08 16:39:40 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-08 16:39:40 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-08 16:40:07 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-08 16:40:07 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-08 16:40:07 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-08 16:40:07 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:43:00 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-10 17:43:00 [info]: ✅ [Singleton] Instances created: 
+2025-08-10 17:43:00 [info]: 📦 shapeStorage: true 
+2025-08-10 17:43:00 [info]: 🔌 webSocketService: true 
+2025-08-10 17:43:00 [info]: 🚀 Initializing WebSocket server... 
+2025-08-10 17:43:00 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-10 17:43:00 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-10 17:43:00 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-10 17:43:00 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-10 17:43:00 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-10 17:43:00 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-10 17:43:29 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-10 17:43:29 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-10 17:43:29 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-10 17:43:30 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-10 17:43:30 [info]: ✅ [Singleton] Instances created: 
+2025-08-10 17:43:30 [info]: 📦 shapeStorage: true 
+2025-08-10 17:43:30 [info]: 🔌 webSocketService: true 
+2025-08-10 17:50:12 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-10 17:50:12 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-10 17:50:12 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:50:12 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:46 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-10 17:51:46 [info]: ✅ [Singleton] Instances created: 
+2025-08-10 17:51:46 [info]: 📦 shapeStorage: true 
+2025-08-10 17:51:46 [info]: 🔌 webSocketService: true 
+2025-08-10 17:51:46 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:46 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:46 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:46 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:46 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:46 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:46 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:46 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:46 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:46 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:46 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:46 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:46 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:46 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:46 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:46 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:46 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:46 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:46 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:46 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:46 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:46 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:46 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:46 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:47 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:47 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:47 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:47 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:47 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:47 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:47 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:47 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:47 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:47 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:47 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:47 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:47 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:47 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:47 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:47 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:47 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:47 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:47 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:47 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:47 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:47 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:47 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:47 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:48 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:48 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:48 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:48 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:48 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:48 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:48 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:48 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:48 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:48 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:48 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:48 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:48 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:48 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:48 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:48 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:48 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:48 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:48 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:48 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:48 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:48 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:48 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:48 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:48 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-10 17:51:48 [info]: ✅ [Singleton] Instances created: 
+2025-08-10 17:51:48 [info]: 📦 shapeStorage: true 
+2025-08-10 17:51:48 [info]: 🔌 webSocketService: true 
+2025-08-10 17:51:49 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:49 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:49 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:49 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:49 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:49 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:49 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:49 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:49 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:49 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:49 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:49 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:49 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:49 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:49 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:49 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:49 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:49 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:49 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:49 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:49 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:49 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:49 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:49 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:50 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:50 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:50 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:50 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:50 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:50 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:50 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:50 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:50 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:50 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:50 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:50 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:51 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:51 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:51 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:51 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:51 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:51 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:51 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:51 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:51 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:51 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:51 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:51 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:51 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:51 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:51 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:51 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:51 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:51 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:51 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:51 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:52 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:52 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:52 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:52 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:52 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:52 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:52 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:52 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:52 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:52 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:52 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:52 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:52 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-10 17:51:52 [info]: ✅ [Singleton] Instances created: 
+2025-08-10 17:51:52 [info]: 📦 shapeStorage: true 
+2025-08-10 17:51:52 [info]: 🔌 webSocketService: true 
+2025-08-10 17:51:52 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:52 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:52 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:52 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:53 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:53 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:53 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:53 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:53 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:53 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:53 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:53 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:53 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:53 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:53 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:53 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:53 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:53 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:53 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:53 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:53 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:53 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:53 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:53 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:53 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:53 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:53 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:53 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:53 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:53 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:53 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:53 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:54 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-10 17:51:54 [info]: ✅ [Singleton] Instances created: 
+2025-08-10 17:51:54 [info]: 📦 shapeStorage: true 
+2025-08-10 17:51:54 [info]: 🔌 webSocketService: true 
+2025-08-10 17:51:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-10 17:51:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-10 17:51:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-10 17:51:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-10 17:51:56 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-10 17:51:56 [info]: ✅ [Singleton] Instances created: 
+2025-08-10 17:51:56 [info]: 📦 shapeStorage: true 
+2025-08-10 17:51:56 [info]: 🔌 webSocketService: true 
+2025-08-10 17:52:36 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-10 17:52:37 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
+2025-08-14 04:25:16 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-14 04:25:16 [info]: ✅ [Singleton] Instances created: 
+2025-08-14 04:25:16 [info]: 📦 shapeStorage: true 
+2025-08-14 04:25:16 [info]: 🔌 webSocketService: true 
+2025-08-14 04:25:16 [info]: 🚀 Initializing WebSocket server... 
+2025-08-14 04:25:16 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-14 04:25:16 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-14 04:25:16 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-14 04:25:16 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-14 04:25:16 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-14 04:25:16 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-14 04:26:25 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-14 04:26:25 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-14 04:26:25 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-14 04:26:26 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-14 04:26:26 [info]: ✅ [Singleton] Instances created: 
+2025-08-14 04:26:26 [info]: 📦 shapeStorage: true 
+2025-08-14 04:26:26 [info]: 🔌 webSocketService: true 
+2025-08-14 04:28:05 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-14 04:28:05 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-14 04:28:05 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:28:05 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:28:14 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-14 04:28:14 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-14 04:28:14 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:28:14 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:28:26 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-14 04:28:29 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-14 04:28:29 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-14 04:28:29 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-14 04:28:31 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:28:31 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:28:31 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:28:31 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:28:34 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:28:34 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:28:34 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:28:34 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:28:39 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:28:39 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:28:39 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:28:39 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:28:43 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:28:43 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:28:43 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:28:43 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:28:49 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:28:49 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:28:49 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:28:49 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:28:52 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:28:52 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:28:52 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:28:52 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:28:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:28:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:28:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:28:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:28:58 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:28:58 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:28:58 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:28:58 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:29:01 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:29:01 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:29:01 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:29:01 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:29:01 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-14 04:29:04 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-14 04:29:04 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-14 04:29:04 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-14 04:29:05 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:29:05 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:29:05 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:29:05 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:29:05 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-14 04:29:08 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-14 04:29:08 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-14 04:29:08 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-14 04:29:10 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:29:10 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:29:10 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:29:10 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:29:43 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-14 04:29:44 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-14 04:29:44 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-14 04:29:44 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-14 04:29:49 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-14 04:29:53 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-14 04:29:53 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-14 04:29:53 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-14 04:30:02 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-14 04:30:03 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-14 04:30:03 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-14 04:30:03 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-14 04:30:06 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-14 04:30:09 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-14 04:30:09 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-14 04:30:09 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-14 04:30:15 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
+2025-08-14 04:30:15 [info]: [WebSocket] 🔄 Closing WebSocket server... 
+2025-08-14 04:30:15 [info]: [WebSocket] ✅ WebSocket server closed 
+2025-08-14 04:30:32 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-14 04:30:32 [info]: ✅ [Singleton] Instances created: 
+2025-08-14 04:30:32 [info]: 📦 shapeStorage: true 
+2025-08-14 04:30:32 [info]: 🔌 webSocketService: true 
+2025-08-14 04:30:32 [info]: 🚀 Initializing WebSocket server... 
+2025-08-14 04:30:32 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-14 04:30:32 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-14 04:30:32 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-14 04:30:32 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-14 04:30:32 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-14 04:30:32 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-14 04:30:32 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-14 04:30:32 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-14 04:30:32 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-14 04:30:47 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-14 04:30:49 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-14 04:30:49 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-14 04:30:49 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-14 04:30:50 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-14 04:30:50 [info]: ✅ [Singleton] Instances created: 
+2025-08-14 04:30:50 [info]: 📦 shapeStorage: true 
+2025-08-14 04:30:50 [info]: 🔌 webSocketService: true 
+2025-08-14 04:31:52 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-14 04:31:52 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-14 04:31:52 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:31:52 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:31:57 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-14 04:31:57 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-14 04:31:57 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:31:57 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:32:01 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:32:01 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:32:01 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:32:01 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:32:05 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:32:05 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:32:05 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:32:05 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:32:08 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:32:08 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:32:08 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:32:08 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:32:11 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:32:11 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:32:11 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:32:11 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:32:14 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:32:14 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:32:14 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:32:14 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:32:17 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:32:17 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:32:17 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:32:17 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:32:20 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:32:20 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:32:20 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:32:20 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:32:23 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:32:23 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:32:23 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:32:23 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:32:26 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:32:26 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:32:26 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:32:26 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:32:29 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:32:29 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:32:29 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:32:29 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:32:32 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:32:32 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:32:32 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:32:32 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:32:35 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:32:35 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:32:35 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:32:35 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:32:38 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-14 04:32:38 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-14 04:32:38 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:32:38 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:33:11 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
+2025-08-14 04:33:29 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-14 04:33:29 [info]: ✅ [Singleton] Instances created: 
+2025-08-14 04:33:29 [info]: 📦 shapeStorage: true 
+2025-08-14 04:33:29 [info]: 🔌 webSocketService: true 
+2025-08-14 04:33:29 [info]: 🚀 Initializing WebSocket server... 
+2025-08-14 04:33:29 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-14 04:33:29 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-14 04:33:29 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-14 04:33:29 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-14 04:33:29 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-14 04:33:29 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-14 04:33:51 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-14 04:33:51 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-14 04:33:51 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-14 04:33:51 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-14 04:33:51 [info]: ✅ [Singleton] Instances created: 
+2025-08-14 04:33:51 [info]: 📦 shapeStorage: true 
+2025-08-14 04:33:51 [info]: 🔌 webSocketService: true 
+2025-08-14 04:36:30 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-14 04:36:30 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-14 04:36:30 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:36:30 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:39:10 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
+2025-08-14 04:39:19 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-14 04:39:19 [info]: ✅ [Singleton] Instances created: 
+2025-08-14 04:39:19 [info]: 📦 shapeStorage: true 
+2025-08-14 04:39:19 [info]: 🔌 webSocketService: true 
+2025-08-14 04:39:19 [info]: 🚀 Initializing WebSocket server... 
+2025-08-14 04:39:19 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-14 04:39:19 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-14 04:39:19 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-14 04:39:19 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-14 04:39:19 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-14 04:39:19 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-14 04:39:19 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-14 04:39:19 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-14 04:39:19 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-14 04:39:31 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-14 04:39:34 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-14 04:39:34 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-14 04:39:34 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-14 04:39:34 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-14 04:39:34 [info]: ✅ [Singleton] Instances created: 
+2025-08-14 04:39:34 [info]: 📦 shapeStorage: true 
+2025-08-14 04:39:34 [info]: 🔌 webSocketService: true 
+2025-08-14 04:40:12 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-14 04:40:12 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-14 04:40:12 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:40:12 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:44:09 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-14 04:44:09 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-14 04:44:09 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:44:09 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:46:13 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-14 04:46:13 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-14 04:46:13 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:46:13 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 04:49:12 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-14 04:49:12 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-14 04:49:12 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-14 04:49:12 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-14 05:38:34 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
+2025-08-19 16:27:42 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 16:27:42 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 16:27:42 [info]: 📦 shapeStorage: true 
+2025-08-19 16:27:42 [info]: 🔌 webSocketService: true 
+2025-08-19 16:27:42 [info]: 🚀 Initializing WebSocket server... 
+2025-08-19 16:27:42 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-19 16:27:42 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-19 16:27:42 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-19 16:27:42 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-19 16:27:42 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-19 16:27:42 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-19 16:28:32 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 16:28:32 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 16:28:32 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 16:28:33 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 16:28:33 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 16:28:33 [info]: 📦 shapeStorage: true 
+2025-08-19 16:28:33 [info]: 🔌 webSocketService: true 
+2025-08-19 16:30:34 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-19 16:30:34 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-19 16:30:34 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-19 16:30:34 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-19 16:31:44 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-19 16:31:47 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 16:31:47 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 16:31:47 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 16:31:51 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-19 16:31:53 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 16:31:53 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 16:31:53 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 16:32:33 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-19 16:32:34 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 16:32:34 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 16:32:34 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 16:32:34 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 16:32:34 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 16:32:34 [info]: 📦 shapeStorage: true 
+2025-08-19 16:32:34 [info]: 🔌 webSocketService: true 
+2025-08-19 16:32:51 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-19 16:32:51 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-19 16:32:51 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-19 16:32:51 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-19 16:35:07 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-19 16:35:08 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 16:35:08 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 16:35:08 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 16:35:14 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-19 16:35:17 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 16:35:17 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 16:35:17 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 16:35:22 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-19 16:35:23 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 16:35:23 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 16:35:23 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 16:35:28 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-19 16:35:31 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 16:35:31 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 16:35:31 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 16:35:52 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-19 16:35:54 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 16:35:54 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 16:35:54 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 16:36:26 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
+2025-08-19 16:36:33 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 16:36:33 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 16:36:33 [info]: 📦 shapeStorage: true 
+2025-08-19 16:36:33 [info]: 🔌 webSocketService: true 
+2025-08-19 16:36:33 [info]: 🚀 Initializing WebSocket server... 
+2025-08-19 16:36:33 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-19 16:36:33 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-19 16:36:33 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-19 16:36:33 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-19 16:36:33 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-19 16:36:33 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-19 16:36:35 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 16:36:35 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 16:36:35 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 16:36:37 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-19 16:36:50 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 16:36:50 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 16:36:50 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 16:36:51 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 16:36:51 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 16:36:51 [info]: 📦 shapeStorage: true 
+2025-08-19 16:36:51 [info]: 🔌 webSocketService: true 
+2025-08-19 16:37:35 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-19 16:37:35 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-19 16:37:35 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-19 16:37:35 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-19 16:39:17 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 16:39:17 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 16:39:17 [info]: 📦 shapeStorage: true 
+2025-08-19 16:39:17 [info]: 🔌 webSocketService: true 
+2025-08-19 16:39:17 [info]: 🚀 Initializing WebSocket server... 
+2025-08-19 16:39:17 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-19 16:39:17 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-19 16:39:17 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-19 16:39:17 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-19 16:39:17 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-19 16:39:17 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-19 16:39:21 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 16:39:21 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 16:39:21 [info]: 📦 shapeStorage: true 
+2025-08-19 16:39:21 [info]: 🔌 webSocketService: true 
+2025-08-19 16:39:21 [info]: 🚀 Initializing WebSocket server... 
+2025-08-19 16:39:21 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-19 16:39:21 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-19 16:39:21 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-19 16:39:21 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-19 16:39:21 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-19 16:39:21 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-19 16:39:21 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 16:39:21 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 16:39:21 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 16:40:25 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-19 16:40:27 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 16:40:27 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 16:40:27 [info]: 📦 shapeStorage: true 
+2025-08-19 16:40:27 [info]: 🔌 webSocketService: true 
+2025-08-19 16:40:27 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 16:40:27 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 16:40:27 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 16:41:31 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-19 16:41:31 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-19 16:41:31 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-19 16:41:31 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-19 22:32:22 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 22:32:22 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 22:32:22 [info]: 📦 shapeStorage: true 
+2025-08-19 22:32:22 [info]: 🔌 webSocketService: true 
+2025-08-19 22:32:22 [info]: 🚀 Initializing WebSocket server... 
+2025-08-19 22:32:22 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-19 22:32:22 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-19 22:32:22 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-19 22:32:22 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-19 22:32:22 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-19 22:32:22 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-19 22:33:03 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 22:33:03 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 22:33:03 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 22:33:03 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 22:33:03 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 22:33:03 [info]: 📦 shapeStorage: true 
+2025-08-19 22:33:03 [info]: 🔌 webSocketService: true 
+2025-08-19 23:09:19 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 23:09:19 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 23:09:19 [info]: 📦 shapeStorage: true 
+2025-08-19 23:09:19 [info]: 🔌 webSocketService: true 
+2025-08-19 23:09:19 [info]: 🚀 Initializing WebSocket server... 
+2025-08-19 23:09:19 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-19 23:09:19 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-19 23:09:19 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-19 23:09:19 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-19 23:09:19 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-19 23:09:19 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-19 23:09:21 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 23:09:21 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 23:09:21 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 23:21:35 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 23:21:35 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 23:21:35 [info]: 📦 shapeStorage: true 
+2025-08-19 23:21:35 [info]: 🔌 webSocketService: true 
+2025-08-19 23:21:35 [info]: 🚀 Initializing WebSocket server... 
+2025-08-19 23:21:35 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-19 23:21:35 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-19 23:21:35 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-19 23:21:35 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-19 23:21:35 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-19 23:21:35 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-19 23:21:36 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 23:21:36 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 23:21:36 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 23:28:15 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
+2025-08-19 23:28:15 [info]: [WebSocket] 🔄 Closing WebSocket server... 
+2025-08-19 23:28:15 [info]: [WebSocket] ✅ WebSocket server closed 
+2025-08-19 23:28:22 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 23:28:22 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 23:28:22 [info]: 📦 shapeStorage: true 
+2025-08-19 23:28:22 [info]: 🔌 webSocketService: true 
+2025-08-19 23:28:22 [info]: 🚀 Initializing WebSocket server... 
+2025-08-19 23:28:22 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-19 23:28:22 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-19 23:28:22 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-19 23:28:22 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-19 23:28:22 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-19 23:28:22 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-19 23:28:25 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 23:28:25 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 23:28:25 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 23:29:14 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 23:29:14 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 23:29:14 [info]: 📦 shapeStorage: true 
+2025-08-19 23:29:14 [info]: 🔌 webSocketService: true 
+2025-08-19 23:29:14 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-19 23:29:14 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-19 23:29:14 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-19 23:29:14 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-19 23:29:23 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-19 23:29:23 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 23:29:23 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 23:29:51 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-19 23:29:51 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 2 browsers 
+2025-08-19 23:29:51 [info]: [WebSocket] 📊 AI broadcast complete: 2 browsers received message 
+2025-08-19 23:29:51 [info]: [WebSocket] ✅ HTTP broadcast sent to 2 browsers 
+2025-08-19 23:31:20 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 23:31:20 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 23:31:20 [info]: 📦 shapeStorage: true 
+2025-08-19 23:31:20 [info]: 🔌 webSocketService: true 
+2025-08-19 23:31:20 [info]: 🚀 Initializing WebSocket server... 
+2025-08-19 23:31:20 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-19 23:31:20 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-19 23:31:20 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-19 23:31:20 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-19 23:31:20 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-19 23:31:20 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-19 23:31:22 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-19 23:31:22 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 23:31:22 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 23:31:22 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2025-08-19 23:31:22 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-19 23:31:22 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-19 23:33:11 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 23:33:11 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 23:33:11 [info]: 📦 shapeStorage: true 
+2025-08-19 23:33:11 [info]: 🔌 webSocketService: true 
+2025-08-19 23:33:11 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-19 23:33:11 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 2 browsers 
+2025-08-19 23:33:11 [info]: [WebSocket] 📊 AI broadcast complete: 2 browsers received message 
+2025-08-19 23:33:11 [info]: [WebSocket] ✅ HTTP broadcast sent to 2 browsers 
+2025-08-19 23:33:46 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 1 
+2025-08-19 23:34:00 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-19 23:34:00 [info]: ✅ [Singleton] Instances created: 
+2025-08-19 23:34:00 [info]: 📦 shapeStorage: true 
+2025-08-19 23:34:00 [info]: 🔌 webSocketService: true 
+2025-08-19 23:35:12 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-19 23:35:12 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-19 23:35:12 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-19 23:35:12 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-19 23:36:20 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-19 23:36:20 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-19 23:36:20 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-19 23:36:20 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-19 23:36:59 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-19 23:36:59 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-19 23:36:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-19 23:36:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-19 23:38:04 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-19 23:38:04 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-19 23:38:04 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-19 23:38:04 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-19 23:39:25 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-19 23:39:25 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-19 23:39:25 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-19 23:39:25 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-19 23:43:19 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-19 23:43:19 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-19 23:43:19 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-19 23:43:19 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-19 23:43:31 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-19 23:43:31 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-19 23:43:31 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-19 23:43:31 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 00:23:33 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-20 00:23:44 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:23:44 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:23:44 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:30:51 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 00:30:53 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:30:53 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:30:53 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:37:10 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 00:37:10 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 00:37:10 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 00:37:10 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 00:42:45 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 00:42:45 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 00:42:45 [info]: 📦 shapeStorage: true 
+2025-08-20 00:42:45 [info]: 🔌 webSocketService: true 
+2025-08-20 00:42:45 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 00:42:45 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 00:42:45 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 00:42:45 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 00:42:45 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 00:42:45 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 00:42:45 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 00:43:27 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 00:43:27 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 00:43:27 [info]: 📦 shapeStorage: true 
+2025-08-20 00:43:27 [info]: 🔌 webSocketService: true 
+2025-08-20 00:43:27 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:43:27 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:43:27 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:43:38 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 00:43:38 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 00:43:38 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 00:43:38 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 00:44:48 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 00:44:49 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:44:49 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:44:49 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:45:27 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 00:45:28 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:45:28 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:45:28 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:45:40 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 00:45:41 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:45:41 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:45:41 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:45:50 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 00:45:51 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:45:51 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:45:51 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:45:55 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 00:45:56 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:45:56 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:45:56 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:45:58 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 00:45:59 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:45:59 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:45:59 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:46:01 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 00:46:02 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:46:02 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:46:02 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:46:28 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
+2025-08-20 00:47:01 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 00:47:01 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 00:47:01 [info]: 📦 shapeStorage: true 
+2025-08-20 00:47:01 [info]: 🔌 webSocketService: true 
+2025-08-20 00:47:01 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 00:47:01 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 00:47:01 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 00:47:01 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 00:47:01 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 00:47:01 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 00:47:01 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 00:47:19 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:47:19 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:47:19 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:47:20 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 00:47:20 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 00:47:20 [info]: 📦 shapeStorage: true 
+2025-08-20 00:47:20 [info]: 🔌 webSocketService: true 
+2025-08-20 00:47:34 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 00:47:34 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 00:47:34 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 00:47:34 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 00:48:17 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-20 00:48:19 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:48:19 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:48:19 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:48:46 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 00:48:47 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:48:47 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:48:47 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:49:31 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 00:49:31 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 00:49:31 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 00:49:31 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 00:52:18 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-20 00:52:21 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:52:21 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:52:21 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:52:39 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 00:52:39 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 00:52:39 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 00:52:39 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 00:55:40 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-20 00:55:41 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:55:41 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:55:41 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 00:55:50 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 00:55:50 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 00:55:50 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 00:55:50 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 00:59:53 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 00:59:55 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 00:59:55 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 00:59:55 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 01:00:34 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 01:00:35 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 01:00:35 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 01:00:35 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 01:00:56 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 01:00:57 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 01:00:57 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 01:00:57 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 01:01:47 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 01:01:47 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 01:01:47 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 01:01:47 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 01:02:19 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 01:02:20 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 01:02:20 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 01:02:20 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 01:02:36 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 01:02:36 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 01:02:36 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 01:02:36 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 01:03:06 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-20 01:03:09 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 01:03:09 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 01:03:09 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 01:03:12 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 01:03:12 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 01:03:12 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 01:03:12 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 01:06:13 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-20 01:06:15 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 01:06:15 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 01:06:15 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 01:06:17 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 01:06:17 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 01:06:17 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 01:06:17 [info]: 📦 shapeStorage: true 
+2025-08-20 01:06:17 [info]: 🔌 webSocketService: true 
+2025-08-20 01:06:17 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 01:06:17 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 01:06:17 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 01:07:18 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-20 01:07:20 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 01:07:20 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 01:07:20 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 01:07:21 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 01:07:21 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 01:07:21 [info]: 📦 shapeStorage: true 
+2025-08-20 01:07:21 [info]: 🔌 webSocketService: true 
+2025-08-20 01:07:21 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 01:07:21 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 01:07:21 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 01:07:21 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 01:11:58 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 01:11:58 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 01:11:58 [info]: 📦 shapeStorage: true 
+2025-08-20 01:11:58 [info]: 🔌 webSocketService: true 
+2025-08-20 01:11:58 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 01:11:58 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 01:11:58 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 01:11:58 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 01:11:58 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 01:11:58 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 01:11:58 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 01:11:59 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 01:11:59 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 01:11:59 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 01:12:05 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-20 01:12:07 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 01:12:07 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 01:12:07 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 01:12:10 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 01:12:10 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 01:12:10 [info]: 📦 shapeStorage: true 
+2025-08-20 01:12:10 [info]: 🔌 webSocketService: true 
+2025-08-20 01:12:10 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 01:12:10 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 01:12:10 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 01:12:10 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 01:12:36 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 01:12:36 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 01:12:36 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 01:12:36 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 01:13:15 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 01:13:15 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 01:13:15 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 01:13:15 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 01:13:48 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-20 01:13:48 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-20 01:13:48 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 01:13:48 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 01:14:42 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 01:14:42 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 01:14:42 [info]: 📦 shapeStorage: true 
+2025-08-20 01:14:42 [info]: 🔌 webSocketService: true 
+2025-08-20 01:14:42 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 01:14:42 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 01:14:42 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 01:14:42 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 01:14:42 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 01:14:42 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 01:14:42 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 01:14:44 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 01:14:44 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 01:14:44 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 01:15:00 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 01:15:00 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 01:15:00 [info]: 📦 shapeStorage: true 
+2025-08-20 01:15:00 [info]: 🔌 webSocketService: true 
+2025-08-20 01:15:00 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 01:15:00 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 01:15:00 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 01:15:00 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 01:15:00 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 01:15:00 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 01:15:00 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 01:15:02 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 01:15:02 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 01:15:02 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 01:15:12 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-20 01:15:14 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 01:15:14 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 01:15:14 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 01:15:19 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 01:15:19 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 01:15:19 [info]: 📦 shapeStorage: true 
+2025-08-20 01:15:19 [info]: 🔌 webSocketService: true 
+2025-08-20 01:15:19 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 01:15:19 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 01:15:19 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 01:15:19 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 01:15:38 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 01:15:38 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 01:15:38 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 01:15:38 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 01:22:23 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 01:22:23 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 01:22:23 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 01:22:23 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 01:22:34 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 01:22:34 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 01:22:34 [info]: 📦 shapeStorage: true 
+2025-08-20 01:22:34 [info]: 🔌 webSocketService: true 
+2025-08-20 01:22:34 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-20 01:22:34 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-20 01:22:34 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 01:22:34 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 01:24:15 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 01:24:16 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 01:24:16 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 01:24:16 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 01:24:44 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-20 01:24:44 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-20 01:24:44 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 01:24:44 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:00:03 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-20 02:00:06 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 02:00:06 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 02:00:06 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 02:04:27 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:04:27 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:04:27 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:04:27 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:04:30 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:04:30 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:04:30 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:04:30 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:04:33 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:04:33 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:04:33 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:04:33 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:04:36 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:04:36 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:04:36 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:04:36 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:04:39 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-20 02:04:39 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-20 02:04:39 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:04:39 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:04:51 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 02:04:52 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 02:04:52 [info]: 📦 shapeStorage: true 
+2025-08-20 02:04:52 [info]: 🔌 webSocketService: true 
+2025-08-20 02:04:53 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 02:04:53 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 02:04:53 [info]: 📦 shapeStorage: true 
+2025-08-20 02:04:53 [info]: 🔌 webSocketService: true 
+2025-08-20 02:04:55 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 02:04:55 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 02:04:55 [info]: 📦 shapeStorage: true 
+2025-08-20 02:04:55 [info]: 🔌 webSocketService: true 
+2025-08-20 02:04:59 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 02:04:59 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 02:04:59 [info]: 📦 shapeStorage: true 
+2025-08-20 02:04:59 [info]: 🔌 webSocketService: true 
+2025-08-20 02:05:01 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 02:05:01 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 02:05:01 [info]: 📦 shapeStorage: true 
+2025-08-20 02:05:01 [info]: 🔌 webSocketService: true 
+2025-08-20 02:05:03 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:05:03 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:05:03 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:05:03 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:05:05 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:05:05 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:05:05 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:05:05 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:05:07 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:05:07 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:05:07 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:05:07 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:05:54 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-20 02:05:56 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 02:05:56 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 02:05:56 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 02:06:18 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-20 02:06:18 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-20 02:06:18 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:06:18 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:07:18 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:07:18 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:07:18 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:07:18 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:07:21 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:07:21 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:07:21 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:07:21 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:07:24 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:07:24 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:07:24 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:07:24 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:07:27 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:07:27 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:07:27 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:07:27 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:07:30 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:07:30 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:07:30 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:07:30 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:07:33 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:07:33 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:07:33 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:07:33 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:07:36 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:07:36 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:07:36 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:07:36 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:07:40 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:07:40 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:07:40 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:07:40 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:07:43 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:07:43 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:07:43 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:07:43 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:07:46 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:07:46 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:07:46 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:07:46 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:07:48 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:07:48 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:07:48 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:07:48 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:07:51 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:07:51 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:07:51 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:07:51 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:07:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:07:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:07:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:07:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:07:58 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:07:58 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:07:58 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:07:58 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:08:01 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 02:08:01 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 02:08:01 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:08:01 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:15:57 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-20 02:15:57 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-20 02:15:57 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:15:57 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:16:34 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-20 02:16:34 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-20 02:16:34 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:16:34 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 02:18:42 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-20 02:18:42 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-20 02:18:42 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 02:18:42 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 22:28:19 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 22:28:19 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 22:28:19 [info]: 📦 shapeStorage: true 
+2025-08-20 22:28:19 [info]: 🔌 webSocketService: true 
+2025-08-20 22:28:19 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 22:28:19 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 22:28:19 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 22:28:19 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 22:28:19 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 22:28:19 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 22:28:19 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 22:29:21 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 22:29:21 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 22:29:21 [info]: 📦 shapeStorage: true 
+2025-08-20 22:29:21 [info]: 🔌 webSocketService: true 
+2025-08-20 22:29:21 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 22:29:21 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 22:29:21 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 22:29:21 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 22:29:21 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 22:29:21 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 22:29:21 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 22:31:17 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 22:31:17 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 22:31:17 [info]: 📦 shapeStorage: true 
+2025-08-20 22:31:17 [info]: 🔌 webSocketService: true 
+2025-08-20 22:31:17 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 22:31:17 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 22:31:17 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 22:31:17 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 22:31:17 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 22:31:17 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 22:31:17 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 22:31:47 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 22:31:47 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 22:31:47 [info]: 📦 shapeStorage: true 
+2025-08-20 22:31:47 [info]: 🔌 webSocketService: true 
+2025-08-20 22:31:47 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 22:31:47 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 22:31:47 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 22:31:47 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 22:31:47 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 22:31:47 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 22:31:47 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 22:34:30 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
+2025-08-20 22:38:44 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 22:38:44 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 22:38:44 [info]: 📦 shapeStorage: true 
+2025-08-20 22:38:44 [info]: 🔌 webSocketService: true 
+2025-08-20 22:38:44 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 22:38:44 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 22:38:44 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 22:38:44 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 22:38:44 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 22:38:44 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 22:38:44 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 22:42:04 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
+2025-08-20 22:42:17 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 22:42:17 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 22:42:17 [info]: 📦 shapeStorage: true 
+2025-08-20 22:42:17 [info]: 🔌 webSocketService: true 
+2025-08-20 22:42:17 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 22:42:17 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 22:42:17 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 22:42:17 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 22:42:17 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 22:42:17 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 22:42:17 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 22:43:58 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 22:43:58 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 22:43:58 [info]: 📦 shapeStorage: true 
+2025-08-20 22:43:58 [info]: 🔌 webSocketService: true 
+2025-08-20 22:43:58 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 22:43:58 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 0 browsers 
+2025-08-20 22:43:58 [info]: [WebSocket] ⚠️ No browser clients connected 
+2025-08-20 22:43:58 [info]: [WebSocket] ✅ HTTP broadcast sent to 0 browsers 
+2025-08-20 22:44:05 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 22:44:05 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 0 browsers 
+2025-08-20 22:44:05 [info]: [WebSocket] ⚠️ No browser clients connected 
+2025-08-20 22:44:05 [info]: [WebSocket] ✅ HTTP broadcast sent to 0 browsers 
+2025-08-20 22:44:14 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 22:44:14 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 0 browsers 
+2025-08-20 22:44:14 [info]: [WebSocket] ⚠️ No browser clients connected 
+2025-08-20 22:44:14 [info]: [WebSocket] ✅ HTTP broadcast sent to 0 browsers 
+2025-08-20 22:44:15 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 22:44:15 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 22:44:15 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 22:44:21 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 22:44:21 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 22:44:21 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 22:44:21 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 22:46:03 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
+2025-08-20 22:47:24 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 22:47:24 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 22:47:24 [info]: 📦 shapeStorage: true 
+2025-08-20 22:47:24 [info]: 🔌 webSocketService: true 
+2025-08-20 22:47:24 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 22:47:24 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 22:47:24 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 22:47:24 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 22:47:24 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 22:47:24 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 22:47:24 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 22:47:24 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 22:47:24 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 22:47:24 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 22:49:39 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-20 22:50:49 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 22:50:49 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 22:50:49 [info]: 📦 shapeStorage: true 
+2025-08-20 22:50:49 [info]: 🔌 webSocketService: true 
+2025-08-20 23:02:57 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 23:02:57 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 23:02:57 [info]: 📦 shapeStorage: true 
+2025-08-20 23:02:57 [info]: 🔌 webSocketService: true 
+2025-08-20 23:02:57 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 23:02:57 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 23:02:57 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 23:02:57 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 23:02:57 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 23:02:57 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 23:02:57 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 23:02:57 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 23:02:57 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 23:02:57 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 23:02:59 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-20 23:03:02 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 23:03:02 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 23:03:02 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 23:03:17 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 23:03:17 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 23:03:17 [info]: 📦 shapeStorage: true 
+2025-08-20 23:03:17 [info]: 🔌 webSocketService: true 
+2025-08-20 23:03:18 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:03:18 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:03:18 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:03:18 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:04:29 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:04:29 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:04:29 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:04:29 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:04:34 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:04:34 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:04:34 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:04:34 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:04:45 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:04:45 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:04:45 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:04:45 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:10:16 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:10:16 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:10:16 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:10:16 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:11:31 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:11:31 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:11:31 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:11:31 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:12:07 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:12:07 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:12:07 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:12:07 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:12:36 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:12:36 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:12:36 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:12:36 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:13:23 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:13:23 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:13:23 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:13:23 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:13:47 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:13:47 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:13:47 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:13:47 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:14:06 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:14:06 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:14:06 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:14:06 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:14:18 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:14:18 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:14:18 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:14:18 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:14:39 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:14:39 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:14:39 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:14:39 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:33:04 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 23:33:04 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 23:33:04 [info]: 📦 shapeStorage: true 
+2025-08-20 23:33:04 [info]: 🔌 webSocketService: true 
+2025-08-20 23:33:04 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 23:33:04 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 23:33:04 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 23:33:04 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 23:33:04 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 23:33:04 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 23:33:04 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 23:33:06 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 23:33:06 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 23:33:06 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 23:42:09 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 23:42:09 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 23:42:09 [info]: 📦 shapeStorage: true 
+2025-08-20 23:42:09 [info]: 🔌 webSocketService: true 
+2025-08-20 23:42:09 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:42:09 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:42:09 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:42:09 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:42:23 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-20 23:42:25 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 23:42:25 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 23:42:25 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 23:43:13 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 23:43:13 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 23:43:13 [info]: 📦 shapeStorage: true 
+2025-08-20 23:43:13 [info]: 🔌 webSocketService: true 
+2025-08-20 23:43:13 [info]: 🚀 Initializing WebSocket server... 
+2025-08-20 23:43:13 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-20 23:43:13 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-20 23:43:13 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-20 23:43:13 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-20 23:43:13 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-20 23:43:13 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-20 23:43:13 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 23:43:13 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 23:43:13 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 23:45:22 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-20 23:45:25 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-20 23:45:25 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-20 23:45:25 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-20 23:45:43 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-20 23:45:43 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-20 23:45:43 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:45:43 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:45:45 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:45:45 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-20 23:45:45 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:45:45 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:45:45 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:45:45 [info]: ✅ [Singleton] Instances created: 
+2025-08-20 23:45:45 [info]: 📦 shapeStorage: true 
+2025-08-20 23:45:45 [info]: 🔌 webSocketService: true 
+2025-08-20 23:45:49 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-20 23:45:49 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-20 23:45:49 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:45:49 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:45:55 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-20 23:45:55 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-20 23:45:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:45:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:46:45 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:46:45 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:46:45 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:46:45 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:47:15 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:47:15 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:47:15 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:47:15 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:47:34 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:47:34 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:47:34 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:47:34 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:47:56 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:47:56 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:47:56 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:47:56 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:49:11 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:49:11 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:49:11 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:49:11 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:49:25 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:49:25 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:49:25 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:49:25 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:49:58 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:49:58 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:49:58 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:49:58 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:51:40 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:51:40 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:51:40 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:51:40 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-20 23:52:12 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-20 23:52:12 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-20 23:52:12 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-20 23:52:12 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:10:28 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-21 00:10:28 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-21 00:10:28 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:10:28 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:10:59 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-21 00:10:59 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-21 00:10:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:10:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:11:15 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-21 00:11:15 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-21 00:11:15 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:11:15 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:13:29 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 00:13:29 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 00:13:29 [info]: 📦 shapeStorage: true 
+2025-08-21 00:13:29 [info]: 🔌 webSocketService: true 
+2025-08-21 00:13:29 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 00:13:29 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 00:13:29 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:13:29 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:13:29 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 00:13:29 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 00:13:29 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:13:29 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:13:29 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 00:13:29 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 00:13:29 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:13:29 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:13:29 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 00:13:29 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 00:13:29 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:13:29 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:13:29 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 00:13:29 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 00:13:29 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:13:29 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:13:29 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 00:13:29 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 00:13:29 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:13:29 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:13:30 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 00:13:30 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 00:13:30 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:13:30 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:13:30 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 00:13:30 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 00:13:30 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:13:30 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:13:30 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 00:13:30 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 00:13:30 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:13:30 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:13:30 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 00:13:30 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 00:13:30 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:13:30 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:13:30 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 00:13:30 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 00:13:30 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:13:30 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:13:30 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 00:13:30 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 00:13:30 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:13:30 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:13:30 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 00:13:30 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 00:13:30 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 00:13:30 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 00:13:30 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 00:13:30 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 00:13:30 [info]: 📦 shapeStorage: true 
+2025-08-21 00:13:30 [info]: 🔌 webSocketService: true 
+2025-08-21 01:26:07 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:26:07 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:26:07 [info]: 📦 shapeStorage: true 
+2025-08-21 01:26:07 [info]: 🔌 webSocketService: true 
+2025-08-21 01:26:07 [info]: 🚀 Initializing WebSocket server... 
+2025-08-21 01:26:07 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-21 01:26:07 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-21 01:26:07 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-21 01:26:07 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-21 01:26:07 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-21 01:26:07 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-21 01:26:07 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-21 01:26:07 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-21 01:26:07 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-21 01:26:51 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:26:51 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:26:51 [info]: 📦 shapeStorage: true 
+2025-08-21 01:26:52 [info]: 🔌 webSocketService: true 
+2025-08-21 01:26:52 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 01:26:52 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 01:26:52 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:26:52 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:27:01 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-21 01:27:01 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-21 01:27:01 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:27:01 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:27:09 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:27:09 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:27:09 [info]: 📦 shapeStorage: true 
+2025-08-21 01:27:09 [info]: 🔌 webSocketService: true 
+2025-08-21 01:27:10 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:27:10 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:27:10 [info]: 📦 shapeStorage: true 
+2025-08-21 01:27:10 [info]: 🔌 webSocketService: true 
+2025-08-21 01:27:18 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:27:18 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:27:18 [info]: 📦 shapeStorage: true 
+2025-08-21 01:27:18 [info]: 🔌 webSocketService: true 
+2025-08-21 01:28:20 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 01:28:20 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 01:28:20 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:28:20 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:28:25 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-21 01:28:25 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-21 01:28:25 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:28:25 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:28:36 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:28:36 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:28:36 [info]: 📦 shapeStorage: true 
+2025-08-21 01:28:36 [info]: 🔌 webSocketService: true 
+2025-08-21 01:28:43 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:28:43 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:28:43 [info]: 📦 shapeStorage: true 
+2025-08-21 01:28:43 [info]: 🔌 webSocketService: true 
+2025-08-21 01:29:19 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:29:19 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:29:19 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:29:19 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:29:19 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:29:19 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:29:19 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:29:19 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:29:19 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:29:19 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:29:19 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:29:19 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:29:19 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:29:19 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:29:19 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:29:19 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:29:19 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:29:19 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:29:19 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:29:19 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:29:20 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:29:20 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:29:20 [info]: 📦 shapeStorage: true 
+2025-08-21 01:29:20 [info]: 🔌 webSocketService: true 
+2025-08-21 01:30:40 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 01:30:40 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 01:30:40 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:30:40 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:30:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:30:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:30:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:30:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:30:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:30:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:30:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:30:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:30:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:30:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:30:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:30:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:30:56 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:30:56 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:30:56 [info]: 📦 shapeStorage: true 
+2025-08-21 01:30:56 [info]: 🔌 webSocketService: true 
+2025-08-21 01:31:23 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 01:31:23 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 01:31:23 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:31:23 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:32:13 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:32:13 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:32:13 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:32:13 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:32:13 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:32:13 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:32:13 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:32:13 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:32:13 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:32:13 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:32:13 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:32:13 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:32:13 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:32:13 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:32:13 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:32:13 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:32:13 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:32:13 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:32:13 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:32:13 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:32:14 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:32:14 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:32:14 [info]: 📦 shapeStorage: true 
+2025-08-21 01:32:14 [info]: 🔌 webSocketService: true 
+2025-08-21 01:32:18 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 01:32:18 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 01:32:18 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:32:18 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:33:06 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 01:33:06 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 01:33:06 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:33:06 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:33:50 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 01:33:50 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 01:33:50 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:33:50 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:35:04 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 01:35:04 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 01:35:04 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:35:04 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:36:52 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 01:36:52 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 01:36:52 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:36:52 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:54 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:54 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:54 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:54 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:56 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:37:56 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:37:56 [info]: 📦 shapeStorage: true 
+2025-08-21 01:37:56 [info]: 🔌 webSocketService: true 
+2025-08-21 01:37:56 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:56 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:56 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:56 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:56 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:56 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:56 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:56 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:56 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:56 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:56 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:56 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:56 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:56 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:56 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:56 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:56 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:56 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:56 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:56 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:56 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:56 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:56 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:56 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:57 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:57 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:57 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:57 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:57 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:57 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:57 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:57 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:57 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:57 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:57 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:57 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:57 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:57 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:57 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:57 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:57 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:57 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:57 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:57 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:57 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:57 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:57 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:57 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:58 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:58 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:58 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:58 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:58 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:58 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:58 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:58 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:58 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:58 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:58 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:58 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:58 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:58 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:58 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:58 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:58 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:58 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:58 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:58 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:58 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:58 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:58 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:58 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:58 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:37:58 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:37:58 [info]: 📦 shapeStorage: true 
+2025-08-21 01:37:58 [info]: 🔌 webSocketService: true 
+2025-08-21 01:37:59 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:59 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:59 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:59 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:59 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:59 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:59 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:59 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:59 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:59 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:59 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:59 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:37:59 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:37:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:37:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:00 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:00 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:00 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:00 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:00 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:00 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:00 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:38:00 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:38:00 [info]: 📦 shapeStorage: true 
+2025-08-21 01:38:00 [info]: 🔌 webSocketService: true 
+2025-08-21 01:38:00 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:00 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:00 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:00 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:00 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:00 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:00 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:00 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:01 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:01 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:01 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:01 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:01 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:01 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:01 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:01 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:01 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:01 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:01 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:01 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:01 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:01 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:01 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:01 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:01 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:01 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:01 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:01 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:01 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:01 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:01 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:01 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:01 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:01 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:01 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:01 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:02 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:02 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:02 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:02 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:02 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:02 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:02 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:02 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:02 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:02 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:02 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:38:02 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:38:02 [info]: 📦 shapeStorage: true 
+2025-08-21 01:38:02 [info]: 🔌 webSocketService: true 
+2025-08-21 01:38:02 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:02 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:02 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:02 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:02 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:02 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:02 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:02 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:02 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:02 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:02 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:02 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:02 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:02 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:03 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:03 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:03 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:03 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:03 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:03 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:03 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:03 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:03 [info]: [WebSocket] 📨 HTTP broadcast request: shape_deleted 
+2025-08-21 01:38:03 [info]: [WebSocket] 📡 Broadcasting AI message: shape_deleted to 1 browsers 
+2025-08-21 01:38:03 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:03 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:38:04 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:38:04 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:38:04 [info]: 📦 shapeStorage: true 
+2025-08-21 01:38:04 [info]: 🔌 webSocketService: true 
+2025-08-21 01:38:15 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 01:38:15 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 01:38:15 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:38:15 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:41:17 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:41:17 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:41:17 [info]: 📦 shapeStorage: true 
+2025-08-21 01:41:17 [info]: 🔌 webSocketService: true 
+2025-08-21 01:41:17 [info]: 🚀 Initializing WebSocket server... 
+2025-08-21 01:41:17 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-21 01:41:17 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-21 01:41:17 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-21 01:41:17 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-21 01:41:17 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-21 01:41:17 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-21 01:41:17 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-21 01:41:17 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-21 01:41:17 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-21 01:41:50 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-21 01:41:52 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-21 01:41:52 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-21 01:41:52 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-21 01:42:04 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-21 01:42:05 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-21 01:42:05 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-21 01:42:05 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-21 01:42:46 [info]: [WebSocket] ❌ Browser client disconnected (code: 1000). Total: 0 
+2025-08-21 01:42:49 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-21 01:42:49 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-21 01:42:49 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-21 01:46:57 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:46:57 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:46:57 [info]: 📦 shapeStorage: true 
+2025-08-21 01:46:57 [info]: 🔌 webSocketService: true 
+2025-08-21 01:46:57 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 01:46:57 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 01:46:57 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:46:57 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:48:10 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 01:48:11 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-21 01:48:10 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 01:48:10 [info]: 📦 shapeStorage: true 
+2025-08-21 01:48:10 [info]: 🔌 webSocketService: true 
+2025-08-21 01:48:11 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-21 01:48:11 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:48:11 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:48:43 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-21 01:48:43 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-21 01:48:43 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:48:43 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:49:12 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-21 01:49:12 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-21 01:49:12 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:49:12 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:49:34 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-21 01:49:34 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-21 01:49:34 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:49:34 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:49:56 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 01:49:56 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 01:49:56 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:49:56 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 01:51:00 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 01:51:00 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 01:51:00 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 01:51:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:15:00 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 02:15:00 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 02:15:00 [info]: 📦 shapeStorage: true 
+2025-08-21 02:15:00 [info]: 🔌 webSocketService: true 
+2025-08-21 02:15:00 [info]: 🚀 Initializing WebSocket server... 
+2025-08-21 02:15:00 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-21 02:15:00 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-21 02:15:00 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-21 02:15:00 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-21 02:15:00 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-21 02:15:00 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-21 02:15:00 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-21 02:15:00 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-21 02:15:00 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-21 02:15:21 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-21 02:15:25 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-21 02:15:25 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-21 02:15:25 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-21 02:16:25 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 02:16:25 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 02:16:25 [info]: 📦 shapeStorage: true 
+2025-08-21 02:16:25 [info]: 🔌 webSocketService: true 
+2025-08-21 02:16:25 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-21 02:16:25 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-21 02:16:25 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:16:25 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:17:18 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:17:18 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:17:18 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:17:18 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:17:59 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:17:59 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:17:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:17:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:18:06 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-21 02:18:09 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-21 02:18:09 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-21 02:18:09 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-21 02:20:11 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 02:20:11 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 02:20:11 [info]: 📦 shapeStorage: true 
+2025-08-21 02:20:11 [info]: 🔌 webSocketService: true 
+2025-08-21 02:20:11 [info]: 🚀 Initializing WebSocket server... 
+2025-08-21 02:20:11 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-21 02:20:11 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-21 02:20:11 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-21 02:20:11 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-21 02:20:11 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-21 02:20:11 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-21 02:20:13 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-21 02:20:13 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-21 02:20:13 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-21 02:20:27 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2025-08-21 02:20:30 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-21 02:20:30 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-21 02:20:30 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-21 02:21:50 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 02:21:50 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 02:21:50 [info]: 📦 shapeStorage: true 
+2025-08-21 02:21:50 [info]: 🔌 webSocketService: true 
+2025-08-21 02:22:00 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:22:00 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:22:00 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:22:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:22:10 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:22:10 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:22:10 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:22:10 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:22:21 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:22:21 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:22:21 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:22:21 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:22:27 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:22:27 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:22:27 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:22:27 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:23:55 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-21 02:23:55 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-21 02:23:55 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:23:55 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:24:05 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:24:05 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:24:05 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:24:05 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:24:13 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:24:13 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:24:13 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:24:13 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:24:22 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:24:22 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:24:22 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:24:22 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:24:29 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:24:29 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:24:29 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:24:29 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:24:37 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:24:37 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:24:37 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:24:37 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:24:41 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-21 02:24:41 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-21 02:24:41 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:24:41 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:28:28 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-21 02:28:28 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-21 02:28:28 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:28:28 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:28:37 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:28:37 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:28:37 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:28:37 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:28:49 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:28:49 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:28:49 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:28:49 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:28:59 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:28:59 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:28:59 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:28:59 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:29:04 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:29:04 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:29:04 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:29:04 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:29:11 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:29:11 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:29:11 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:29:11 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:29:20 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2025-08-21 02:29:20 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 1 browsers 
+2025-08-21 02:29:20 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:29:20 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:29:25 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2025-08-21 02:29:25 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 1 browsers 
+2025-08-21 02:29:25 [info]: [WebSocket] 📊 AI broadcast complete: 1 browsers received message 
+2025-08-21 02:29:25 [info]: [WebSocket] ✅ HTTP broadcast sent to 1 browsers 
+2025-08-21 02:44:08 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 02:44:08 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 02:44:08 [info]: 📦 shapeStorage: true 
+2025-08-21 02:44:08 [info]: 🔌 webSocketService: true 
+2025-08-21 02:44:08 [info]: 🚀 Initializing WebSocket server... 
+2025-08-21 02:44:08 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-21 02:44:08 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-21 02:44:08 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-21 02:44:08 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-21 02:44:08 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-21 02:44:08 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-21 02:44:10 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-21 02:44:10 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-21 02:44:10 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-21 02:45:39 [info]: 🏭 [Singleton] Creating singleton instances... 
+2025-08-21 02:45:39 [info]: ✅ [Singleton] Instances created: 
+2025-08-21 02:45:39 [info]: 📦 shapeStorage: true 
+2025-08-21 02:45:39 [info]: 🔌 webSocketService: true 
+2025-08-21 02:45:39 [info]: 🚀 Initializing WebSocket server... 
+2025-08-21 02:45:39 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2025-08-21 02:45:39 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2025-08-21 02:45:39 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2025-08-21 02:45:39 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2025-08-21 02:45:39 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2025-08-21 02:45:39 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2025-08-21 02:45:41 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2025-08-21 02:45:41 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2025-08-21 02:45:41 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2025-08-21 02:53:35 [info]: 
+🔄 Received SIGINT, shutting down gracefully... 
