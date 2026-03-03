@@ -1,4 +1,4 @@
-# 🧠 Prompt2Sketch: AI-Driven Diagram Playground with MCP & Tldraw
+# 🧠 tldraw-mcp: AI-Driven Diagram Playground with MCP & Tldraw
 
 > An experimental sandbox integrating [Tldraw](https://tldraw.dev/) and the Model Context Protocol (MCP), enabling AI agents and developers to generate, update, and interact with visual diagrams programmatically — all from natural language or logic-based prompts.
 
@@ -19,7 +19,7 @@
 
 ## 📅 Table of Contents
 
-- [🧠 Prompt2Sketch: AI-Driven Diagram Playground with MCP \& Tldraw](#-prompt2sketch-ai-driven-diagram-playground-with-mcp--tldraw)
+- [🧠 tldraw-mcp: AI-Driven Diagram Playground with MCP \& Tldraw](#-tldraw-mcp-ai-driven-diagram-playground-with-mcp--tldraw)
   - [✨ Project Highlights](#-project-highlights)
   - [📅 Table of Contents](#-table-of-contents)
   - [📆 Overview](#-overview)
@@ -42,7 +42,7 @@
 
 ## 📆 Overview
 
-**Prompt2Sketch** is a developer-first playground for experimenting with AI-enhanced diagramming. It combines the flexibility of **Tldraw** with the power of **MCP** to enable **real-time**, **programmable**, and **text-controlled** diagram generation.
+**tldraw-mcp** is a developer-first playground for experimenting with AI-enhanced diagramming. It combines the flexibility of **Tldraw** with the power of **MCP** to enable **real-time**, **programmable**, and **text-controlled** diagram generation.
 
 Think of it as Excalidraw without limits — no paywalls, no request caps, and full control over how your diagrams are generated. Build flows from prompts, code, or AI agents. Ideal for tinkering, building dev tools, or LLM integrations.
 
@@ -72,8 +72,8 @@ Think of it as Excalidraw without limits — no paywalls, no request caps, and f
 ### 📦 Installation
 
 ```bash
-git clone https://github.com/Arsenic-01/mcp_tldraw.git
-cd mcp_tldraw
+git clone https://github.com/SujalXplores/tldraw-mcp.git
+cd tldraw-mcp
 npm install
 ```
 
@@ -104,7 +104,7 @@ WS_SERVER_URL=http://localhost:4000
   "mcpServers": {
     "tldraw-canvas": {
       "command": "tsx",
-      "args": ["/absolute/path/to/mcp_tldraw/src/mcp-server.ts"],
+      "args": ["/absolute/path/to/tldraw-mcp/src/mcp-server.ts"],
       "env": {
         "NEXTJS_SERVER_URL": "http://localhost:3000",
         "ENABLE_CANVAS_SYNC": "true"
@@ -175,12 +175,8 @@ Contributions are welcome! Please open issues or submit PRs.
 
 ## 📬 Contact
 
-- **Name:** Vedant Bhor
-- **Email:** [vedbhor25@gmail.com](mailto:vedbhor25@gmail.com)
-- **GitHub:** [Arsenic-01](https://github.com/Arsenic-01)
-- **LinkedIn:** [Vedant Bhor](https://www.linkedin.com/in/vedant-bhor-39287828b/)
-- **Twitter (X):** [@arsenic_dev](https://x.com/arsenic_dev)
-- **Discord:** [@itsmehomie](https://discordapp.com/users/862682607162359819)
+- **Name:** Sujal Shah
+- **GitHub:** [SujalXplores](https://github.com/SujalXplores)
 
 ---
 
@@ -188,4 +184,4 @@ Contributions are welcome! Please open issues or submit PRs.
 
 This is an experimental, local-first project. Multi-user collaboration and production readiness are not supported (yet).
 
-> Let your AI draw. Let your code paint. Welcome to Prompt2Sketch.
+> Let your AI draw. Let your code paint. Welcome to tldraw-mcp.

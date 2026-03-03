@@ -1,17 +1,17 @@
-import type { Metadata, Viewport } from "next";
-import Script from "next/script";
-import "./globals.css";
+import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Tldraw MCP Canvas",
+  title: 'Tldraw MCP Canvas',
   description:
-    "Production-ready Tldraw canvas with MCP server integration for Next.js 15",
-  keywords: ["tldraw", "canvas", "drawing", "collaboration", "MCP", "next.js"],
-  authors: [{ name: "Tldraw MCP Team" }],
+    'Production-ready Tldraw canvas with MCP server integration for Next.js 15',
+  keywords: ['tldraw', 'canvas', 'drawing', 'collaboration', 'MCP', 'next.js'],
+  authors: [{ name: 'Sujal Shah' }],
 };
 
 export const viewport: Viewport = {
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
 };
 

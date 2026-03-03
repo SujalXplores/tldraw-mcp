@@ -746,10 +746,8 @@ npm run type-check
 
 ## 📞 Contact & Support
 
-**Name**: Vedant Bhor
-**Email**: vedbhor25@gmail.com or vedantbhorofficial@gmail.com
-**GitHub**: [Arsenic-01](https://github.com/Arsenic-01/)
-**LinkedIn**: [Vedant Bhor](https://www.linkedin.com/in/vedant-bhor-39287828b/)
+**Name**: Sujal Shah
+**GitHub**: [SujalXplores](https://github.com/SujalXplores/)
 
 **For Tldraw Team**:
 
