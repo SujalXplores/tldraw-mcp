@@ -608,5 +608,3 @@ export async function runValidationTests(): Promise<void> {
     console.log("Validation needs fixes.");
   }
 }
-
-runValidationTests();

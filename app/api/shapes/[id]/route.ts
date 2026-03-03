@@ -1,26 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { MCPApiResponse, MCPShapeResponse } from "@/src/types";
 import { shapeStorage } from "@/src/services/singleton";
-
-const WS_SERVER_URL = process.env.WS_SERVER_URL || "http://localhost:4000";
-
-async function notifyWebSocketServer(message: any): Promise<boolean> {
-  try {
-    const response = await fetch(`${WS_SERVER_URL}/broadcast`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(message),
-    });
-
-    if (response.ok) {
-      await response.json();
-      return true;
-    }
-    return false;
-  } catch {
-    return false;
-  }
-}
+import { notifyWebSocketServer } from "@/src/lib";
 
 /**
  * GET /api/shapes/[id]
@@ -90,11 +71,10 @@ export async function PUT(
       );
     }
 
-    // Notify browsers via HTTP
-    const notified = await notifyWebSocketServer({
+    await notifyWebSocketServer({
       type: "shape_updated",
       timestamp: new Date().toISOString(),
-      shape: shape,
+      shape,
     });
 
     return NextResponse.json({
@@ -139,8 +119,7 @@ export async function DELETE(
       );
     }
 
-    // Notify browsers via HTTP
-    const notified = await notifyWebSocketServer({
+    await notifyWebSocketServer({
       type: "shape_deleted",
       timestamp: new Date().toISOString(),
       shapeId: id,

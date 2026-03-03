@@ -1,24 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { MCPShapesResponse } from "@/src/types";
 import { shapeStorage } from "@/src/services/singleton";
-import { preprocessAIBatchData, createSafeRichText } from "../route";
-
-const WS_SERVER_URL = process.env.WS_SERVER_URL || "http://localhost:4000";
-
-async function notifyWebSocketServer(message: any): Promise<boolean> {
-  try {
-    const response = await fetch(`${WS_SERVER_URL}/broadcast`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(message),
-    });
-
-    if (!response.ok) return false;
-    return true;
-  } catch {
-    return false;
-  }
-}
+import {
+  preprocessAIBatchData,
+  createSafeRichText,
+  notifyWebSocketServer,
+} from "@/src/lib";
 
 /**
  * POST /api/shapes/batch - Batch create shapes
@@ -57,7 +44,7 @@ export async function POST(
       );
     }
 
-    const createdShapes = await shapeStorage.batchCreateShapes(processedShapes);
+    const createdShapes = await shapeStorage.batchCreateShapes(processedShapes as any);
     await notifyWebSocketServer({
       type: "shapes_batch_created",
       timestamp: new Date().toISOString(),
