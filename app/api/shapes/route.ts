@@ -1,10 +1,6 @@
-// src/app/api/shapes/route.ts - CORRECTED with proper shape properties
+// API route for shape CRUD operations
 import { NextRequest, NextResponse } from "next/server";
-import type {
-  MCPShapeResponse,
-  MCPShapesResponse,
-  TLRichText,
-} from "@/src/types";
+import type { MCPShapeResponse, MCPShapesResponse } from "@/src/types";
 import { shapeStorage } from "@/src/services/singleton";
 
 const WS_SERVER_URL = process.env.WS_SERVER_URL || "http://localhost:4000";
@@ -45,15 +41,15 @@ function sanitizeRichText(richText: any): any {
       return hasValidText ? richText : createSafeRichText();
     }
   } catch (e) {
-    console.warn("[Converter] ⚠️ Invalid richText, falling back");
+    console.warn("[Converter] Invalid richText, falling back");
   }
   return createSafeRichText();
 }
 
-// COMPREHENSIVE AI data preprocessing based on official tldraw schema
+// Preprocess AI data to conform to official tldraw schema
 function preprocessAIData(rawData: any): any {
   if (!rawData || typeof rawData !== "object") {
-    console.warn("[API] ⚠️ Invalid AI data, creating fallback");
+    console.warn("[API] Invalid AI data, creating fallback");
     return {
       type: "geo",
       x: 100,
@@ -77,10 +73,7 @@ function preprocessAIData(rawData: any): any {
     };
   }
 
-  console.log(
-    "[API] 🔍 Preprocessing AI data:",
-    JSON.stringify(rawData, null, 2)
-  );
+  console.log("[API] Preprocessing AI data");
 
   const processed = { ...rawData };
 
@@ -94,17 +87,15 @@ function preprocessAIData(rawData: any): any {
   // Shape-specific preprocessing based on official tldraw schema
   switch (processed.type) {
     case "text":
-      console.log("[API] 📝 Processing text shape...");
-
-      // CRITICAL: Text shapes MUST have richText, never text field
+      // Text shapes MUST have richText, never text field
       if (processed.props.text && !processed.props.richText) {
         const textContent = String(processed.props.text);
         processed.props.richText = createSafeRichText(textContent);
         delete processed.props.text;
-        console.log(`[API] 🔄 Converted AI text "${textContent}" to richText`);
+        console.log(`[API] Converted AI text "${textContent}" to richText`);
       } else if (!processed.props.richText) {
         processed.props.richText = createSafeRichText("Text");
-        console.log("[API] 🔄 Created default richText");
+        console.log("[API] Created default richText");
       }
 
       // Ensure required text shape props
@@ -119,15 +110,13 @@ function preprocessAIData(rawData: any): any {
       break;
 
     case "geo":
-      console.log("[API] 📐 Processing geo shape...");
-
       // Geo shapes can have richText for labels (optional)
       if (processed.props.text && !processed.props.richText) {
         const textContent = String(processed.props.text);
         processed.props.richText = createSafeRichText(textContent);
         delete processed.props.text;
         console.log(
-          `[API] 🔄 Converted geo label "${textContent}" to richText`
+          `[API] Converted geo label "${textContent}" to richText`
         );
       }
 
@@ -150,12 +139,10 @@ function preprocessAIData(rawData: any): any {
       break;
 
     case "arrow":
-      console.log("[API] 🏹 Processing arrow shape...");
-
       // Arrows use simple text string (not richText)
       if (processed.props.text && typeof processed.props.text !== "string") {
         processed.props.text = String(processed.props.text);
-        console.log("[API] 🔧 Fixed arrow text to string");
+        console.log("[API] Fixed arrow text to string");
       }
 
       // Ensure arrow points
@@ -190,19 +177,17 @@ function preprocessAIData(rawData: any): any {
       break;
 
     case "note":
-      console.log("[API] 📄 Processing note shape...");
-
-      // CORRECTED: Notes use richText, not simple text field
+      // Notes use richText, not simple text field
       if (processed.props.text && !processed.props.richText) {
         const textContent = String(processed.props.text);
         processed.props.richText = createSafeRichText(textContent);
         delete processed.props.text;
         console.log(
-          `[API] 🔄 Converted note text "${textContent}" to richText`
+          `[API] Converted note text "${textContent}" to richText`
         );
       } else if (!processed.props.richText) {
         processed.props.richText = createSafeRichText("");
-        console.log("[API] 🔄 Created default richText for note");
+        console.log("[API] Created default richText for note");
       }
 
       // Ensure note props
@@ -221,9 +206,7 @@ function preprocessAIData(rawData: any): any {
       break;
 
     case "frame":
-      console.log("[API] 🖼️ Processing frame shape...");
-
-      // CORRECTED: Frame shapes include color
+      // Frame shapes include color
       if (!processed.props.color) processed.props.color = "black";
       if (typeof processed.props.w !== "number") processed.props.w = 160;
       if (typeof processed.props.h !== "number") processed.props.h = 90;
@@ -231,18 +214,14 @@ function preprocessAIData(rawData: any): any {
       break;
 
     case "embed":
-      console.log("[API] 🌐 Processing embed shape...");
-
-      // CORRECTED: Embed shapes only have h, url, w
+      // Embed shapes only have h, url, w
       if (typeof processed.props.h !== "number") processed.props.h = 300;
       if (!processed.props.url) processed.props.url = "";
       if (typeof processed.props.w !== "number") processed.props.w = 300;
       break;
 
     case "bookmark":
-      console.log("[API] 🔖 Processing bookmark shape...");
-
-      // CORRECTED: Bookmark shapes include h and w
+      // Bookmark shapes include h and w
       if (processed.props.assetId === undefined) processed.props.assetId = null;
       if (typeof processed.props.h !== "number") processed.props.h = 100;
       if (!processed.props.url) processed.props.url = "";
@@ -250,9 +229,6 @@ function preprocessAIData(rawData: any): any {
       break;
 
     case "image":
-      console.log("[API] 🖼️ Processing image shape...");
-
-      // CORRECTED: Image shapes include altText, flipX, flipY
       if (!processed.props.altText) processed.props.altText = "";
       if (processed.props.assetId === undefined) processed.props.assetId = null;
       if (processed.props.crop === undefined) processed.props.crop = null;
@@ -268,9 +244,6 @@ function preprocessAIData(rawData: any): any {
       break;
 
     case "video":
-      console.log("[API] 🎥 Processing video shape...");
-
-      // CORRECTED: Video shapes include altText and autoplay
       if (!processed.props.altText) processed.props.altText = "";
       if (processed.props.assetId === undefined) processed.props.assetId = null;
       if (typeof processed.props.autoplay !== "boolean")
@@ -284,8 +257,6 @@ function preprocessAIData(rawData: any): any {
       break;
 
     case "line":
-      console.log("[API] ➖ Processing line shape...");
-
       if (!processed.props.color) processed.props.color = "black";
       if (!processed.props.dash) processed.props.dash = "draw";
       if (!processed.props.size) processed.props.size = "m";
@@ -295,8 +266,6 @@ function preprocessAIData(rawData: any): any {
       break;
 
     case "draw":
-      console.log("[API] ✏️ Processing draw shape...");
-
       if (!processed.props.color) processed.props.color = "black";
       if (!processed.props.fill) processed.props.fill = "none";
       if (!processed.props.dash) processed.props.dash = "draw";
@@ -313,8 +282,6 @@ function preprocessAIData(rawData: any): any {
       break;
 
     case "highlight":
-      console.log("[API] 🖍️ Processing highlight shape...");
-
       if (!processed.props.color) processed.props.color = "yellow";
       if (typeof processed.props.isComplete !== "boolean")
         processed.props.isComplete = false;
@@ -327,13 +294,11 @@ function preprocessAIData(rawData: any): any {
       break;
 
     case "group":
-      console.log("[API] 👥 Processing group shape...");
-      // Groups have no additional props
       break;
 
     default:
       console.log(
-        `[API] ❓ Unknown shape type: ${processed.type}, treating as geo`
+        `[API] Unknown shape type: ${processed.type}, treating as geo`
       );
       processed.type = "geo";
       break;
@@ -381,12 +346,12 @@ function preprocessAIData(rawData: any): any {
     const mappedColor = colorMap[processed.props.color.toLowerCase()];
     if (mappedColor) {
       console.log(
-        `[API] 🎨 Mapped color: ${processed.props.color} → ${mappedColor}`
+        `[API] Mapped color: ${processed.props.color} → ${mappedColor}`
       );
       processed.props.color = mappedColor;
     } else {
       console.warn(
-        `[API] ⚠️ Invalid color "${processed.props.color}", using black`
+        `[API] Invalid color "${processed.props.color}", using black`
       );
       processed.props.color = "black";
     }
@@ -400,23 +365,18 @@ function preprocessAIData(rawData: any): any {
     processed.props.labelColor = "black";
   }
 
-  console.log(
-    "[API] ✅ Preprocessed data:",
-    JSON.stringify(processed, null, 2)
-  );
+  console.log(`[API] Preprocessed: type=${processed.type}`);
   return processed;
 }
 
 // Batch preprocessing
 function preprocessAIBatchData(rawShapes: any[]): any[] {
   if (!Array.isArray(rawShapes)) {
-    console.error("[API] ❌ Expected array of shapes");
+    console.error("[API] Expected array of shapes");
     return [];
   }
 
-  console.log(
-    `[API] 🏭 Preprocessing batch of ${rawShapes.length} AI shapes...`
-  );
+  console.log(`[API] Preprocessing batch of ${rawShapes.length} shapes`);
 
   const processed = rawShapes
     .filter((shape) => shape !== null && shape !== undefined)
@@ -424,7 +384,7 @@ function preprocessAIBatchData(rawShapes: any[]): any[] {
       try {
         return preprocessAIData(shape);
       } catch (error) {
-        console.error(`[API] ❌ Error preprocessing shape ${index}:`, error);
+        console.error(`[API] Error preprocessing shape ${index}:`, error);
         return {
           type: "geo",
           x: 100 + index * 120, // Spread them out
@@ -449,9 +409,7 @@ function preprocessAIBatchData(rawShapes: any[]): any[] {
       }
     });
 
-  console.log(
-    `[API] ✅ Batch preprocessing complete: ${processed.length} shapes ready`
-  );
+  console.log(`[API] Batch preprocessed: ${processed.length} shapes`);
   return processed;
 }
 
@@ -460,8 +418,6 @@ function preprocessAIBatchData(rawShapes: any[]): any[] {
  */
 async function notifyWebSocketServer(message: any): Promise<boolean> {
   try {
-    console.log("[API] 📡 Sending HTTP notification to WebSocket server...");
-
     const response = await fetch(`${WS_SERVER_URL}/broadcast`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -469,31 +425,23 @@ async function notifyWebSocketServer(message: any): Promise<boolean> {
     });
 
     if (!response.ok) {
-      const error = await response.text();
-      console.error("[API] ❌ WebSocket server error:", response.status, error);
+      console.error("[API] WS broadcast failed:", response.status);
       return false;
     }
 
-    const result = await response.json();
-    console.log(
-      `[API] ✅ Successfully broadcasted to ${result.clientsCount} browsers`
-    );
     return true;
   } catch (error: any) {
-    console.error("[API] ❌ HTTP notification failed:", error.message);
+    console.error("[API] WS notification failed:", error.message);
     return false;
   }
 }
 
 /**
- * GET /api/shapes - Get all shapes
+ * GET /api/shapes
  */
 export async function GET(): Promise<NextResponse<MCPShapesResponse>> {
   try {
-    console.log("[API] 📥 GET /api/shapes");
-
     const shapes = await shapeStorage.getAllShapes();
-    console.log(`[API] ✅ Found ${shapes.length} shapes`);
 
     return NextResponse.json({
       success: true,
@@ -502,7 +450,7 @@ export async function GET(): Promise<NextResponse<MCPShapesResponse>> {
       timestamp: new Date().toISOString(),
     });
   } catch (error: any) {
-    console.error("[API] ❌ Error fetching shapes:", error);
+    console.error("[API] Error fetching shapes:", error);
     return NextResponse.json(
       {
         success: false,
@@ -517,18 +465,13 @@ export async function GET(): Promise<NextResponse<MCPShapesResponse>> {
 }
 
 /**
- * POST /api/shapes - Create shape (MCP Server → Browser)
+ * POST /api/shapes - Create shape
  */
 export async function POST(
   request: NextRequest
 ): Promise<NextResponse<MCPShapeResponse>> {
   try {
-    console.log("[API] 📥 POST /api/shapes - 🤖 MCP Server creating shape");
-
     const rawBody = await request.json();
-    console.log("[API] 📋 Raw AI data:", JSON.stringify(rawBody, null, 2));
-
-    // CRITICAL: Preprocess AI data to fix text/richText and other issues
     const processedBody = preprocessAIData(rawBody);
 
     if (
@@ -536,7 +479,7 @@ export async function POST(
       typeof processedBody.x !== "number" ||
       typeof processedBody.y !== "number"
     ) {
-      console.error("[API] ❌ Invalid shape data after preprocessing");
+      console.error("[API] Invalid shape data after preprocessing");
       return NextResponse.json(
         {
           success: false,
@@ -549,17 +492,8 @@ export async function POST(
     }
 
     // Create shape in storage
-    console.log("[API] 🏪 Creating shape in storage...");
     const shape = await shapeStorage.createShape(processedBody);
-
-    console.log("[API] ✅ Shape created:", {
-      id: shape.id,
-      type: shape.type,
-      position: `(${shape.x}, ${shape.y})`,
-      props: Object.keys(shape.props || {}),
-      hasRichText: !!(shape.props as any)?.richText,
-      hasText: !!(shape.props as any)?.text,
-    });
+    console.log(`[API] Shape created: ${shape.id} (${shape.type})`);
 
     // Notify browsers via HTTP
     const notified = await notifyWebSocketServer({
@@ -577,7 +511,7 @@ export async function POST(
       { status: 201 }
     );
   } catch (error: any) {
-    console.error("[API] ❌ Error creating shape:", error);
+    console.error("[API] Error creating shape:", error);
 
     // Create a safe fallback shape so AI doesn't break the canvas
     try {

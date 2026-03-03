@@ -1,4 +1,3 @@
-// src/components/TldrawCanvas.tsx
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -47,7 +46,7 @@ function TldrawController({
 
       <button
         onClick={clearCanvas}
-        className="z-[9999] w-full mt-3 px-3 py-2 bg-red-500 dark:bg-red-800 text-white text-sm hover:bg-red-700 transition-colors disabled:opacity-50 rounded-md"
+        className="z-9999 w-full mt-3 px-3 py-2 bg-red-500 dark:bg-red-800 text-white text-sm hover:bg-red-700 transition-colors disabled:opacity-50 rounded-md"
         disabled={!editor || isLoading}
       >
         Clear All
@@ -64,30 +63,12 @@ export default function TldrawCanvas() {
   const converterService = useRef(new ShapeConverterService());
   const websocketRef = useRef<WebSocket | null>(null);
   const mountedRef = useRef(false);
-  const hasLoadedRef = useRef(false);
-  const isLoadingRef = useRef(false);
 
   const router = useRouter();
-
-  console.log(
-    "[Canvas] Browser whiteboard - standalone mode, mounted:",
-    mountedRef.current,
-    "hasLoaded:",
-    hasLoadedRef.current
-  );
 
   const handleWebSocketMessage = useCallback(
     (data: MCPWebSocketMessage): void => {
       if (!editor || !mountedRef.current) return;
-
-      console.log("[Canvas] Processing AI message:", data.type);
-
-      if (data.shape) {
-        console.log(
-          "[Canvas] Shape from AI:",
-          JSON.stringify(data.shape, null, 2)
-        );
-      }
 
       try {
         switch (data.type) {
@@ -95,52 +76,38 @@ export default function TldrawCanvas() {
           case "shapes_batch_created":
             if (data.shapes?.length) {
               const tldrawShapes = converterService.current.toTldrawShapes(
-                data.shapes
+                data.shapes,
               );
               editor.createShapes(tldrawShapes);
-              console.log(
-                `[Canvas] 🤖 AI created ${tldrawShapes.length} shapes`
-              );
             }
             break;
           case "shape_created":
             if (data.shape) {
-              console.log("[Canvas] 🤖 AI creating shape...");
               const tldrawShape = converterService.current.toTldrawShape(
-                data.shape
+                data.shape,
               );
-              console.log(
-                "[Canvas] Converted AI shape:",
-                JSON.stringify(tldrawShape, null, 2)
-              );
-
               editor.createShapes([tldrawShape]);
-              console.log("[Canvas] ✅ AI shape added to canvas");
             }
             break;
           case "shape_updated":
             if (data.shape) {
               const tldrawShape = converterService.current.toTldrawShape(
-                data.shape
+                data.shape,
               );
               editor.updateShapes([tldrawShape]);
-              console.log("[Canvas] ✅ AI updated shape");
             }
             break;
           case "shape_deleted":
             if (data.shapeId) {
               editor.deleteShapes([data.shapeId as TLShapeId]);
-              console.log("[Canvas] ✅ AI deleted shape");
             }
             break;
-          default:
-            console.log("[Canvas] Unknown AI message type:", data.type);
         }
       } catch (error) {
         console.error("[Canvas] Error processing AI message:", error);
       }
     },
-    [editor]
+    [editor],
   );
 
   const connectWebSocket = useCallback((): void => {
@@ -149,23 +116,15 @@ export default function TldrawCanvas() {
       websocketRef.current?.readyState === WebSocket.OPEN ||
       websocketRef.current?.readyState === WebSocket.CONNECTING
     ) {
-      console.log(
-        "[Canvas] Skipping WebSocket connection - already connected or not mounted"
-      );
       return;
     }
 
     const wsUrl = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:4000";
-    console.log("[Canvas] 🔌 Connecting to AI WebSocket:", wsUrl);
-
     websocketRef.current = new WebSocket(wsUrl);
 
     websocketRef.current.onopen = () => {
       if (!mountedRef.current) return;
       setIsConnected(true);
-      console.log(
-        "[Canvas] ✅ AI WebSocket connected - ready to receive shapes"
-      );
     };
 
     websocketRef.current.onmessage = (event) => {
@@ -181,91 +140,29 @@ export default function TldrawCanvas() {
     websocketRef.current.onclose = (event) => {
       if (!mountedRef.current) return;
       setIsConnected(false);
-      console.log("[Canvas] ❌ AI WebSocket disconnected, code:", event.code);
 
-      // Reconnect on unexpected closures
       if (event.code !== 1000 && mountedRef.current) {
-        console.log("[Canvas] 🔄 Reconnecting to AI in 3 seconds...");
         setTimeout(() => {
           if (mountedRef.current) connectWebSocket();
         }, 3000);
       }
     };
 
-    websocketRef.current.onerror = (error) => {
+    websocketRef.current.onerror = () => {
       if (!mountedRef.current) return;
-      console.error("[Canvas] ❌ AI WebSocket error:", error);
       setIsConnected(false);
     };
   }, [handleWebSocketMessage]);
-
-  const loadExistingShapes = useCallback(async (): Promise<void> => {
-    if (
-      !editor ||
-      !mountedRef.current ||
-      hasLoadedRef.current ||
-      isLoadingRef.current
-    ) {
-      console.log("[Canvas] Skipping loadExistingShapes:", {
-        hasEditor: !!editor,
-        mounted: mountedRef.current,
-        hasLoaded: hasLoadedRef.current,
-        isLoading: isLoadingRef.current,
-      });
-      return;
-    }
-
-    try {
-      isLoadingRef.current = true;
-      setIsLoading(true);
-      console.log("[Canvas] ⏳ Loading AI-created shapes...");
-
-      const response = await fetch("/api/shapes");
-
-      if (!response.ok) {
-        throw new Error(`API error: ${response.status} ${response.statusText}`);
-      }
-
-      const result = await response.json();
-
-      if (!mountedRef.current) {
-        console.log("[Canvas] Component unmounted during API call, aborting");
-        return;
-      }
-
-      if (result.success && result.shapes?.length > 0) {
-        const tldrawShapes = converterService.current.toTldrawShapes(
-          result.shapes
-        );
-        editor.createShapes(tldrawShapes);
-        console.log(
-          `[Canvas] ✅ Loaded ${result.shapes.length} AI-created shapes`
-        );
-      } else {
-        console.log("[Canvas] ℹ️ No AI shapes to load");
-      }
-
-      hasLoadedRef.current = true;
-    } catch (error) {
-      console.error("[Canvas] ❌ Error loading AI shapes:", error);
-    } finally {
-      isLoadingRef.current = false;
-      setIsLoading(false);
-    }
-  }, [editor]);
 
   // WebSocket connection setup
   useEffect(() => {
     mountedRef.current = true;
 
-    // Always try to connect to receive AI updates
     if (editor && !websocketRef.current) {
-      console.log("[Canvas] 🚀 Setting up AI connection...");
       setTimeout(connectWebSocket, 500);
     }
 
     return () => {
-      console.log("[Canvas] 🧹 Cleaning up AI connection...");
       mountedRef.current = false;
       if (websocketRef.current) {
         websocketRef.current.close(1000);
@@ -284,39 +181,24 @@ export default function TldrawCanvas() {
       const result = await response.json();
 
       if (result.success && result.shapes?.length) {
-        console.log(
-          `[Canvas] 🗑️ Clearing ${result.shapes.length} AI shapes from backend...`
-        );
         const deletePromises = result.shapes.map((shape: MCPShape) =>
-          fetch(`/api/shapes/${shape.id}`, { method: "DELETE" })
+          fetch(`/api/shapes/${shape.id}`, { method: "DELETE" }),
         );
         await Promise.all(deletePromises);
       }
 
       const allShapeIds = editor.getCurrentPageShapeIds();
       editor.deleteShapes(Array.from(allShapeIds));
-      console.log("[Canvas] ✅ Canvas cleared (local + AI shapes)");
       router.refresh();
     } catch (error) {
       console.error("[Canvas] Error clearing canvas:", error);
-      // Still clear locally even if backend fails
       const allShapeIds = editor.getCurrentPageShapeIds();
       editor.deleteShapes(Array.from(allShapeIds));
-      console.log("[Canvas] ✅ Canvas cleared locally");
     }
-  }, [editor]);
+  }, [editor, router]);
 
   const handleMount = useCallback((editorInstance: Editor): void => {
-    console.log("[Canvas] 🎬 Browser whiteboard mounting (standalone mode)...");
     setEditor(editorInstance);
-
-    // CRITICAL: NO side effects for user actions
-    // The browser is completely standalone - user actions never trigger API calls
-    // Only AI actions via WebSocket will modify the canvas
-
-    console.log("[Canvas] ✅ Standalone browser whiteboard ready");
-    console.log("[Canvas] 🚫 User actions will NOT sync to API");
-    console.log("[Canvas] 🤖 AI actions will be received via WebSocket");
   }, []);
 
   return (
@@ -342,38 +224,36 @@ export default function TldrawCanvas() {
   );
 }
 
-// Utility functions for AI integration (not user-triggered)
+// Utility functions for AI integration
 export function createShapeFromAI(
   editor: Editor,
   mcpShape: MCPShape,
-  converterService: ShapeConverterService
+  converterService: ShapeConverterService,
 ): void {
   try {
     const tldrawShape = converterService.toTldrawShape(mcpShape);
     editor.createShapes([tldrawShape]);
-    console.log("[Canvas] ✅ AI shape created");
   } catch (error) {
-    console.error("[Canvas] Error creating AI shape:", error);
+    console.error("[Canvas] Error creating shape:", error);
   }
 }
 
 export function createShapesFromAI(
   editor: Editor,
   mcpShapes: MCPShape[],
-  converterService: ShapeConverterService
+  converterService: ShapeConverterService,
 ): void {
   try {
     const tldrawShapes = converterService.toTldrawShapes(mcpShapes);
     editor.createShapes(tldrawShapes);
-    console.log(`[Canvas] ✅ ${mcpShapes.length} AI shapes created`);
   } catch (error) {
-    console.error("[Canvas] Error creating AI shapes:", error);
+    console.error("[Canvas] Error creating shapes:", error);
   }
 }
 
 export function getAllCanvasShapes(
   editor: Editor,
-  converterService: ShapeConverterService
+  converterService: ShapeConverterService,
 ): MCPShape[] {
   try {
     const tldrawShapes = editor.getCurrentPageShapes();

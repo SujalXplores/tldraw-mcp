@@ -1,9 +1,6 @@
-// src/services/shape-converter.ts
-
 import type { TLShape } from "tldraw";
 import type { MCPShape, TldrawShapeType } from "../types";
 
-// --- STRICT validation constants matching MCP server ---
 const VALID_TLDRAW_COLORS = [
   "black",
   "grey",
@@ -74,7 +71,6 @@ const VALID_ARROWHEADS = [
   "bar",
 ] as const;
 
-// --- Enhanced color mapping ---
 const COLOR_MAPPING: Record<string, string> = {
   purple: "violet",
   pink: "light-red",
@@ -99,26 +95,18 @@ const COLOR_MAPPING: Record<string, string> = {
   tan: "orange",
 };
 
-/**
- * CRITICAL: Validate and normalize shape type
- */
 function validateShapeType(type: any): TldrawShapeType {
-  // Handle null, undefined, numbers, etc.
   if (typeof type !== "string") {
-    console.warn(
-      `[Converter] ⚠️ Invalid shape type: ${typeof type}, using "geo"`
-    );
+    console.warn(`[Converter] Invalid shape type: ${typeof type}, using "geo"`);
     return "geo";
   }
 
   const lowerType = type.toLowerCase().trim();
 
-  // Direct match with valid Tldraw types
   if (VALID_SHAPE_TYPES.includes(lowerType as any)) {
     return lowerType as TldrawShapeType;
   }
 
-  // Map common invalid shape names to valid types
   const typeMapping: Record<string, TldrawShapeType> = {
     rectangle: "geo",
     circle: "geo",
@@ -129,111 +117,67 @@ function validateShapeType(type: any): TldrawShapeType {
     diamond: "geo",
     shape: "geo",
     polygon: "geo",
-    // Add more mappings as needed
   };
 
   if (typeMapping[lowerType]) {
-    console.log(
-      `[Converter] 🔄 Mapped shape type: ${type} → ${typeMapping[lowerType]}`
-    );
     return typeMapping[lowerType];
   }
 
-  console.warn(`[Converter] ⚠️ Unknown shape type: "${type}", using "geo"`);
+  console.warn(`[Converter] Unknown shape type: "${type}", defaulting to "geo"`);
   return "geo";
 }
 
-/**
- * Enhanced color normalization with comprehensive mapping
- */
 function normalizeColor(color: any): string {
   if (typeof color !== "string") {
-    console.warn(
-      `[Converter] ⚠️ Non-string color type: ${typeof color}, using black`
-    );
     return "black";
   }
 
   const lowerColor = color.toLowerCase().trim();
 
-  // Direct match
   if (VALID_TLDRAW_COLORS.includes(lowerColor as any)) {
     return lowerColor;
   }
 
-  // Mapped color
   if (COLOR_MAPPING[lowerColor]) {
-    console.log(
-      `[Converter] 🎨 Mapped: ${color} → ${COLOR_MAPPING[lowerColor]}`
-    );
     return COLOR_MAPPING[lowerColor];
   }
 
-  // Fallback to black
-  console.warn(`[Converter] ⚠️ Unknown color "${color}", using black`);
+  console.warn(`[Converter] Unknown color "${color}", using black`);
   return "black";
 }
 
-/**
- * Safe number validation with clamping
- */
 function validateNumber(
   value: any,
   min: number,
   max: number,
   fallback: number,
-  field: string
+  _field: string
 ): number {
   if (typeof value !== "number" || isNaN(value) || !isFinite(value)) {
-    console.warn(
-      `[Converter] ⚠️ Invalid ${field}: ${value}, using ${fallback}`
-    );
     return fallback;
   }
-
-  const clamped = Math.max(min, Math.min(max, value));
-  if (clamped !== value) {
-    console.log(`[Converter] 📏 Clamped ${field}: ${value} → ${clamped}`);
-  }
-
-  return clamped;
+  return Math.max(min, Math.min(max, value));
 }
 
-/**
- * Safe enum validation
- */
 function validateEnum<T extends readonly string[]>(
   value: any,
   validValues: T,
   fallback: T[number],
-  field: string
+  _field: string
 ): T[number] {
   if (typeof value !== "string") {
-    console.warn(
-      `[Converter] ⚠️ Invalid ${field} type: ${typeof value}, using "${fallback}"`
-    );
     return fallback;
   }
 
   const match = validValues.find(
     (v) => v.toLowerCase() === value.toLowerCase()
   );
-  if (match) {
-    return match;
-  }
-
-  console.warn(
-    `[Converter] ⚠️ Invalid ${field}: "${value}", using "${fallback}"`
-  );
-  return fallback;
+  return match ?? fallback;
 }
 
-/**
- * Create safe richText structure
- */
 function createSafeRichText(text?: string) {
   const safeText =
-    typeof text === "string" && text.trim().length > 0 ? text.trim() : "\u200B"; // <-- zero-width space (valid, invisible placeholder)
+    typeof text === "string" && text.trim().length > 0 ? text.trim() : "\u200B";
 
   return {
     type: "doc",
@@ -265,15 +209,12 @@ function sanitizeRichText(richText: any): any {
       );
       return hasValidText ? richText : createSafeRichText();
     }
-  } catch (e) {
-    console.warn("[Converter] ⚠️ Invalid richText, falling back");
+  } catch {
+    // Fall through to default
   }
   return createSafeRichText();
 }
 
-/**
- * Get comprehensive defaults for each shape type
- */
 function getShapeDefaults(shapeType: TldrawShapeType): any {
   const defaults: Record<TldrawShapeType, any> = {
     geo: {
@@ -404,44 +345,22 @@ function getShapeDefaults(shapeType: TldrawShapeType): any {
   return defaults[shapeType] || defaults.geo;
 }
 
-/**
- * Comprehensive props sanitization based on shape type
- */
 function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
   if (!props || typeof props !== "object") {
-    console.warn(
-      `[Converter] ⚠️ Invalid props for ${shapeType}, using defaults`
-    );
     return getShapeDefaults(shapeType);
   }
 
   const defaults = getShapeDefaults(shapeType);
   const sanitized = { ...defaults };
 
-  console.log(
-    `[Converter] 🧹 Sanitizing ${shapeType} props:`,
-    Object.keys(props)
-  );
-
-  // Shape-type specific sanitization
   switch (shapeType) {
     case "geo":
-      sanitized.align = validateEnum(
-        props.align,
-        VALID_ALIGNS,
-        "middle",
-        "align"
-      );
+      sanitized.align = validateEnum(props.align, VALID_ALIGNS, "middle", "align");
       sanitized.color = normalizeColor(props.color);
       sanitized.dash = validateEnum(props.dash, VALID_DASHES, "draw", "dash");
       sanitized.fill = validateEnum(props.fill, VALID_FILLS, "none", "fill");
       sanitized.font = validateEnum(props.font, VALID_FONTS, "draw", "font");
-      sanitized.geo = validateEnum(
-        props.geo,
-        VALID_GEO_TYPES,
-        "rectangle",
-        "geo"
-      );
+      sanitized.geo = validateEnum(props.geo, VALID_GEO_TYPES, "rectangle", "geo");
       sanitized.growY = validateNumber(props.growY, 0, 1000, 0, "growY");
       sanitized.h = validateNumber(props.h, 1, 2000, 100, "height");
       sanitized.labelColor = normalizeColor(props.labelColor);
@@ -456,7 +375,6 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
       );
       sanitized.w = validateNumber(props.w, 1, 2000, 100, "width");
 
-      // Handle richText for geo labels
       if (props.richText && typeof props.richText === "object") {
         sanitized.richText = props.richText;
       }
@@ -477,7 +395,6 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
       );
       sanitized.w = validateNumber(props.w, 1, 2000, 8, "width");
 
-      // Handle text → richText conversion
       if (props.richText && typeof props.richText === "object") {
         sanitized.richText = sanitizeRichText(props.richText);
       } else if (typeof props.text === "string") {
@@ -563,13 +480,7 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
       break;
 
     case "note":
-      // CORRECTED: Note shapes use richText
-      sanitized.align = validateEnum(
-        props.align,
-        VALID_ALIGNS,
-        "middle",
-        "align"
-      );
+      sanitized.align = validateEnum(props.align, VALID_ALIGNS, "middle", "align");
       sanitized.color = normalizeColor(props.color);
       sanitized.font = validateEnum(props.font, VALID_FONTS, "draw", "font");
       sanitized.fontSizeAdjustment = validateNumber(
@@ -591,7 +502,6 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
         "verticalAlign"
       );
 
-      // Handle richText for notes
       if (props.richText && typeof props.richText === "object") {
         sanitized.richText = sanitizeRichText(props.richText);
       } else if (typeof props.text === "string") {
@@ -600,7 +510,6 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
       break;
 
     case "frame":
-      // CORRECTED: Frame shapes include color
       sanitized.color = normalizeColor(props.color);
       sanitized.w = validateNumber(props.w, 10, 2000, 160, "width");
       sanitized.h = validateNumber(props.h, 10, 2000, 90, "height");
@@ -608,14 +517,12 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
       break;
 
     case "embed":
-      // CORRECTED: Embed shapes only have h, url, w
       sanitized.h = validateNumber(props.h, 50, 2000, 300, "height");
       sanitized.url = typeof props.url === "string" ? props.url : "";
       sanitized.w = validateNumber(props.w, 50, 2000, 300, "width");
       break;
 
     case "bookmark":
-      // CORRECTED: Bookmark shapes include h and w
       sanitized.assetId =
         typeof props.assetId === "string" || props.assetId === null
           ? props.assetId
@@ -626,7 +533,6 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
       break;
 
     case "image":
-      // CORRECTED: Image shapes include altText, flipX, flipY
       sanitized.altText =
         typeof props.altText === "string" ? props.altText : "";
       sanitized.assetId =
@@ -677,44 +583,26 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
       break;
 
     case "group":
-      // Groups have no props
       break;
   }
 
-  console.log(`[Converter] ✅ ${shapeType} props sanitized`);
   return sanitized;
 }
 
-/**
- * FIXED Shape converter service with bulletproof validation
- */
 export class ShapeConverterService {
-  /**
-   * Convert MCPShape to Tldraw shape with comprehensive error handling
-   */
   toTldrawShape(mcpShape: MCPShape): TLShape {
     try {
-      // CRITICAL: Validate input shape exists and is not null/undefined
       if (!mcpShape || typeof mcpShape !== "object") {
-        console.error(
-          "[Converter] ❌ Error converting MCP shape: shape is null/undefined"
-        );
-        console.log("[Converter] 🛟 Creating fallback rectangle shape");
+        console.error("[Converter] Cannot convert null/undefined shape");
         return this.createFallbackShape();
       }
 
-      console.log(
-        `[Converter] 🔄 Converting MCP → Tldraw: ${mcpShape.id} (${mcpShape.type})`
-      );
-
-      // Validate and sanitize core properties
       const safeId =
         typeof mcpShape.id === "string" && mcpShape.id.trim()
           ? mcpShape.id.trim()
           : `shape:${Date.now()}`;
 
       const safeType = validateShapeType(mcpShape.type);
-
       const safeX = validateNumber(mcpShape.x, -10000, 10000, 100, "x");
       const safeY = validateNumber(mcpShape.y, -10000, 10000, 100, "y");
       const safeRotation = validateNumber(
@@ -725,8 +613,6 @@ export class ShapeConverterService {
         "rotation"
       );
       const safeOpacity = validateNumber(mcpShape.opacity, 0, 1, 1, "opacity");
-
-      // Sanitize props based on the VALIDATED shape type
       const sanitizedProps = sanitizeProps(safeType, mcpShape.props);
 
       const tldrawShape: TLShape = {
@@ -747,65 +633,45 @@ export class ShapeConverterService {
             : {},
       };
 
-      console.log(
-        `[Converter] ✅ Successfully converted: ${safeId} (${safeType})`
-      );
       return tldrawShape;
     } catch (error) {
-      console.error(`[Converter] ❌ Error converting MCP shape:`, error);
-      console.log(`[Converter] 🛟 Creating fallback rectangle shape`);
+      console.error("[Converter] Error converting MCP shape:", error);
       return this.createFallbackShape();
     }
   }
 
-  /**
-   * Convert multiple MCPShapes with error recovery
-   */
   toTldrawShapes(mcpShapes: MCPShape[]): TLShape[] {
     if (!Array.isArray(mcpShapes)) {
-      console.error(`[Converter] ❌ Invalid shapes array:`, typeof mcpShapes);
+      console.error("[Converter] Invalid shapes array:", typeof mcpShapes);
       return [];
     }
 
-    console.log(`[Converter] 🔄 Converting ${mcpShapes.length} MCP shapes`);
-
     const convertedShapes: TLShape[] = [];
-    let successCount = 0;
     let errorCount = 0;
 
     mcpShapes.forEach((shape, index) => {
       try {
-        // CRITICAL: Skip null/undefined shapes
         if (!shape || typeof shape !== "object") {
-          console.error(
-            `[Converter] ❌ Failed to convert shape ${index}: shape is null/undefined`
-          );
+          console.error(`[Converter] Skipping invalid shape at index ${index}`);
           errorCount++;
-          return; // Skip this shape
+          return;
         }
-
-        const tldrawShape = this.toTldrawShape(shape);
-        convertedShapes.push(tldrawShape);
-        successCount++;
+        convertedShapes.push(this.toTldrawShape(shape));
       } catch (error) {
-        console.error(
-          `[Converter] ❌ Failed to convert shape ${index}:`,
-          error
-        );
+        console.error(`[Converter] Failed to convert shape ${index}:`, error);
         errorCount++;
-        // Continue with other shapes instead of failing completely
       }
     });
 
-    console.log(
-      `[Converter] ✅ Conversion complete: ${successCount} success, ${errorCount} errors`
-    );
+    if (errorCount > 0) {
+      console.warn(
+        `[Converter] Batch conversion: ${convertedShapes.length} ok, ${errorCount} failed`
+      );
+    }
+
     return convertedShapes;
   }
 
-  /**
-   * Create ultra-safe fallback shape
-   */
   private createFallbackShape(): TLShape {
     return {
       id: `fallback-${Date.now()}` as any,
@@ -823,13 +689,8 @@ export class ShapeConverterService {
     };
   }
 
-  /**
-   * Convert Tldraw shape to MCPShape format
-   */
   fromTldrawShape(tldrawShape: TLShape): MCPShape {
     try {
-      console.log(`[Converter] 🔄 Converting Tldraw → MCP: ${tldrawShape.id}`);
-
       const mcpShape: MCPShape = {
         id: tldrawShape.id,
         type: tldrawShape.type as TldrawShapeType,
@@ -846,44 +707,27 @@ export class ShapeConverterService {
         updatedAt: new Date().toISOString(),
       };
 
-      console.log(`[Converter] ✅ Converted to MCP: ${mcpShape.id}`);
       return mcpShape;
     } catch (error) {
-      console.error(`[Converter] ❌ Error converting Tldraw shape:`, error);
+      console.error("[Converter] Error converting Tldraw shape:", error);
       throw error;
     }
   }
 
-  /**
-   * Batch convert Tldraw shapes to MCP format
-   */
   fromTldrawShapes(tldrawShapes: TLShape[]): MCPShape[] {
-    console.log(
-      `[Converter] 🔄 Converting ${tldrawShapes.length} Tldraw → MCP`
-    );
-
     return tldrawShapes.map((shape, index) => {
       try {
         return this.fromTldrawShape(shape);
       } catch (error) {
-        console.error(
-          `[Converter] ❌ Failed to convert Tldraw shape ${index}:`,
-          error
-        );
+        console.error(`[Converter] Failed to convert shape ${index}:`, error);
         throw error;
       }
     });
   }
 
-  /**
-   * Validate and repair MCPShape with comprehensive checks
-   */
   validateAndRepair(mcpShape: MCPShape): MCPShape {
-    console.log(`[Converter] 🔧 Validating and repairing: ${mcpShape.id}`);
-
     try {
       const validType = validateShapeType(mcpShape.type);
-      const defaults = getShapeDefaults(validType);
       const repairedProps = sanitizeProps(validType, mcpShape.props);
 
       const repairedShape: MCPShape = {
@@ -914,13 +758,9 @@ export class ShapeConverterService {
         version: mcpShape.version,
       };
 
-      console.log(
-        `[Converter] ✅ Shape repaired successfully: ${repairedShape.id}`
-      );
       return repairedShape;
     } catch (error) {
-      console.error(`[Converter] ❌ Error repairing shape:`, error);
-      console.log(`[Converter] 🛟 Creating safe fallback shape`);
+      console.error("[Converter] Error repairing shape:", error);
 
       return {
         id: mcpShape.id || `fallback-${Date.now()}`,

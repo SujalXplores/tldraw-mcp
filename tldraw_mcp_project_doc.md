@@ -4,7 +4,7 @@
 
 ---
 
-## 🎯 Project Overview
+##  Project Overview
 
 This project creates a robust bridge between AI language models and Tldraw's collaborative canvas through the Model Context Protocol (MCP). It enables AI assistants to create, manipulate, and manage shapes on a Tldraw canvas in real-time, with comprehensive validation and error handling to prevent AI hallucinations from breaking the canvas.
 
@@ -17,57 +17,57 @@ This project creates a robust bridge between AI language models and Tldraw's col
 
 ---
 
-## 🏗️ Project Architecture
+##  Project Architecture
 
 ```
 tldraw-mcp-project/
-├── 📁 app/                        # Next.js 15 App Router
-│   ├── 📁 api/
-│   │   └── 📁 shapes/             # REST API endpoints
-│   │       ├── 📁 [id]/
+├──  app/                        # Next.js 15 App Router
+│   ├──  api/
+│   │   └──  shapes/             # REST API endpoints
+│   │       ├──  [id]/
 │   │       │   └── route.ts       # Individual shape operations
-│   │       ├── 📁 batch/
+│   │       ├──  batch/
 │   │       │   └── route.ts       # Batch operations
 │   │       └── route.ts           # Main CRUD operations
 │   ├── favicon.ico                # App favicon
 │   ├── globals.css               # Global styles
 │   ├── layout.tsx                # Root layout
 │   └── page.tsx                  # Main canvas page
-├── 📁 components/
+├──  components/
 │   └── TldrawCanvas.tsx          # Main Tldraw component
-├── 📁 logs/
+├──  logs/
 │   ├── combined.log              # Combined application logs
 │   └── error.log                 # Error-specific logs
-├── 📁 node_modules/              # Dependencies
-├── 📁 public/                    # Static assets
-├── 📁 server/
+├──  node_modules/              # Dependencies
+├──  public/                    # Static assets
+├──  server/
 │   └── ws-server.ts              # WebSocket server
-├── 📁 src/
-│   ├── 📁 services/
+├──  src/
+│   ├──  services/
 │   │   ├── logger.ts             # Structured logging service
 │   │   ├── shape-converter.ts    # AI data validation/conversion
 │   │   ├── shape-storage.ts      # In-memory shape storage
 │   │   ├── singleton.ts          # Service instances
 │   │   └── websocket.ts          # WebSocket service
-│   ├── 📁 test/
+│   ├──  test/
 │   │   ├── frontend-types-bridge.ts  # Tldraw type bridge
 │   │   ├── mcp-server.ts         # MCP server tests
 │   │   └── types.ts              # Test type definitions
-│   └── 📁 types/
+│   └──  types/
 │       └── index.ts              # Main TypeScript definitions
-├── 📄 .env.local                 # Environment variables
-├── 📄 .env.example               # Environment example
-├── 📄 eslint.config.mjs          # ESLint configuration
-├── 📄 next-env.d.ts              # Next.js types
-├── 📄 next.config.ts             # Next.js configuration
-├── 📄 package.json               # Dependencies and scripts
-├── 📄 tailwind.config.ts         # Tailwind CSS config
-└── 📄 tsconfig.json              # TypeScript configuration
+├──  .env.local                 # Environment variables
+├──  .env.example               # Environment example
+├──  eslint.config.mjs          # ESLint configuration
+├──  next-env.d.ts              # Next.js types
+├──  next.config.ts             # Next.js configuration
+├──  package.json               # Dependencies and scripts
+├──  tailwind.config.ts         # Tailwind CSS config
+└──  tsconfig.json              # TypeScript configuration
 ```
 
 ---
 
-## 🔧 Core Components
+##  Core Components
 
 ### **1. MCP Server (`mcp-tldraw-server.ts`)**
 
@@ -75,12 +75,12 @@ The heart of the project - a Node.js MCP server that communicates with AI langua
 
 #### Key Features:
 
-- 🛡️ Comprehensive input validation with Zod schemas
-- 🔄 AI text-to-richText conversion automatically
-- 🎨 Color mapping (purple → violet, crimson → red, etc.)
-- 📏 Numeric value clamping to safe ranges
-- 🏗️ Complete Tldraw v3.15.1 property support
-- ❌ Graceful error recovery with fallback shapes
+-  Comprehensive input validation with Zod schemas
+-  AI text-to-richText conversion automatically
+-  Color mapping (purple → violet, crimson → red, etc.)
+-  Numeric value clamping to safe ranges
+-  Complete Tldraw v3.15.1 property support
+-  Graceful error recovery with fallback shapes
 
 #### Supported Operations:
 
@@ -115,12 +115,12 @@ Critical validation layer that makes AI-generated data safe for Tldraw:
 
 #### Validation Features:
 
-- ✅ Color normalization (150+ color mappings)
-- ✅ Numeric value clamping (-10000 to 10000 for coordinates)
-- ✅ Enum validation (fill types, sizes, fonts, etc.)
-- ✅ Required property injection
-- ✅ Type-specific property sanitization
-- ✅ Rich text structure creation
+-  Color normalization (150+ color mappings)
+-  Numeric value clamping (-10000 to 10000 for coordinates)
+-  Enum validation (fill types, sizes, fonts, etc.)
+-  Required property injection
+-  Type-specific property sanitization
+-  Rich text structure creation
 
 ### **4. WebSocket Service (`websocket.ts`)**
 
@@ -137,13 +137,13 @@ In-memory storage with complete CRUD operations:
 #### Storage Features:
 
 - 🆔 Automatic shape ID generation
-- 📝 Versioning and timestamps
-- 🔄 Batch operations
-- 📊 Statistics and debugging
+-  Versioning and timestamps
+-  Batch operations
+-  Statistics and debugging
 
 ---
 
-## 🛡️ Validation & Error Handling
+##  Validation & Error Handling
 
 ### **AI Hallucination Prevention**
 
@@ -173,16 +173,16 @@ The system handles common AI mistakes:
 
 The `validation-test-suite.ts` runs 50+ tests covering:
 
-- ✅ Valid shape creation
-- ✅ Invalid color handling
-- ✅ Malformed property recovery
-- ✅ Coordinate validation
-- ✅ Text conversion accuracy
-- ✅ Batch processing robustness
+-  Valid shape creation
+-  Invalid color handling
+-  Malformed property recovery
+-  Coordinate validation
+-  Text conversion accuracy
+-  Batch processing robustness
 
 ---
 
-## 🚀 How It Works
+##  How It Works
 
 ### **1. AI Interaction Flow**
 
@@ -211,7 +211,7 @@ When AI sends invalid data:
 
 ---
 
-## 📈 Scalability & Production Readiness
+##  Scalability & Production Readiness
 
 ### **Current Limitations**
 
@@ -288,7 +288,7 @@ interface TenantShapeStorage {
 
 ---
 
-## 🔧 Deployment Guide
+##  Deployment Guide
 
 ### **For Tldraw Team Integration**
 
@@ -361,7 +361,7 @@ aws apprunner create-service \
 
 ---
 
-## 🎯 Integration with Tldraw's Ecosystem
+##  Integration with Tldraw's Ecosystem
 
 ### **1. Plugin Architecture**
 
@@ -413,7 +413,7 @@ interface OfficialMCPServer {
 
 ---
 
-## 💡 Key Innovation Points
+##  Key Innovation Points
 
 ### **1. AI-First Design**
 
@@ -442,19 +442,19 @@ interface OfficialMCPServer {
 
 ---
 
-## 🎉 Why This Matters for Tldraw
+##  Why This Matters for Tldraw
 
 This project demonstrates:
 
-1. **🔮 Future of AI-Canvas Integration**: Shows how AI can naturally create and manipulate visual content
-2. **🛡️ Robust Error Handling**: Proves AI can safely interact with complex UI systems
-3. **📈 Scalability Blueprint**: Provides a clear path from prototype to production
-4. **🏗️ Clean Architecture**: Separates concerns properly for maintainable code
-5. **🎯 MCP Standard Compliance**: Follows emerging standards for AI-tool communication
+1. ** Future of AI-Canvas Integration**: Shows how AI can naturally create and manipulate visual content
+2. ** Robust Error Handling**: Proves AI can safely interact with complex UI systems
+3. ** Scalability Blueprint**: Provides a clear path from prototype to production
+4. ** Clean Architecture**: Separates concerns properly for maintainable code
+5. ** MCP Standard Compliance**: Follows emerging standards for AI-tool communication
 
 ---
 
-## 📋 File-by-File Breakdown
+##  File-by-File Breakdown
 
 ### **Core MCP Server Files**
 
@@ -623,7 +623,7 @@ This project demonstrates:
 
 ---
 
-## 🔄 Data Flow Example
+##  Data Flow Example
 
 ### Creating a Text Shape via AI
 
@@ -676,7 +676,7 @@ This project demonstrates:
 
 ---
 
-## 🚦 Getting Started
+##  Getting Started
 
 ### **Prerequisites**
 
@@ -719,7 +719,7 @@ npm run type-check
 
 ---
 
-## 🔮 Future Roadmap
+##  Future Roadmap
 
 ### **Short Term (1-3 months)**
 
@@ -744,7 +744,7 @@ npm run type-check
 
 ---
 
-## 📞 Contact & Support
+##  Contact & Support
 
 **Name**: Sujal Shah
 **GitHub**: [SujalXplores](https://github.com/SujalXplores/)
@@ -760,4 +760,4 @@ npm run type-check
 
 **The project is ready for immediate integration into Tldraw's ecosystem and can serve as a reference implementation for AI-canvas interactions in the broader developer community.**
 
-**Ready to scale, ready to deploy, ready to revolutionize how AI creates visual content! 🚀**
+**Ready to scale, ready to deploy, ready to revolutionize how AI creates visual content! **

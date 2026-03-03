@@ -1,103 +1,86 @@
-# 🧠 tldraw-mcp: AI-Driven Diagram Playground with MCP & Tldraw
+# tldraw-mcp
 
-> An experimental sandbox integrating [Tldraw](https://tldraw.dev/) and the Model Context Protocol (MCP), enabling AI agents and developers to generate, update, and interact with visual diagrams programmatically — all from natural language or logic-based prompts.
+An MCP (Model Context Protocol) server that bridges AI language models and [Tldraw](https://tldraw.dev/), enabling programmatic creation, manipulation, and management of canvas shapes through natural language or structured tool calls.
 
 ---
 
 ![Banner Picture](https://i.postimg.cc/LXBV3FGs/image.png)
 
-## ✨ Project Highlights
+## Highlights
 
-- 🤖 **Unrestricted AI Generation**: No API limits or quotas — generate infinite diagrams with local agents.
-- ✍️ **Tldraw Canvas Integration**: Beautiful, intuitive canvas backed by a battle-tested open-source drawing library.
-- ⚖️ **Protocol-Driven**: Built on a robust API/WebSocket interface compatible with any MCP-compliant client.
-- 📈 **Offline-First Architecture**: Everything runs locally. Perfect for private setups using Ollama, local LLMs, or experiments.
-- ⚖️ **Type-Safe from End to End**: Zod-based schemas and strict TypeScript tooling make development smooth.
-- 🧰 **Built for Exploration**: Easily extend with new shapes, tools, and AI workflows. Ideal for R\&D, agent devs, and tinkerers.
-
----
-
-## 📅 Table of Contents
-
-- [🧠 tldraw-mcp: AI-Driven Diagram Playground with MCP \& Tldraw](#-tldraw-mcp-ai-driven-diagram-playground-with-mcp--tldraw)
-  - [✨ Project Highlights](#-project-highlights)
-  - [📅 Table of Contents](#-table-of-contents)
-  - [📆 Overview](#-overview)
-  - [🧱 Architecture](#-architecture)
-  - [⚙️ Getting Started](#️-getting-started)
-    - [✅ Prerequisites](#-prerequisites)
-    - [📦 Installation](#-installation)
-    - [🔍 Sample .env](#-sample-env)
-    - [📂 MCP Client Config.json](#-mcp-client-configjson)
-    - [🚀 Running Locally](#-running-locally)
-    - [🚪 Development Scripts](#-development-scripts)
-  - [💻 Usage](#-usage)
-  - [🛠️ Tech Stack](#️-tech-stack)
-  - [🤝 Contributing](#-contributing)
-  - [📄 License](#-license)
-  - [📬 Contact](#-contact)
-    - [🧪 Disclaimer](#-disclaimer)
+- **Unrestricted local generation** — no API limits, no quotas, fully offline-capable.
+- **Tldraw v3 canvas** — backed by a production-grade open-source drawing library.
+- **MCP-compliant** — works with any MCP client (Claude Desktop, custom agents, CLI tools).
+- **End-to-end type safety** — Zod schemas + strict TypeScript from server to canvas.
+- **AI-safe validation** — automatic correction of malformed AI data (color mapping, text-to-richText conversion, coordinate clamping).
 
 ---
 
-## 📆 Overview
+## Table of Contents
 
-**tldraw-mcp** is a developer-first playground for experimenting with AI-enhanced diagramming. It combines the flexibility of **Tldraw** with the power of **MCP** to enable **real-time**, **programmable**, and **text-controlled** diagram generation.
-
-Think of it as Excalidraw without limits — no paywalls, no request caps, and full control over how your diagrams are generated. Build flows from prompts, code, or AI agents. Ideal for tinkering, building dev tools, or LLM integrations.
-
-> ⚠️ Real-time multi-user collaboration is not supported yet. Local-first only.
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Tech Stack](#tech-stack)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 ---
 
-## 🧱 Architecture
+## Overview
+
+tldraw-mcp is a developer-first tool for AI-enhanced diagramming. It combines Tldraw's flexible canvas with an MCP server to enable real-time, programmable shape generation from AI agents or code.
+
+> **Note:** Multi-user collaboration is not supported. This is a local-first, single-user tool.
+
+---
+
+## Architecture
 
 ![Architecture Diagram](https://i.postimg.cc/DZfGF3JR/image.png)
 
-
-- **Frontend**: Next.js 15 with App Router and Tldraw canvas
-- **Backend**: Node.js MCP server using WebSockets and HTTP
-- **Typing**: End-to-end with Zod + TypeScript
-- **Sync**: Real-time (local), single-user only
+| Layer | Technology | Role |
+|-------|-----------|------|
+| Frontend | Next.js 15 (App Router) | Tldraw canvas + WebSocket client |
+| API | Next.js Route Handlers | Shape CRUD with AI data preprocessing |
+| MCP Server | Node.js + stdio transport | AI tool interface (create, update, delete, get shapes) |
+| Real-time | WebSocket (ws) | Broadcasts shape mutations to browser clients |
+| Validation | Zod | Schema validation with automatic fallback/correction |
 
 ---
 
-## ⚙️ Getting Started
+## Getting Started
 
-### ✅ Prerequisites
+### Prerequisites
 
 - Node.js >= 18
-- npm (or yarn/pnpm/bun)
+- pnpm (or npm/yarn)
 
-### 📦 Installation
+### Installation
 
 ```bash
 git clone https://github.com/SujalXplores/tldraw-mcp.git
 cd tldraw-mcp
-npm install
+pnpm install
 ```
 
-### 🔍 Sample .env
+### Environment Variables
 
 ```env
-# Next.js Application Configuration
 NEXTJS_SERVER_URL=http://localhost:3000
 PORT=3000
-
-# MCP Server Configuration
 ENABLE_CANVAS_SYNC=true
 MCP_TRANSPORT_MODE=stdio
-
-# Development Configuration
 NODE_ENV=development
 DEBUG=false
-
 NEXT_PUBLIC_WS_URL=ws://localhost:4000
 WS_PORT=4000
 WS_SERVER_URL=http://localhost:4000
 ```
 
-### 📂 MCP Client Config.json
+### MCP Client Configuration
 
 ```json
 {
@@ -114,50 +97,56 @@ WS_SERVER_URL=http://localhost:4000
 }
 ```
 
-### 🚀 Running Locally
+### Running Locally
 
 ```bash
-npm run canvas
+pnpm run canvas
 ```
 
-- Frontend: [http://localhost:3000](http://localhost:3000)
-- MCP Server: [ws://localhost:4000](ws://localhost:4000)
+This starts all three processes concurrently:
 
-### 🚪 Development Scripts
+| Service | URL |
+|---------|-----|
+| Frontend | http://localhost:3000 |
+| WebSocket Server | ws://localhost:4000 |
+| MCP Server | stdio (attach via MCP client) |
 
-| Script               | Description                |
-| -------------------- | -------------------------- |
-| `npm run dev`        | Start Next.js frontend     |
-| `npm run dev:ws`     | Start MCP WebSocket server |
-| `npm run mcp-server` | Run MCP server standalone  |
+### Development Scripts
 
----
-
-## 💻 Usage
-
-- Launch the frontend and draw manually using Tldraw
-- Connect an MCP client (e.g. LLM or CLI) to generate or edit shapes
-- Hit broadcast/status endpoints to simulate interactions
-- Extend to new workflows with custom shapes, commands, or drawing logic
+| Script | Description |
+|--------|-------------|
+| `pnpm dev` | Start Next.js frontend |
+| `pnpm dev:ws` | Start WebSocket server (watch mode) |
+| `pnpm mcp-server` | Run MCP server standalone |
+| `pnpm canvas` | Start all services concurrently |
 
 ---
 
-## 🛠️ Tech Stack
+## Usage
 
-- [Next.js 15](https://nextjs.org/)
-- [Tldraw](https://tldraw.dev/)
-- [TypeScript](https://typescriptlang.org/)
-- [Zod](https://zod.dev/)
-- [Node.js](https://nodejs.org/)
-- [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
-- [Winston](https://github.com/winstonjs/winston)
-- [Tailwind CSS](https://tailwindcss.com/)
+1. Start the frontend and draw manually using the Tldraw canvas.
+2. Connect an MCP client to generate or edit shapes programmatically.
+3. Use the `/broadcast` and `/status` HTTP endpoints on the WebSocket server for debugging.
 
 ---
 
-## 🤝 Contributing
+## Tech Stack
 
-Contributions are welcome! Please open issues or submit PRs.
+| Category | Technology |
+|----------|-----------|
+| Framework | [Next.js 15](https://nextjs.org/) |
+| Canvas | [Tldraw v3](https://tldraw.dev/) |
+| Language | [TypeScript](https://typescriptlang.org/) |
+| Validation | [Zod](https://zod.dev/) |
+| Real-time | [ws](https://github.com/websockets/ws) |
+| Logging | [Winston](https://github.com/winstonjs/winston) |
+| Styling | [Tailwind CSS v4](https://tailwindcss.com/) |
+
+---
+
+## Contributing
+
+Contributions are welcome. Please open issues or submit PRs.
 
 1. Fork the repo
 2. Create a branch (`git checkout -b feature/your-feature`)
@@ -167,21 +156,16 @@ Contributions are welcome! Please open issues or submit PRs.
 
 ---
 
-## 📄 License
+## License
 
-[MIT License](LICENSE)
-
----
-
-## 📬 Contact
-
-- **Name:** Sujal Shah
-- **GitHub:** [SujalXplores](https://github.com/SujalXplores)
+[MIT](LICENSE)
 
 ---
 
-### 🧪 Disclaimer
+## Contact
 
-This is an experimental, local-first project. Multi-user collaboration and production readiness are not supported (yet).
+- **Sujal Shah** — [GitHub](https://github.com/SujalXplores)
 
-> Let your AI draw. Let your code paint. Welcome to tldraw-mcp.
+---
+
+> **Disclaimer:** This is an experimental, local-first project. Multi-user collaboration and production deployments are not yet supported.

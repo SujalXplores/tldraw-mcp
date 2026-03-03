@@ -1,10 +1,10 @@
-// test/validation-test-suite.ts - Test the robustness of shape validation
+// Shape validation test suite
 
 import { ShapeConverterService } from "../services/shape-converter";
 import { MCPShape } from "../types";
 
 /**
- * Comprehensive test suite to validate the AI hallucination fixes
+ * Test suite for shape validation and AI input sanitization
  */
 export class ValidationTestSuite {
   private converter = new ShapeConverterService();
@@ -14,11 +14,8 @@ export class ValidationTestSuite {
     details: string;
   }> = [];
 
-  /**
-   * Run all validation tests
-   */
   async runAllTests(): Promise<void> {
-    console.log("🧪 Starting comprehensive validation tests...");
+    console.log("Starting validation tests...");
 
     this.testValidShapes();
     this.testInvalidColors();
@@ -34,11 +31,8 @@ export class ValidationTestSuite {
     this.printResults();
   }
 
-  /**
-   * Test that valid shapes work correctly
-   */
   private testValidShapes(): void {
-    console.log("📐 Testing valid shapes...");
+    console.log("Testing valid shapes...");
 
     const validShapes: MCPShape[] = [
       {
@@ -108,11 +102,8 @@ export class ValidationTestSuite {
     }
   }
 
-  /**
-   * Test invalid color handling
-   */
   private testInvalidColors(): void {
-    console.log("🎨 Testing invalid colors...");
+    console.log("Testing invalid colors...");
 
     const invalidColorShapes = [
       { color: "crimson", expected: "red" },
@@ -155,11 +146,8 @@ export class ValidationTestSuite {
     });
   }
 
-  /**
-   * Test invalid properties are handled safely
-   */
   private testInvalidProperties(): void {
-    console.log("🔧 Testing invalid properties...");
+    console.log("Testing invalid properties...");
 
     const invalidPropTests = [
       {
@@ -214,7 +202,7 @@ export class ValidationTestSuite {
    * Test invalid shape types
    */
   private testInvalidShapeTypes(): void {
-    console.log("📝 Testing invalid shape types...");
+    console.log("Testing invalid shape types...");
 
     const invalidTypes = [
       "rectangle",
@@ -275,7 +263,7 @@ export class ValidationTestSuite {
    * Test invalid coordinates handling
    */
   private testInvalidCoordinates(): void {
-    console.log("📍 Testing invalid coordinates...");
+    console.log("Testing invalid coordinates...");
 
     const invalidCoords = [
       { x: null, y: undefined },
@@ -331,7 +319,7 @@ export class ValidationTestSuite {
    * Test props object validation
    */
   private testInvalidProps(): void {
-    console.log("🧩 Testing invalid props objects...");
+    console.log("Testing invalid props objects...");
 
     const invalidProps = [
       null,
@@ -382,7 +370,7 @@ export class ValidationTestSuite {
    * Test text to richText conversion
    */
   private testTextConversion(): void {
-    console.log("📝 Testing text conversion...");
+    console.log("Testing text conversion...");
 
     const textTests = [
       { text: "Hello World", expected: "Should create richText" },
@@ -431,7 +419,7 @@ export class ValidationTestSuite {
    * Test arrow validation
    */
   private testArrowValidation(): void {
-    console.log("🏹 Testing arrow validation...");
+    console.log("Testing arrow validation...");
 
     const arrowTests = [
       {
@@ -489,7 +477,7 @@ export class ValidationTestSuite {
    * Test batch processing
    */
   private testBatchProcessing(): void {
-    console.log("📦 Testing batch processing...");
+    console.log("Testing batch processing...");
 
     // Mix of valid and invalid shapes
     const mixedShapes: any[] = [
@@ -522,7 +510,7 @@ export class ValidationTestSuite {
    * Test error recovery
    */
   private testErrorRecovery(): void {
-    console.log("🛟 Testing error recovery...");
+    console.log("Testing error recovery...");
 
     // Test completely malformed shape
     const malformedShape = {
@@ -591,7 +579,7 @@ export class ValidationTestSuite {
    */
   private addResult(test: string, passed: boolean, details: string): void {
     this.testResults.push({ test, passed, details });
-    const status = passed ? "✅" : "❌";
+    const status = passed ? "" : "";
     console.log(`  ${status} ${test}: ${details}`);
   }
 
@@ -602,15 +590,15 @@ export class ValidationTestSuite {
     const passed = this.testResults.filter((r) => r.passed).length;
     const total = this.testResults.length;
 
-    console.log(`\n📊 Test Results: ${passed}/${total} passed`);
+    console.log(`\nResults: ${passed}/${total} passed`);
 
     if (passed === total) {
-      console.log("🎉 All tests passed! The validation system is robust.");
+      console.log("All tests passed.");
     } else {
-      console.log("⚠️ Some tests failed. Review the validation logic.");
+      console.log("Some tests failed.");
 
       const failed = this.testResults.filter((r) => !r.passed);
-      console.log("\n❌ Failed tests:");
+      console.log("\n Failed tests:");
       failed.forEach(({ test, details }) => {
         console.log(`  • ${test}: ${details}`);
       });
@@ -634,9 +622,9 @@ export async function runValidationTests(): Promise<void> {
 
   const summary = testSuite.getTestSummary();
   if (summary.success) {
-    console.log("✅ Validation system is ready for production!");
+    console.log("Validation system ready.");
   } else {
-    console.log("❌ Validation needs more work before deployment.");
+    console.log("Validation needs fixes.");
   }
 }
 

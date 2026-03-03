@@ -1,6 +1,6 @@
 // src/types.ts
 
-// Base ID types (branded strings for type safety)
+// Branded string types for type safety
 export type TLShapeId = string & { __type__: "TLShapeId" };
 export type TLParentId = string & { __type__: "TLParentId" };
 export type TLAssetId = string & { __type__: "TLAssetId" };
@@ -22,8 +22,6 @@ export type TldrawShapeType =
   | "note"
   | "line"
   | "group";
-
-// ===== OFFICIAL TLDRAW STYLE TYPES =====
 
 export type TldrawColor =
   | "black"
@@ -82,10 +80,8 @@ export type TldrawArrowheadType =
   | "inverted"
   | "bar";
 
-// Line spline style
 export type TldrawLineSplineStyle = "line" | "cubic";
 
-// ===== RICH TEXT TYPES - OFFICIAL STRUCTURE =====
 export interface TLRichText {
   type: "doc";
   content: TLRichTextNode[];
@@ -106,21 +102,17 @@ export interface TLTextSpan {
 
 export type TLTextStyle = "bold" | "italic" | "underline" | "strike" | "code";
 
-// ===== SHAPE CROP INTERFACE =====
 export interface TLShapeCrop {
   topLeft: VecLike;
   bottomRight: VecLike;
 }
 
-// ===== LINE SHAPE POINT =====
 export interface TldrawLinePoint {
   id: string;
   index: string;
   x: number;
   y: number;
 }
-
-// ===== SHAPE-SPECIFIC PROPS - FROM OFFICIAL DOCS =====
 
 export interface TldrawGeoShapeProps {
   align: TldrawAlign;
@@ -179,7 +171,6 @@ export interface TldrawHighlightShapeProps {
   size: TldrawSize;
 }
 
-// Draw shape segments
 export interface TldrawDrawShapeSegment {
   type: "free" | "straight";
   points: VecLike[];
@@ -204,7 +195,7 @@ export interface TldrawNoteShapeProps {
   fontSizeAdjustment: number;
   growY: number;
   labelColor: TldrawColor;
-  richText: TLRichText; // NOTE: Uses richText, NOT simple text!
+  richText: TLRichText;
   scale: number;
   size: TldrawSize;
   url: string;
@@ -218,7 +209,7 @@ export interface TldrawFrameShapeProps {
   w: number;
 }
 
-export interface TldrawGroupShapeProps {}
+export interface TldrawGroupShapeProps { }
 
 export interface TldrawEmbedShapeProps {
   h: number;
@@ -268,34 +259,34 @@ export interface TldrawLineShapeProps {
 // Generic shape props type
 export type TldrawShapeProps<T extends TldrawShapeType = TldrawShapeType> =
   T extends "geo"
-    ? TldrawGeoShapeProps
-    : T extends "text"
-    ? TldrawTextShapeProps
-    : T extends "arrow"
-    ? TldrawArrowShapeProps
-    : T extends "draw"
-    ? TldrawDrawShapeProps
-    : T extends "highlight"
-    ? TldrawHighlightShapeProps
-    : T extends "note"
-    ? TldrawNoteShapeProps
-    : T extends "frame"
-    ? TldrawFrameShapeProps
-    : T extends "group"
-    ? TldrawGroupShapeProps
-    : T extends "embed"
-    ? TldrawEmbedShapeProps
-    : T extends "bookmark"
-    ? TldrawBookmarkShapeProps
-    : T extends "image"
-    ? TldrawImageShapeProps
-    : T extends "video"
-    ? TldrawVideoShapeProps
-    : T extends "line"
-    ? TldrawLineShapeProps
-    : Record<string, unknown>;
+  ? TldrawGeoShapeProps
+  : T extends "text"
+  ? TldrawTextShapeProps
+  : T extends "arrow"
+  ? TldrawArrowShapeProps
+  : T extends "draw"
+  ? TldrawDrawShapeProps
+  : T extends "highlight"
+  ? TldrawHighlightShapeProps
+  : T extends "note"
+  ? TldrawNoteShapeProps
+  : T extends "frame"
+  ? TldrawFrameShapeProps
+  : T extends "group"
+  ? TldrawGroupShapeProps
+  : T extends "embed"
+  ? TldrawEmbedShapeProps
+  : T extends "bookmark"
+  ? TldrawBookmarkShapeProps
+  : T extends "image"
+  ? TldrawImageShapeProps
+  : T extends "video"
+  ? TldrawVideoShapeProps
+  : T extends "line"
+  ? TldrawLineShapeProps
+  : Record<string, unknown>;
 
-// Base shape interface (equivalent to TLBaseShape)
+// Base shape interface
 export interface TLBaseShape<Type extends string, Props extends object> {
   readonly id: TLShapeId;
   readonly typeName: "shape";
@@ -564,7 +555,7 @@ export const SHAPE_DEFAULTS = {
     w: 300,
   }),
 
-  // CORRECTED: Bookmark shapes include h and w
+  // Bookmark defaults
   bookmark: (): TldrawBookmarkShapeProps => ({
     assetId: null,
     h: 100,

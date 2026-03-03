@@ -1,21 +1,17 @@
-// src/app/api/test-ws/route.ts - FIXED VERSION
 import { MCPShapeCreateInput } from "@/src/types";
 import { NextResponse } from "next/server";
 
 const WS_SERVER_URL = process.env.WS_SERVER_URL || "http://localhost:4000";
 
 /**
- * Test API using HTTP notification to WebSocket server
+ * Test endpoint for WebSocket broadcasting
  */
 export async function POST(): Promise<NextResponse> {
   try {
-    console.log("[TEST] 🧪 Creating test shape via HTTP notification...");
-
-    // Import only shapeStorage (NOT webSocketService)
     const { shapeStorage } = await import("@/src/services/singleton");
 
     const testShapeData: MCPShapeCreateInput<"geo"> = {
-      type: "geo" as const, // Use 'as const' to ensure literal type
+      type: "geo" as const,
       x: 300,
       y: 300,
       rotation: 0,
@@ -31,18 +27,8 @@ export async function POST(): Promise<NextResponse> {
       meta: {},
     };
 
-    console.log("[TEST] 🏪 Creating test shape in storage...");
     const shape = await shapeStorage.createShape(testShapeData);
-
-    console.log("[TEST] ✅ Test shape created:", {
-      id: shape.id,
-      type: shape.type,
-      position: `(${shape.x}, ${shape.y})`,
-    });
-
-    console.log(
-      `[TEST] 📡 Sending HTTP notification to ${WS_SERVER_URL}/broadcast`
-    );
+    console.log(`[TEST] Shape created: ${shape.id}`);
 
     // Send HTTP request to WebSocket server
     try {
@@ -58,14 +44,10 @@ export async function POST(): Promise<NextResponse> {
         }),
       });
 
-      console.log(`[TEST] 📡 HTTP response status: ${response.status}`);
+      console.log(`[TEST] WS response: ${response.status}`);
 
       if (response.ok) {
         const result = await response.json();
-        console.log("[TEST] ✅ WebSocket server response:", result);
-        console.log(
-          `[TEST] 📊 Successfully sent to ${result.clientsCount} browser clients`
-        );
 
         return NextResponse.json({
           success: true,
@@ -80,11 +62,6 @@ export async function POST(): Promise<NextResponse> {
         });
       } else {
         const errorText = await response.text();
-        console.error(
-          "[TEST] ❌ WebSocket server error:",
-          response.status,
-          errorText
-        );
 
         return NextResponse.json({
           success: false,
@@ -99,8 +76,6 @@ export async function POST(): Promise<NextResponse> {
         });
       }
     } catch (fetchError: any) {
-      console.error("[TEST] ❌ HTTP request failed:", fetchError.message);
-
       return NextResponse.json({
         success: false,
         message: "Shape created but WebSocket server unreachable",
@@ -114,7 +89,6 @@ export async function POST(): Promise<NextResponse> {
       });
     }
   } catch (error: any) {
-    console.error("[TEST] ❌ Error in test:", error);
     return NextResponse.json(
       {
         success: false,

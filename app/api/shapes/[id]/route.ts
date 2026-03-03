@@ -1,4 +1,3 @@
-// src/app/api/shapes/[id]/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import type { MCPApiResponse, MCPShapeResponse } from "@/src/types";
 import { shapeStorage } from "@/src/services/singleton";
@@ -15,7 +14,7 @@ async function notifyWebSocketServer(message: any): Promise<boolean> {
 
     if (response.ok) {
       const result = await response.json();
-      console.log(`[API] ✅ Notified ${result.clientsCount} browsers`);
+      console.log(`[API] Notified ${result.clientsCount} browsers`);
       return true;
     }
     return false;
@@ -25,7 +24,7 @@ async function notifyWebSocketServer(message: any): Promise<boolean> {
 }
 
 /**
- * GET /api/shapes/[id] - Get shape by ID
+ * GET /api/shapes/[id]
  */
 export async function GET(
   request: NextRequest,
@@ -34,7 +33,6 @@ export async function GET(
   const { id } = await context.params;
 
   try {
-    console.log(`[API] 📥 GET /api/shapes/${id}`);
     const shape = await shapeStorage.getShape(id);
 
     if (!shape) {
@@ -49,7 +47,7 @@ export async function GET(
       );
     }
 
-    console.log(`[API] ✅ Found shape: ${shape.id} (${shape.type})`);
+    console.log(`[API] Found shape: ${shape.id}`);
 
     return NextResponse.json({
       success: true,
@@ -57,7 +55,7 @@ export async function GET(
       timestamp: new Date().toISOString(),
     });
   } catch (error: any) {
-    console.error(`[API] ❌ Error fetching shape ${id}:`, error);
+    console.error(`[API] Error fetching shape ${id}:`, error);
     return NextResponse.json(
       {
         success: false,
@@ -71,7 +69,7 @@ export async function GET(
 }
 
 /**
- * PUT /api/shapes/[id] - Update shape (MCP Server → Browser)
+ * PUT /api/shapes/[id]
  */
 export async function PUT(
   request: NextRequest,
@@ -80,10 +78,6 @@ export async function PUT(
   const { id } = await context.params;
 
   try {
-    console.log(
-      `[API] 📥 PUT /api/shapes/${id} - 🤖 MCP Server updating shape`
-    );
-
     const body = await request.json();
     const shape = await shapeStorage.updateShape({ id, ...body });
 
@@ -106,7 +100,7 @@ export async function PUT(
       shape: shape,
     });
 
-    console.log(`[API] ✅ Shape ${id} updated`);
+    console.log(`[API] Shape ${id} updated`);
 
     return NextResponse.json({
       success: true,
@@ -114,7 +108,7 @@ export async function PUT(
       timestamp: new Date().toISOString(),
     });
   } catch (error: any) {
-    console.error(`[API] ❌ Error updating shape ${id}:`, error);
+    console.error(`[API] Error updating shape ${id}:`, error);
     return NextResponse.json(
       {
         success: false,
@@ -128,7 +122,7 @@ export async function PUT(
 }
 
 /**
- * DELETE /api/shapes/[id] - Delete shape (MCP Server → Browser)
+ * DELETE /api/shapes/[id]
  */
 export async function DELETE(
   request: NextRequest,
@@ -137,10 +131,6 @@ export async function DELETE(
   const { id } = await context.params;
 
   try {
-    console.log(
-      `[API] 📥 DELETE /api/shapes/${id} - 🤖 MCP Server deleting shape`
-    );
-
     const deleted = await shapeStorage.deleteShape(id);
 
     if (!deleted) {
@@ -161,7 +151,7 @@ export async function DELETE(
       shapeId: id,
     });
 
-    console.log(`[API] ✅ Shape ${id} deleted`);
+    console.log(`[API] Shape ${id} deleted`);
 
     return NextResponse.json({
       success: true,
@@ -169,7 +159,7 @@ export async function DELETE(
       timestamp: new Date().toISOString(),
     });
   } catch (error: any) {
-    console.error(`[API] ❌ Error deleting shape ${id}:`, error);
+    console.error(`[API] Error deleting shape ${id}:`, error);
     return NextResponse.json(
       {
         success: false,

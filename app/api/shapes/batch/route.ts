@@ -1,4 +1,3 @@
-// src/app/api/shapes/batch/route.ts - CORRECTED with AI preprocessing
 import { NextRequest, NextResponse } from "next/server";
 import type { MCPShapesResponse } from "@/src/types";
 import { shapeStorage } from "@/src/services/singleton";
@@ -15,34 +14,20 @@ async function notifyWebSocketServer(message: any): Promise<boolean> {
     });
 
     if (!response.ok) return false;
-
-    const result = await response.json();
-    console.log(
-      `[API] ✅ Batch broadcasted to ${result.clientsCount} browsers`
-    );
     return true;
-  } catch (error: any) {
-    console.error("[API] ❌ Batch notification failed:", error.message);
+  } catch {
     return false;
   }
 }
 
 /**
- * POST /api/shapes/batch - Batch create shapes (MCP Server → Browser)
+ * POST /api/shapes/batch - Batch create shapes
  */
 export async function POST(
   request: NextRequest
 ): Promise<NextResponse<MCPShapesResponse>> {
   try {
-    console.log(
-      "[API] 📥 POST /api/shapes/batch - 🤖 MCP Server batch creation"
-    );
-
     const { shapes: rawShapesToCreate } = await request.json();
-    console.log(
-      "[API] 📋 Raw AI batch data:",
-      JSON.stringify(rawShapesToCreate, null, 2)
-    );
 
     if (!Array.isArray(rawShapesToCreate)) {
       return NextResponse.json(
@@ -57,15 +42,9 @@ export async function POST(
       );
     }
 
-    // CRITICAL: Preprocess ALL AI shapes to fix text/richText issues
     const processedShapes = preprocessAIBatchData(rawShapesToCreate);
-    console.log(
-      "[API] 🔄 Processed AI batch data:",
-      JSON.stringify(processedShapes, null, 2)
-    );
 
     if (processedShapes.length === 0) {
-      console.log("[API] ⚠️ No valid shapes after preprocessing");
       return NextResponse.json(
         {
           success: false,
@@ -78,33 +57,14 @@ export async function POST(
       );
     }
 
-    console.log(
-      `[API] 🏭 Batch creating ${processedShapes.length} preprocessed shapes...`
-    );
     const createdShapes = await shapeStorage.batchCreateShapes(processedShapes);
+    console.log(`[API] Batch created ${createdShapes.length} shapes`);
 
-    // Log shape creation details
-    const shapeDetails = createdShapes.map((s) => ({
-      id: s.id,
-      type: s.type,
-      hasRichText: !!(s.props as any)?.richText,
-      hasText: !!(s.props as any)?.text,
-      color: (s.props as any)?.color,
-    }));
-    console.log("[API] 📊 Created shapes details:", shapeDetails);
-
-    // Notify browsers via HTTP
-    const notified = await notifyWebSocketServer({
+    await notifyWebSocketServer({
       type: "shapes_batch_created",
       timestamp: new Date().toISOString(),
       shapes: createdShapes,
     });
-
-    console.log(`[API] ✅ Batch created ${createdShapes.length} shapes`);
-    console.log(
-      "[API] 🎯 Shape types created:",
-      createdShapes.map((s) => s.type).join(", ")
-    );
 
     return NextResponse.json(
       {
@@ -116,11 +76,10 @@ export async function POST(
       { status: 201 }
     );
   } catch (error: any) {
-    console.error("[API] ❌ Error batch creating shapes:", error);
+    console.error("[API] Error batch creating shapes:", error);
 
-    // Create fallback shapes so AI doesn't break the canvas
+    // Fallback: create error indicator shapes
     try {
-      console.log("[API] 🛟 Creating fallback shapes...");
       const fallbackShapes = await shapeStorage.batchCreateShapes([
         {
           type: "geo",
