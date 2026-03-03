@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 process.env.NODE_DISABLE_COLORS = "1";
 process.env.NO_COLOR = "1";
+process.env.DOTENV_CONFIG_QUIET = "true";
 
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
@@ -801,7 +802,7 @@ const StrictTldrawShapeSchema = z
     opacity: z.number().min(0).max(1).optional().default(1),
     isLocked: z.boolean().optional().default(false),
     props: StrictShapePropsSchema.optional().default({}),
-    meta: z.record(z.any()).optional().default({}),
+    meta: z.record(z.string(), z.any()).optional().default({}),
   })
   .transform((data, ctx) => {
     logger.debug(`[MCP] Processing shape: ${data.type}`);
@@ -844,7 +845,7 @@ const UpdateShapeSchema = z
     opacity: z.number().min(0).max(1).optional(),
     isLocked: z.boolean().optional(),
     props: StrictShapePropsSchema.optional(),
-    meta: z.record(z.any()).optional(),
+    meta: z.record(z.string(), z.any()).optional(),
   })
   .transform((data, ctx) => {
     // Preprocess and sanitize props if provided
@@ -861,7 +862,7 @@ const UpdateShapeSchema = z
 const MCPShapesResponseSchema = z.object({
   success: z.boolean(),
   count: z.number().optional(),
-  shapes: z.array(z.record(z.any())).optional(),
+  shapes: z.array(z.record(z.string(), z.any())).optional(),
   error: z.string().optional(),
 });
 
@@ -1056,7 +1057,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     logger.error(`[${requestId}] ${error.message}`);
 
     if (error instanceof z.ZodError) {
-      const errorDetails = error.errors
+      const errorDetails = error.issues
         .map((e) => `${e.path.join(".")}: ${e.message}`)
         .join(", ");
 

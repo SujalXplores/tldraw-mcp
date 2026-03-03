@@ -63,6 +63,7 @@ export default function TldrawCanvas() {
   const converterService = useRef(new ShapeConverterService());
   const websocketRef = useRef<WebSocket | null>(null);
   const mountedRef = useRef(false);
+  const connectWebSocketRef = useRef<() => void>(() => {});
 
   const router = useRouter();
 
@@ -137,7 +138,7 @@ export default function TldrawCanvas() {
 
       if (event.code !== 1000 && mountedRef.current) {
         setTimeout(() => {
-          if (mountedRef.current) connectWebSocket();
+          if (mountedRef.current) connectWebSocketRef.current();
         }, 3000);
       }
     };
@@ -147,6 +148,10 @@ export default function TldrawCanvas() {
       setIsConnected(false);
     };
   }, [handleWebSocketMessage]);
+
+  useEffect(() => {
+    connectWebSocketRef.current = connectWebSocket;
+  }, [connectWebSocket]);
 
   // WebSocket connection setup
   useEffect(() => {

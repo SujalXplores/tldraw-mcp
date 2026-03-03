@@ -43,7 +43,7 @@ tldraw-mcp is a developer-first tool for AI-enhanced diagramming. It combines Tl
 
 | Layer | Technology | Role |
 |-------|-----------|------|
-| Frontend | Next.js 15 (App Router) | Tldraw canvas + WebSocket client |
+| Frontend | Next.js 16 (App Router) | Tldraw canvas + WebSocket client |
 | API | Next.js Route Handlers | Shape CRUD with AI data preprocessing |
 | MCP Server | Node.js + stdio transport | AI tool interface (create, update, delete, get shapes) |
 | Real-time | WebSocket (ws) | Broadcasts shape mutations to browser clients |
@@ -100,7 +100,7 @@ WS_SERVER_URL=http://localhost:4000
 ### Running Locally
 
 ```bash
-pnpm run canvas
+pnpm dev:all
 ```
 
 This starts all three processes concurrently:
@@ -117,8 +117,17 @@ This starts all three processes concurrently:
 |--------|-------------|
 | `pnpm dev` | Start Next.js frontend |
 | `pnpm dev:ws` | Start WebSocket server (watch mode) |
-| `pnpm mcp-server` | Run MCP server standalone |
-| `pnpm canvas` | Start all services concurrently |
+| `pnpm dev:mcp` | Run MCP server standalone |
+| `pnpm dev:all` | Start all services concurrently |
+| `pnpm inspect` | Launch MCP Inspector with the server |
+| `pnpm build` | Production build |
+| `pnpm lint` | Run ESLint |
+| `pnpm typecheck` | Run TypeScript type checking |
+| `pnpm format` | Format code with Prettier |
+| `pnpm format:check` | Check formatting (CI-friendly) |
+| `pnpm test` | Run tests |
+| `pnpm test:watch` | Run tests in watch mode |
+| `pnpm check` | Run lint + typecheck + test |
 
 ---
 

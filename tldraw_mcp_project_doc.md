@@ -699,22 +699,23 @@ npm install
 cp .env.example .env
 
 # Start development servers
-npm run dev          # Next.js app (port 3000)
-npm run ws-server    # WebSocket server (port 4000)
-npm run mcp-server   # MCP server (stdio)
+pnpm dev          # Next.js app (port 3000)
+pnpm dev:ws       # WebSocket server (port 4000)
+pnpm dev:mcp      # MCP server (stdio)
+pnpm dev:all      # All services concurrently
 ```
 
 ### **Testing**
 
 ```bash
-# Run validation tests
-npm run test
-
-# Run MCP server tests
-npm run test:mcp
+# Run tests
+pnpm test
 
 # Check TypeScript
-npm run type-check
+pnpm typecheck
+
+# Run all quality checks
+pnpm check
 ```
 
 ---
