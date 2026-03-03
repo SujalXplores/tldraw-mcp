@@ -75,25 +75,19 @@ export default function TldrawCanvas() {
           case "initial_shapes":
           case "shapes_batch_created":
             if (data.shapes?.length) {
-              const tldrawShapes = converterService.current.toTldrawShapes(
-                data.shapes,
-              );
+              const tldrawShapes = converterService.current.toTldrawShapes(data.shapes);
               editor.createShapes(tldrawShapes);
             }
             break;
           case "shape_created":
             if (data.shape) {
-              const tldrawShape = converterService.current.toTldrawShape(
-                data.shape,
-              );
+              const tldrawShape = converterService.current.toTldrawShape(data.shape);
               editor.createShapes([tldrawShape]);
             }
             break;
           case "shape_updated":
             if (data.shape) {
-              const tldrawShape = converterService.current.toTldrawShape(
-                data.shape,
-              );
+              const tldrawShape = converterService.current.toTldrawShape(data.shape);
               editor.updateShapes([tldrawShape]);
             }
             break;

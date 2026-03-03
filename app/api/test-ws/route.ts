@@ -28,8 +28,6 @@ export async function POST(): Promise<NextResponse> {
     };
 
     const shape = await shapeStorage.createShape(testShapeData);
-    console.log(`[TEST] Shape created: ${shape.id}`);
-
     // Send HTTP request to WebSocket server
     try {
       const response = await fetch(`${WS_SERVER_URL}/broadcast`, {
@@ -43,8 +41,6 @@ export async function POST(): Promise<NextResponse> {
           shape: shape,
         }),
       });
-
-      console.log(`[TEST] WS response: ${response.status}`);
 
       if (response.ok) {
         const result = await response.json();
@@ -95,7 +91,7 @@ export async function POST(): Promise<NextResponse> {
         error: error.message,
         timestamp: new Date().toISOString(),
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

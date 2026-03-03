@@ -1,7 +1,7 @@
-// src/frontend-types-bridge.ts - Proper bridge between Tldraw's real types and our local types
+// Bridge between Tldraw's real types and our local types
 
-import type { IndexKey as TldrawIndexKey } from "@tldraw/utils";
 import type {
+  IndexKey as TldrawIndexKey,
   TLParentId as TldrawParentId,
   TLShapeId as TldrawShapeId,
   TLShape as TldrawTLShape,
@@ -9,12 +9,7 @@ import type {
 } from "tldraw";
 
 // Our local types (simplified for API use)
-import type {
-  IndexKey,
-  TLParentId,
-  TLShapeId,
-  TLShape as LocalTLShape,
-} from "./types";
+import type { IndexKey, TLParentId, TLShapeId, TLShape as LocalTLShape } from "./types";
 
 /**
  * Convert Tldraw IndexKey to backend string representation
@@ -115,9 +110,7 @@ export function toLocalShapes(tldrawShapes: TldrawTLShape[]): LocalTLShape[] {
 /**
  * Create a Tldraw-compatible shape partial for updates
  */
-export function createTldrawShapePartial(
-  localShape: LocalTLShape
-): TldrawTLShapePartial {
+export function createTldrawShapePartial(localShape: LocalTLShape): TldrawTLShapePartial {
   return {
     id: toFrontendShapeId(localShape.id),
     type: localShape.type,
@@ -189,10 +182,7 @@ export class IdValidator {
   }
 
   static isValidTldrawParentId(id: string): id is TldrawParentId {
-    return (
-      typeof id === "string" &&
-      (id.startsWith("page:") || id.startsWith("shape:"))
-    );
+    return typeof id === "string" && (id.startsWith("page:") || id.startsWith("shape:"));
   }
 
   static isValidTldrawIndexKey(key: string): key is TldrawIndexKey {

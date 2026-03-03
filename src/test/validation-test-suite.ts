@@ -95,7 +95,7 @@ export class ValidationTestSuite {
       this.addResult(
         "Valid shapes conversion",
         converted.length === 3,
-        `Converted ${converted.length}/3 valid shapes`
+        `Converted ${converted.length}/3 valid shapes`,
       );
     } catch (error) {
       this.addResult("Valid shapes conversion", false, `Error: ${error}`);
@@ -138,7 +138,7 @@ export class ValidationTestSuite {
         this.addResult(
           `Color mapping: ${color} → ${expected}`,
           actualColor === expected,
-          `Got: ${actualColor}, Expected: ${expected}`
+          `Got: ${actualColor}, Expected: ${expected}`,
         );
       } catch (error) {
         this.addResult(`Color mapping: ${color}`, false, `Error: ${error}`);
@@ -204,15 +204,7 @@ export class ValidationTestSuite {
   private testInvalidShapeTypes(): void {
     console.log("Testing invalid shape types...");
 
-    const invalidTypes = [
-      "rectangle",
-      "circle",
-      "box",
-      "triangle",
-      null,
-      undefined,
-      123,
-    ];
+    const invalidTypes = ["rectangle", "circle", "box", "triangle", null, undefined, 123];
 
     invalidTypes.forEach((type) => {
       try {
@@ -251,7 +243,7 @@ export class ValidationTestSuite {
         this.addResult(
           `Invalid type: ${type}`,
           isValidType,
-          `Converted to: ${converted.type}`
+          `Converted to: ${converted.type}`,
         );
       } catch (error) {
         this.addResult(`Invalid type: ${type}`, false, `Error: ${error}`);
@@ -303,13 +295,13 @@ export class ValidationTestSuite {
         this.addResult(
           `Invalid coords: ${JSON.stringify(coords)}`,
           hasValidCoords,
-          `Result: x=${converted.x}, y=${converted.y}`
+          `Result: x=${converted.x}, y=${converted.y}`,
         );
       } catch (error) {
         this.addResult(
           `Invalid coords: ${JSON.stringify(coords)}`,
           false,
-          `Error: ${error}`
+          `Error: ${error}`,
         );
       }
     });
@@ -348,20 +340,15 @@ export class ValidationTestSuite {
         };
 
         const converted = this.converter.toTldrawShape(shape);
-        const hasValidProps =
-          converted.props && typeof converted.props === "object";
+        const hasValidProps = converted.props && typeof converted.props === "object";
 
         this.addResult(
           `Invalid props: ${typeof props}`,
           hasValidProps,
-          `Result: ${JSON.stringify(converted.props)}`
+          `Result: ${JSON.stringify(converted.props)}`,
         );
       } catch (error) {
-        this.addResult(
-          `Invalid props: ${typeof props}`,
-          false,
-          `Error: ${error}`
-        );
+        this.addResult(`Invalid props: ${typeof props}`, false, `Error: ${error}`);
       }
     });
   }
@@ -404,11 +391,7 @@ export class ValidationTestSuite {
           (converted.props as any).richText &&
           (converted.props as any).richText.type === "doc";
 
-        this.addResult(
-          `Text conversion: ${text || "richText"}`,
-          hasRichText,
-          expected
-        );
+        this.addResult(`Text conversion: ${text || "richText"}`, hasRichText, expected);
       } catch (error) {
         this.addResult(`Text conversion: ${text}`, false, `Error: ${error}`);
       }
@@ -465,7 +448,7 @@ export class ValidationTestSuite {
         this.addResult(
           name,
           hasValidArrow === expected,
-          `Arrow props: ${JSON.stringify(converted.props as any, null, 2)}`
+          `Arrow props: ${JSON.stringify(converted.props as any, null, 2)}`,
         );
       } catch (error) {
         this.addResult(name, false, `Error: ${error}`);
@@ -491,15 +474,13 @@ export class ValidationTestSuite {
     ];
 
     try {
-      const converted = this.converter.toTldrawShapes(
-        mixedShapes as MCPShape[]
-      );
+      const converted = this.converter.toTldrawShapes(mixedShapes as MCPShape[]);
       const hasResults = converted.length > 0;
 
       this.addResult(
         "Batch processing with mixed inputs",
         hasResults,
-        `Processed ${converted.length} shapes from ${mixedShapes.length} inputs`
+        `Processed ${converted.length} shapes from ${mixedShapes.length} inputs`,
       );
     } catch (error) {
       this.addResult("Batch processing", false, `Error: ${error}`);
@@ -533,7 +514,7 @@ export class ValidationTestSuite {
       this.addResult(
         "Error recovery fallback",
         isValidFallback,
-        `Created fallback: ${converted.type} at (${converted.x}, ${converted.y})`
+        `Created fallback: ${converted.type} at (${converted.x}, ${converted.y})`,
       );
     } catch (error) {
       this.addResult("Error recovery", false, `Failed to recover: ${error}`);

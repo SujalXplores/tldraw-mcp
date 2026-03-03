@@ -22,7 +22,7 @@ export class ShapeStorageService implements MCPShapeStorage {
   public readonly shapes = new Map<string, MCPShape>();
 
   async createShape<T extends TldrawShapeType>(
-    input: MCPShapeCreateInput<T>
+    input: MCPShapeCreateInput<T>,
   ): Promise<MCPShape<T>> {
     const id = generateShapeId();
     const now = new Date().toISOString();
@@ -52,7 +52,7 @@ export class ShapeStorageService implements MCPShapeStorage {
   }
 
   async updateShape<T extends TldrawShapeType>(
-    input: MCPShapeUpdateInput<T>
+    input: MCPShapeUpdateInput<T>,
   ): Promise<MCPShape<T> | null> {
     const existing = this.shapes.get(input.id as unknown as string);
     if (!existing) return null;
@@ -60,9 +60,7 @@ export class ShapeStorageService implements MCPShapeStorage {
     const updated: MCPShape<T> = {
       ...existing,
       ...input,
-      props: input.props
-        ? { ...existing.props, ...input.props }
-        : existing.props,
+      props: input.props ? { ...existing.props, ...input.props } : existing.props,
       updatedAt: new Date().toISOString(),
       version: (existing.version ?? 1) + 1,
     } as MCPShape<T>;
@@ -76,7 +74,7 @@ export class ShapeStorageService implements MCPShapeStorage {
   }
 
   async getShape<T extends TldrawShapeType>(
-    id: TLShapeId | string
+    id: TLShapeId | string,
   ): Promise<MCPShape<T> | null> {
     return (this.shapes.get(id as string) as MCPShape<T>) ?? null;
   }

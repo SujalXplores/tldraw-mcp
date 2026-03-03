@@ -15,8 +15,7 @@ import { z } from "zod";
 
 dotenv.config();
 
-const NEXTJS_SERVER_URL =
-  process.env.NEXTJS_SERVER_URL || "http://localhost:3000";
+const NEXTJS_SERVER_URL = process.env.NEXTJS_SERVER_URL || "http://localhost:3000";
 
 let mcpConnected = false;
 
@@ -30,7 +29,7 @@ const logger = {
           logger: "mcp-tldraw-server",
           message: message,
           ...(data && { data }),
-        })
+        }),
       );
     }
   },
@@ -43,7 +42,7 @@ const logger = {
           logger: "mcp-tldraw-server",
           message: message,
           ...(data && { data }),
-        })
+        }),
       );
     }
   },
@@ -56,7 +55,7 @@ const logger = {
           logger: "mcp-tldraw-server",
           message: message,
           ...(data && { data }),
-        })
+        }),
       );
     }
   },
@@ -68,7 +67,7 @@ const logger = {
         logger: "mcp-tldraw-server",
         message: message,
         ...(data && { data }),
-      })
+      }),
     );
   },
   startup: (...args: any[]) => {
@@ -207,7 +206,7 @@ function validateNumber(
   min: number,
   max: number,
   fallback: number,
-  field: string
+  field: string,
 ): number {
   if (typeof value !== "number" || isNaN(value) || !isFinite(value)) {
     if (mcpConnected) {
@@ -228,20 +227,16 @@ function validateEnum<T extends readonly string[]>(
   value: any,
   validValues: T,
   fallback: T[number],
-  field: string
+  field: string,
 ): T[number] {
   if (typeof value !== "string") {
     if (mcpConnected) {
-      logger.warn(
-        `Invalid ${field} type: ${typeof value}, using "${fallback}"`
-      );
+      logger.warn(`Invalid ${field} type: ${typeof value}, using "${fallback}"`);
     }
     return fallback;
   }
 
-  const match = validValues.find(
-    (v) => v.toLowerCase() === value.toLowerCase()
-  );
+  const match = validValues.find((v) => v.toLowerCase() === value.toLowerCase());
   if (match) {
     return match;
   }
@@ -253,8 +248,7 @@ function validateEnum<T extends readonly string[]>(
 }
 
 function createSafeRichText(text?: string) {
-  const safeText =
-    typeof text === "string" && text.trim() ? text.trim() : "placeholder";
+  const safeText = typeof text === "string" && text.trim() ? text.trim() : "placeholder";
   return {
     type: "doc",
     content: [
@@ -293,8 +287,7 @@ function preprocessAIShapeData(rawData: any): any {
   if (!processed.type) processed.type = "geo";
   if (typeof processed.x !== "number") processed.x = 100;
   if (typeof processed.y !== "number") processed.y = 100;
-  if (!processed.props || typeof processed.props !== "object")
-    processed.props = {};
+  if (!processed.props || typeof processed.props !== "object") processed.props = {};
 
   switch (processed.type) {
     case "text":
@@ -304,9 +297,7 @@ function preprocessAIShapeData(rawData: any): any {
         processed.props.richText = createSafeRichText(textContent);
         delete processed.props.text;
         if (mcpConnected) {
-          logger.info(
-            `[MCP] Converted AI text "${textContent}" to richText`
-          );
+          logger.info(`[MCP] Converted AI text "${textContent}" to richText`);
         }
       }
       break;
@@ -318,9 +309,7 @@ function preprocessAIShapeData(rawData: any): any {
         processed.props.richText = createSafeRichText(textContent);
         delete processed.props.text;
         if (mcpConnected) {
-          logger.info(
-            `[MCP] Converted geo label "${textContent}" to richText`
-          );
+          logger.info(`[MCP] Converted geo label "${textContent}" to richText`);
         }
       }
       break;
@@ -341,9 +330,7 @@ function preprocessAIShapeData(rawData: any): any {
         processed.props.richText = createSafeRichText(textContent);
         delete processed.props.text;
         if (mcpConnected) {
-          logger.info(
-            `[MCP] Converted note text "${textContent}" to richText`
-          );
+          logger.info(`[MCP] Converted note text "${textContent}" to richText`);
         }
       }
       break;
@@ -511,22 +498,12 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
   // Type-specific sanitization
   switch (type) {
     case "geo":
-      sanitized.align = validateEnum(
-        props.align,
-        TLDRAW_ALIGNS,
-        "middle",
-        "align"
-      );
+      sanitized.align = validateEnum(props.align, TLDRAW_ALIGNS, "middle", "align");
       sanitized.color = normalizeColor(props.color);
       sanitized.dash = validateEnum(props.dash, TLDRAW_DASHES, "draw", "dash");
       sanitized.fill = validateEnum(props.fill, TLDRAW_FILLS, "none", "fill");
       sanitized.font = validateEnum(props.font, TLDRAW_FONTS, "draw", "font");
-      sanitized.geo = validateEnum(
-        props.geo,
-        TLDRAW_GEO_TYPES,
-        "rectangle",
-        "geo"
-      );
+      sanitized.geo = validateEnum(props.geo, TLDRAW_GEO_TYPES, "rectangle", "geo");
       sanitized.growY = validateNumber(props.growY, 0, 1000, 0, "growY");
       sanitized.h = validateNumber(props.h, 1, 2000, 100, "height");
       sanitized.labelColor = normalizeColor(props.labelColor);
@@ -537,7 +514,7 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
         props.verticalAlign,
         TLDRAW_ALIGNS,
         "middle",
-        "verticalAlign"
+        "verticalAlign",
       );
       sanitized.w = validateNumber(props.w, 1, 2000, 100, "width");
 
@@ -549,10 +526,7 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
             ...para,
             content:
               para.content
-                ?.filter(
-                  (span: any) =>
-                    typeof span.text === "string" && span.text.trim()
-                )
+                ?.filter((span: any) => typeof span.text === "string" && span.text.trim())
                 .map((span: any) => ({
                   ...span,
                   text: span.text.trim(),
@@ -564,8 +538,7 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
       break;
 
     case "text":
-      sanitized.autoSize =
-        typeof props.autoSize === "boolean" ? props.autoSize : true;
+      sanitized.autoSize = typeof props.autoSize === "boolean" ? props.autoSize : true;
       sanitized.color = normalizeColor(props.color);
       sanitized.font = validateEnum(props.font, TLDRAW_FONTS, "draw", "font");
       sanitized.scale = validateNumber(props.scale, 0.1, 10, 1, "scale");
@@ -574,7 +547,7 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
         props.textAlign,
         TLDRAW_ALIGNS,
         "start",
-        "textAlign"
+        "textAlign",
       );
       sanitized.w = validateNumber(props.w, 1, 2000, 8, "width");
 
@@ -586,10 +559,7 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
             ...para,
             content:
               para.content
-                ?.filter(
-                  (span: any) =>
-                    typeof span.text === "string" && span.text.trim()
-                )
+                ?.filter((span: any) => typeof span.text === "string" && span.text.trim())
                 .map((span: any) => ({
                   ...span,
                   text: span.text.trim(),
@@ -600,9 +570,7 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
       } else if (typeof props.text === "string") {
         sanitized.richText = createSafeRichText(props.text);
         if (mcpConnected) {
-          logger.info(
-            `[MCP] Converted text "${props.text}" to richText in sanitizer`
-          );
+          logger.info(`[MCP] Converted text "${props.text}" to richText in sanitizer`);
         }
       } else {
         sanitized.richText = createSafeRichText("Text");
@@ -614,13 +582,13 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
         props.arrowheadEnd,
         TLDRAW_ARROWHEADS,
         "arrow",
-        "arrowheadEnd"
+        "arrowheadEnd",
       );
       sanitized.arrowheadStart = validateEnum(
         props.arrowheadStart,
         TLDRAW_ARROWHEADS,
         "none",
-        "arrowheadStart"
+        "arrowheadStart",
       );
       sanitized.bend = validateNumber(props.bend, -2, 2, 0, "bend");
       sanitized.color = normalizeColor(props.color);
@@ -630,23 +598,18 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
         0,
         1,
         0,
-        "elbowMidPoint"
+        "elbowMidPoint",
       );
       sanitized.fill = validateEnum(props.fill, TLDRAW_FILLS, "none", "fill");
       sanitized.font = validateEnum(props.font, TLDRAW_FONTS, "draw", "font");
-      sanitized.kind = validateEnum(
-        props.kind,
-        ["arc", "elbow"] as const,
-        "arc",
-        "kind"
-      );
+      sanitized.kind = validateEnum(props.kind, ["arc", "elbow"] as const, "arc", "kind");
       sanitized.labelColor = normalizeColor(props.labelColor);
       sanitized.labelPosition = validateNumber(
         props.labelPosition,
         0,
         1,
         0.5,
-        "labelPosition"
+        "labelPosition",
       );
       sanitized.scale = validateNumber(props.scale, 0.1, 10, 1, "scale");
       sanitized.size = validateEnum(props.size, TLDRAW_SIZES, "m", "size");
@@ -692,25 +655,14 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
       sanitized.size = validateEnum(props.size, TLDRAW_SIZES, "m", "size");
 
       if (type === "draw") {
-        sanitized.dash = validateEnum(
-          props.dash,
-          TLDRAW_DASHES,
-          "draw",
-          "dash"
-        );
+        sanitized.dash = validateEnum(props.dash, TLDRAW_DASHES, "draw", "dash");
         sanitized.fill = validateEnum(props.fill, TLDRAW_FILLS, "none", "fill");
-        sanitized.isClosed =
-          typeof props.isClosed === "boolean" ? props.isClosed : false;
+        sanitized.isClosed = typeof props.isClosed === "boolean" ? props.isClosed : false;
       }
       break;
 
     case "note":
-      sanitized.align = validateEnum(
-        props.align,
-        TLDRAW_ALIGNS,
-        "middle",
-        "align"
-      );
+      sanitized.align = validateEnum(props.align, TLDRAW_ALIGNS, "middle", "align");
       sanitized.color = normalizeColor(props.color);
       sanitized.font = validateEnum(props.font, TLDRAW_FONTS, "draw", "font");
       sanitized.fontSizeAdjustment = validateNumber(
@@ -718,7 +670,7 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
         -5,
         5,
         0,
-        "fontSizeAdjustment"
+        "fontSizeAdjustment",
       );
       sanitized.growY = validateNumber(props.growY, 0, 1000, 0, "growY");
       sanitized.labelColor = normalizeColor(props.labelColor);
@@ -729,7 +681,7 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
         props.verticalAlign,
         TLDRAW_ALIGNS,
         "middle",
-        "verticalAlign"
+        "verticalAlign",
       );
 
       // Handle richText for notes
@@ -738,9 +690,7 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
       } else if (typeof props.text === "string") {
         sanitized.richText = createSafeRichText(props.text);
         if (mcpConnected) {
-          logger.info(
-            `[MCP] Converted note text "${props.text}" to richText`
-          );
+          logger.info(`[MCP] Converted note text "${props.text}" to richText`);
         }
       }
       break;
@@ -769,35 +719,29 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
       break;
 
     case "image":
-      sanitized.altText =
-        typeof props.altText === "string" ? props.altText : "";
+      sanitized.altText = typeof props.altText === "string" ? props.altText : "";
       sanitized.assetId =
         typeof props.assetId === "string" || props.assetId === null
           ? props.assetId
           : null;
-      sanitized.crop =
-        props.crop && typeof props.crop === "object" ? props.crop : null;
+      sanitized.crop = props.crop && typeof props.crop === "object" ? props.crop : null;
       sanitized.flipX = typeof props.flipX === "boolean" ? props.flipX : false;
       sanitized.flipY = typeof props.flipY === "boolean" ? props.flipY : false;
       sanitized.h = validateNumber(props.h, 10, 2000, 100, "height");
-      sanitized.playing =
-        typeof props.playing === "boolean" ? props.playing : true;
+      sanitized.playing = typeof props.playing === "boolean" ? props.playing : true;
       sanitized.url = typeof props.url === "string" ? props.url : "";
       sanitized.w = validateNumber(props.w, 10, 2000, 100, "width");
       break;
 
     case "video":
-      sanitized.altText =
-        typeof props.altText === "string" ? props.altText : "";
+      sanitized.altText = typeof props.altText === "string" ? props.altText : "";
       sanitized.assetId =
         typeof props.assetId === "string" || props.assetId === null
           ? props.assetId
           : null;
-      sanitized.autoplay =
-        typeof props.autoplay === "boolean" ? props.autoplay : false;
+      sanitized.autoplay = typeof props.autoplay === "boolean" ? props.autoplay : false;
       sanitized.h = validateNumber(props.h, 10, 2000, 100, "height");
-      sanitized.playing =
-        typeof props.playing === "boolean" ? props.playing : false;
+      sanitized.playing = typeof props.playing === "boolean" ? props.playing : false;
       sanitized.time = validateNumber(props.time, 0, Infinity, 0, "time");
       sanitized.url = typeof props.url === "string" ? props.url : "";
       sanitized.w = validateNumber(props.w, 10, 2000, 100, "width");
@@ -814,7 +758,7 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
         props.spline,
         ["line", "cubic"] as const,
         "line",
-        "spline"
+        "spline",
       );
       break;
 
@@ -830,7 +774,7 @@ function sanitizeShapeProps(type: TldrawShapeType, props: any): any {
   }
 
   if (mcpConnected) {
-    logger.debug(` Sanitized ${type} props:`, Object.keys(sanitized));
+    logger.debug(`Sanitized ${type} props:`, Object.keys(sanitized));
   }
   return sanitized;
 }
@@ -865,10 +809,7 @@ const StrictTldrawShapeSchema = z
     const preprocessed = preprocessAIShapeData(data);
 
     // Then sanitize props based on shape type
-    const sanitizedProps = sanitizeShapeProps(
-      preprocessed.type,
-      preprocessed.props
-    );
+    const sanitizedProps = sanitizeShapeProps(preprocessed.type, preprocessed.props);
 
     const result = {
       ...preprocessed,
@@ -876,9 +817,7 @@ const StrictTldrawShapeSchema = z
     };
 
     logger.debug(
-      `[MCP] Shape processed: ${result.type} with props: ${Object.keys(
-        result.props
-      )}`
+      `[MCP] Shape processed: ${result.type} with props: ${Object.keys(result.props)}`,
     );
     return result;
   });
@@ -985,7 +924,7 @@ async function sendToAPI(operation: string, data: any): Promise<any> {
     if (!response.ok) {
       const errorText = await response.text();
       throw new Error(
-        `API failed: ${response.status} ${response.statusText}\nBody: ${errorText}`
+        `API failed: ${response.status} ${response.statusText}\nBody: ${errorText}`,
       );
     }
 
@@ -1007,7 +946,7 @@ const server = new Server(
       tools: {},
       logging: {},
     },
-  }
+  },
 );
 
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
@@ -1061,9 +1000,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           content: [
             {
               type: "text",
-              text: result
-                ? `Shape ${id} updated.`
-                : `Failed to update shape ${id}.`,
+              text: result ? `Shape ${id} updated.` : `Failed to update shape ${id}.`,
             },
           ],
         };
@@ -1091,9 +1028,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         const result = MCPShapesResponseSchema.parse(rawJson);
 
         if (result.success && result.shapes) {
-          const summary = result.shapes
-            .map((s) => `${s.type}(${s.x},${s.y})`)
-            .join(", ");
+          const summary = result.shapes.map((s) => `${s.type}(${s.x},${s.y})`).join(", ");
           return {
             content: [
               {
@@ -1374,10 +1309,7 @@ async function runServer(): Promise<void> {
   try {
     logger.startup(`MCP Tldraw server starting → ${NEXTJS_SERVER_URL}`);
 
-    if (
-      process.env.NODE_ENV === "production" &&
-      !process.env.NEXTJS_SERVER_URL
-    ) {
+    if (process.env.NODE_ENV === "production" && !process.env.NEXTJS_SERVER_URL) {
       logger.startup("WARNING: NEXTJS_SERVER_URL not set in production");
     }
 

@@ -24,7 +24,7 @@ async function notifyWebSocketServer(message: any): Promise<boolean> {
  * POST /api/shapes/batch - Batch create shapes
  */
 export async function POST(
-  request: NextRequest
+  request: NextRequest,
 ): Promise<NextResponse<MCPShapesResponse>> {
   try {
     const { shapes: rawShapesToCreate } = await request.json();
@@ -38,7 +38,7 @@ export async function POST(
           count: 0,
           timestamp: new Date().toISOString(),
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -53,13 +53,11 @@ export async function POST(
           count: 0,
           timestamp: new Date().toISOString(),
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const createdShapes = await shapeStorage.batchCreateShapes(processedShapes);
-    console.log(`[API] Batch created ${createdShapes.length} shapes`);
-
     await notifyWebSocketServer({
       type: "shapes_batch_created",
       timestamp: new Date().toISOString(),
@@ -73,7 +71,7 @@ export async function POST(
         count: createdShapes.length,
         timestamp: new Date().toISOString(),
       },
-      { status: 201 }
+      { status: 201 },
     );
   } catch (error: any) {
     console.error("[API] Error batch creating shapes:", error);
@@ -132,7 +130,7 @@ export async function POST(
           timestamp: new Date().toISOString(),
           message: "Created fallback shapes due to AI data error",
         },
-        { status: 201 }
+        { status: 201 },
       );
     } catch (fallbackError) {
       return NextResponse.json(
@@ -143,7 +141,7 @@ export async function POST(
           count: 0,
           timestamp: new Date().toISOString(),
         },
-        { status: 500 }
+        { status: 500 },
       );
     }
   }

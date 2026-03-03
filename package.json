@@ -11,6 +11,7 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "mcp-server": "tsx src/mcp-server.ts",
+    "format": "prettier --write \"src/**/*.ts\" \"app/**/*.{ts,tsx}\" \"components/**/*.tsx\" \"server/**/*.ts\"",
     "test": "jest",
     "test:watch": "jest --watch"
   },
@@ -44,6 +45,7 @@
     "eslint-config-next": "15.0.0",
     "jest": "29.7.0",
     "postcss": "8.5.6",
+    "prettier": "3.8.1",
     "tailwindcss": "4",
     "typescript": "5"
   },
@@ -56,3 +58,4 @@
     ]
   }
 }
+

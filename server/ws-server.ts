@@ -31,7 +31,7 @@ const server = createServer((req, res) => {
             message: `Broadcasted ${data.type}`,
             clientsCount: status.browserClientsCount,
             timestamp: new Date().toISOString(),
-          })
+          }),
         );
       } catch (error: any) {
         logger.error("[WS] Broadcast error:", error);
@@ -49,7 +49,7 @@ const server = createServer((req, res) => {
         success: true,
         status: webSocketService.getStatus(),
         timestamp: new Date().toISOString(),
-      })
+      }),
     );
     return;
   }

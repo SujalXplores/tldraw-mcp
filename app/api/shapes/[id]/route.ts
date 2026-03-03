@@ -13,8 +13,7 @@ async function notifyWebSocketServer(message: any): Promise<boolean> {
     });
 
     if (response.ok) {
-      const result = await response.json();
-      console.log(`[API] Notified ${result.clientsCount} browsers`);
+      await response.json();
       return true;
     }
     return false;
@@ -28,7 +27,7 @@ async function notifyWebSocketServer(message: any): Promise<boolean> {
  */
 export async function GET(
   request: NextRequest,
-  context: { params: Promise<{ id: string }> }
+  context: { params: Promise<{ id: string }> },
 ): Promise<NextResponse<MCPShapeResponse>> {
   const { id } = await context.params;
 
@@ -43,11 +42,9 @@ export async function GET(
           shape: {} as any,
           timestamp: new Date().toISOString(),
         },
-        { status: 404 }
+        { status: 404 },
       );
     }
-
-    console.log(`[API] Found shape: ${shape.id}`);
 
     return NextResponse.json({
       success: true,
@@ -63,7 +60,7 @@ export async function GET(
         shape: {} as any,
         timestamp: new Date().toISOString(),
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -73,7 +70,7 @@ export async function GET(
  */
 export async function PUT(
   request: NextRequest,
-  context: { params: Promise<{ id: string }> }
+  context: { params: Promise<{ id: string }> },
 ): Promise<NextResponse<MCPShapeResponse>> {
   const { id } = await context.params;
 
@@ -89,7 +86,7 @@ export async function PUT(
           shape: {} as any,
           timestamp: new Date().toISOString(),
         },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -99,8 +96,6 @@ export async function PUT(
       timestamp: new Date().toISOString(),
       shape: shape,
     });
-
-    console.log(`[API] Shape ${id} updated`);
 
     return NextResponse.json({
       success: true,
@@ -116,7 +111,7 @@ export async function PUT(
         shape: {} as any,
         timestamp: new Date().toISOString(),
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -126,7 +121,7 @@ export async function PUT(
  */
 export async function DELETE(
   request: NextRequest,
-  context: { params: Promise<{ id: string }> }
+  context: { params: Promise<{ id: string }> },
 ): Promise<NextResponse<MCPApiResponse>> {
   const { id } = await context.params;
 
@@ -140,7 +135,7 @@ export async function DELETE(
           error: `Shape ${id} not found`,
           timestamp: new Date().toISOString(),
         },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -150,8 +145,6 @@ export async function DELETE(
       timestamp: new Date().toISOString(),
       shapeId: id,
     });
-
-    console.log(`[API] Shape ${id} deleted`);
 
     return NextResponse.json({
       success: true,
@@ -166,7 +159,7 @@ export async function DELETE(
         error: error.message || "Failed to delete shape",
         timestamp: new Date().toISOString(),
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

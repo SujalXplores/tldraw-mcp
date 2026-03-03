@@ -2673,3 +2673,28 @@
 2026-03-03 11:22:12 [info]: [WS] Browser connected (total: 1)
 2026-03-03 11:28:14 [info]: [WS] Browser disconnected (total: 0)
 2026-03-03 11:28:15 [info]: [WS] Browser connected (total: 1)
+2026-03-03 11:30:18 [info]: [WS] Server initialized
+2026-03-03 11:30:18 [info]: WebSocket server running on ws://localhost:4000
+2026-03-03 11:30:18 [info]:   POST http://localhost:4000/broadcast
+2026-03-03 11:30:18 [info]:   GET  http://localhost:4000/status
+2026-03-03 11:30:21 [info]: [WS] Browser connected (total: 1)
+2026-03-03 11:32:42 [info]: [WS] Server initialized
+2026-03-03 11:32:42 [info]: WebSocket server running on ws://localhost:4000
+2026-03-03 11:32:42 [info]:   POST http://localhost:4000/broadcast
+2026-03-03 11:32:42 [info]:   GET  http://localhost:4000/status
+2026-03-03 11:32:43 [info]: [WS] Browser connected (total: 1)
+2026-03-03 11:45:42 [info]: [WS] Server initialized
+2026-03-03 11:45:42 [error]: [WS] Server error: listen EADDRINUSE: address already in use :::4000 {"code":"EADDRINUSE","errno":-4091,"syscall":"listen","address":"::","port":4000,"stack":"Error: listen EADDRINUSE: address already in use :::4000\n    at Server.setupListenHandle [as _listen2] (node:net:2008:16)\n    at listenInCluster (node:net:2065:12)\n    at Server.listen (node:net:2170:7)\n    at logger (D:\\tldraw-mcp\\server\\ws-server.ts:63:8)\n    at Object.<anonymous> (D:\\tldraw-mcp\\server\\ws-server.ts:76:30)\n    at Module._compile (node:internal/modules/cjs/loader:1811:14)\n    at Object.transformer (D:\\tldraw-mcp\\node_modules\\.pnpm\\tsx@4.19.0\\node_modules\\tsx\\dist\\register-C1urN2EO.cjs:2:1122)\n    at Module.load (node:internal/modules/cjs/loader:1532:32)\n    at Module._load (node:internal/modules/cjs/loader:1334:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)"}
+2026-03-03 11:47:13 [info]: [WS] Server initialized
+2026-03-03 11:47:13 [error]: [WS] Server error: listen EADDRINUSE: address already in use :::4000 {"code":"EADDRINUSE","errno":-4091,"syscall":"listen","address":"::","port":4000,"stack":"Error: listen EADDRINUSE: address already in use :::4000\n    at Server.setupListenHandle [as _listen2] (node:net:2008:16)\n    at listenInCluster (node:net:2065:12)\n    at Server.listen (node:net:2170:7)\n    at logger (D:\\tldraw-mcp\\server\\ws-server.ts:63:8)\n    at Object.<anonymous> (D:\\tldraw-mcp\\server\\ws-server.ts:76:30)\n    at Module._compile (node:internal/modules/cjs/loader:1811:14)\n    at Object.transformer (D:\\tldraw-mcp\\node_modules\\.pnpm\\tsx@4.19.0\\node_modules\\tsx\\dist\\register-C1urN2EO.cjs:2:1122)\n    at Module.load (node:internal/modules/cjs/loader:1532:32)\n    at Module._load (node:internal/modules/cjs/loader:1334:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)"}
+2026-03-03 11:47:59 [info]: [WS] Server initialized
+2026-03-03 11:47:59 [info]: WebSocket server running on ws://localhost:4000
+2026-03-03 11:47:59 [info]:   POST http://localhost:4000/broadcast
+2026-03-03 11:47:59 [info]:   GET  http://localhost:4000/status
+2026-03-03 11:48:02 [info]: [WS] Browser connected (total: 1)
+2026-03-03 11:52:03 [info]: [WS] Broadcast shape_created to 1 client(s)
+2026-03-03 11:55:55 [info]: [WS] Broadcast shape_created to 1 client(s)
+2026-03-03 11:56:14 [info]: [WS] Broadcast shapes_batch_created to 1 client(s)
+2026-03-03 12:01:53 [info]: [WS] Broadcast shape_deleted to 1 client(s)
+2026-03-03 12:27:08 [info]: [WS] Browser disconnected (total: 0)
+2026-03-03 12:28:17 [info]: [WS] Browser connected (total: 1)

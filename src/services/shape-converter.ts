@@ -151,7 +151,7 @@ function validateNumber(
   min: number,
   max: number,
   fallback: number,
-  _field: string
+  _field: string,
 ): number {
   if (typeof value !== "number" || isNaN(value) || !isFinite(value)) {
     return fallback;
@@ -163,15 +163,13 @@ function validateEnum<T extends readonly string[]>(
   value: any,
   validValues: T,
   fallback: T[number],
-  _field: string
+  _field: string,
 ): T[number] {
   if (typeof value !== "string") {
     return fallback;
   }
 
-  const match = validValues.find(
-    (v) => v.toLowerCase() === value.toLowerCase()
-  );
+  const match = validValues.find((v) => v.toLowerCase() === value.toLowerCase());
   return match ?? fallback;
 }
 
@@ -197,15 +195,11 @@ function createSafeRichText(text?: string) {
 
 function sanitizeRichText(richText: any): any {
   try {
-    if (
-      richText &&
-      typeof richText === "object" &&
-      Array.isArray(richText.content)
-    ) {
+    if (richText && typeof richText === "object" && Array.isArray(richText.content)) {
       const hasValidText = richText.content.some((block: any) =>
         block?.content?.some(
-          (node: any) => typeof node.text === "string" && node.text.trim()
-        )
+          (node: any) => typeof node.text === "string" && node.text.trim(),
+        ),
       );
       return hasValidText ? richText : createSafeRichText();
     }
@@ -371,7 +365,7 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
         props.verticalAlign,
         VALID_ALIGNS,
         "middle",
-        "verticalAlign"
+        "verticalAlign",
       );
       sanitized.w = validateNumber(props.w, 1, 2000, 100, "width");
 
@@ -381,8 +375,7 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
       break;
 
     case "text":
-      sanitized.autoSize =
-        typeof props.autoSize === "boolean" ? props.autoSize : true;
+      sanitized.autoSize = typeof props.autoSize === "boolean" ? props.autoSize : true;
       sanitized.color = normalizeColor(props.color);
       sanitized.font = validateEnum(props.font, VALID_FONTS, "draw", "font");
       sanitized.scale = validateNumber(props.scale, 0.1, 10, 1, "scale");
@@ -391,7 +384,7 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
         props.textAlign,
         VALID_ALIGNS,
         "start",
-        "textAlign"
+        "textAlign",
       );
       sanitized.w = validateNumber(props.w, 1, 2000, 8, "width");
 
@@ -407,13 +400,13 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
         props.arrowheadEnd,
         VALID_ARROWHEADS,
         "arrow",
-        "arrowheadEnd"
+        "arrowheadEnd",
       );
       sanitized.arrowheadStart = validateEnum(
         props.arrowheadStart,
         VALID_ARROWHEADS,
         "none",
-        "arrowheadStart"
+        "arrowheadStart",
       );
       sanitized.bend = validateNumber(props.bend, -2, 2, 0, "bend");
       sanitized.color = normalizeColor(props.color);
@@ -423,23 +416,18 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
         0,
         1,
         0,
-        "elbowMidPoint"
+        "elbowMidPoint",
       );
       sanitized.fill = validateEnum(props.fill, VALID_FILLS, "none", "fill");
       sanitized.font = validateEnum(props.font, VALID_FONTS, "draw", "font");
-      sanitized.kind = validateEnum(
-        props.kind,
-        ["arc", "elbow"] as const,
-        "arc",
-        "kind"
-      );
+      sanitized.kind = validateEnum(props.kind, ["arc", "elbow"] as const, "arc", "kind");
       sanitized.labelColor = normalizeColor(props.labelColor);
       sanitized.labelPosition = validateNumber(
         props.labelPosition,
         0,
         1,
         0.5,
-        "labelPosition"
+        "labelPosition",
       );
       sanitized.scale = validateNumber(props.scale, 0.1, 10, 1, "scale");
       sanitized.size = validateEnum(props.size, VALID_SIZES, "m", "size");
@@ -474,8 +462,7 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
       if (shapeType === "draw") {
         sanitized.fill = validateEnum(props.fill, VALID_FILLS, "none", "fill");
         sanitized.dash = validateEnum(props.dash, VALID_DASHES, "draw", "dash");
-        sanitized.isClosed =
-          typeof props.isClosed === "boolean" ? props.isClosed : false;
+        sanitized.isClosed = typeof props.isClosed === "boolean" ? props.isClosed : false;
       }
       break;
 
@@ -488,7 +475,7 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
         -5,
         5,
         0,
-        "fontSizeAdjustment"
+        "fontSizeAdjustment",
       );
       sanitized.growY = validateNumber(props.growY, 0, 1000, 0, "growY");
       sanitized.labelColor = normalizeColor(props.labelColor);
@@ -499,7 +486,7 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
         props.verticalAlign,
         VALID_ALIGNS,
         "middle",
-        "verticalAlign"
+        "verticalAlign",
       );
 
       if (props.richText && typeof props.richText === "object") {
@@ -533,35 +520,29 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
       break;
 
     case "image":
-      sanitized.altText =
-        typeof props.altText === "string" ? props.altText : "";
+      sanitized.altText = typeof props.altText === "string" ? props.altText : "";
       sanitized.assetId =
         typeof props.assetId === "string" || props.assetId === null
           ? props.assetId
           : null;
-      sanitized.crop =
-        props.crop && typeof props.crop === "object" ? props.crop : null;
+      sanitized.crop = props.crop && typeof props.crop === "object" ? props.crop : null;
       sanitized.flipX = typeof props.flipX === "boolean" ? props.flipX : false;
       sanitized.flipY = typeof props.flipY === "boolean" ? props.flipY : false;
       sanitized.h = validateNumber(props.h, 10, 2000, 100, "height");
-      sanitized.playing =
-        typeof props.playing === "boolean" ? props.playing : true;
+      sanitized.playing = typeof props.playing === "boolean" ? props.playing : true;
       sanitized.url = typeof props.url === "string" ? props.url : "";
       sanitized.w = validateNumber(props.w, 10, 2000, 100, "width");
       break;
 
     case "video":
-      sanitized.altText =
-        typeof props.altText === "string" ? props.altText : "";
+      sanitized.altText = typeof props.altText === "string" ? props.altText : "";
       sanitized.assetId =
         typeof props.assetId === "string" || props.assetId === null
           ? props.assetId
           : null;
-      sanitized.autoplay =
-        typeof props.autoplay === "boolean" ? props.autoplay : false;
+      sanitized.autoplay = typeof props.autoplay === "boolean" ? props.autoplay : false;
       sanitized.h = validateNumber(props.h, 10, 2000, 100, "height");
-      sanitized.playing =
-        typeof props.playing === "boolean" ? props.playing : false;
+      sanitized.playing = typeof props.playing === "boolean" ? props.playing : false;
       sanitized.time = validateNumber(props.time, 0, Infinity, 0, "time");
       sanitized.url = typeof props.url === "string" ? props.url : "";
       sanitized.w = validateNumber(props.w, 10, 2000, 100, "width");
@@ -575,7 +556,7 @@ function sanitizeProps(shapeType: TldrawShapeType, props: any): any {
         props.spline,
         ["line", "cubic"] as const,
         "line",
-        "spline"
+        "spline",
       );
       sanitized.points =
         props.points && typeof props.points === "object" ? props.points : {};
@@ -610,7 +591,7 @@ export class ShapeConverterService {
         0,
         2 * Math.PI,
         0,
-        "rotation"
+        "rotation",
       );
       const safeOpacity = validateNumber(mcpShape.opacity, 0, 1, 1, "opacity");
       const sanitizedProps = sanitizeProps(safeType, mcpShape.props);
@@ -627,10 +608,7 @@ export class ShapeConverterService {
         isLocked: Boolean(mcpShape.isLocked),
         opacity: safeOpacity,
         props: sanitizedProps as any,
-        meta:
-          mcpShape.meta && typeof mcpShape.meta === "object"
-            ? mcpShape.meta
-            : {},
+        meta: mcpShape.meta && typeof mcpShape.meta === "object" ? mcpShape.meta : {},
       };
 
       return tldrawShape;
@@ -665,7 +643,7 @@ export class ShapeConverterService {
 
     if (errorCount > 0) {
       console.warn(
-        `[Converter] Batch conversion: ${convertedShapes.length} ok, ${errorCount} failed`
+        `[Converter] Batch conversion: ${convertedShapes.length} ok, ${errorCount} failed`,
       );
     }
 
@@ -731,28 +709,18 @@ export class ShapeConverterService {
       const repairedProps = sanitizeProps(validType, mcpShape.props);
 
       const repairedShape: MCPShape = {
-        id:
-          typeof mcpShape.id === "string" ? mcpShape.id : `shape:${Date.now()}`,
+        id: typeof mcpShape.id === "string" ? mcpShape.id : `shape:${Date.now()}`,
         type: validType,
         typeName: "shape",
         x: validateNumber(mcpShape.x, -10000, 10000, 100, "x"),
         y: validateNumber(mcpShape.y, -10000, 10000, 100, "y"),
-        rotation: validateNumber(
-          mcpShape.rotation,
-          0,
-          2 * Math.PI,
-          0,
-          "rotation"
-        ),
+        rotation: validateNumber(mcpShape.rotation, 0, 2 * Math.PI, 0, "rotation"),
         index: mcpShape.index || "a1",
         parentId: mcpShape.parentId || "page:page",
         isLocked: Boolean(mcpShape.isLocked),
         opacity: validateNumber(mcpShape.opacity, 0, 1, 1, "opacity"),
         props: repairedProps,
-        meta:
-          mcpShape.meta && typeof mcpShape.meta === "object"
-            ? mcpShape.meta
-            : {},
+        meta: mcpShape.meta && typeof mcpShape.meta === "object" ? mcpShape.meta : {},
         createdAt: mcpShape.createdAt,
         updatedAt: mcpShape.updatedAt || new Date().toISOString(),
         version: mcpShape.version,

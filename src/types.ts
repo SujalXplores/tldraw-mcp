@@ -209,7 +209,7 @@ export interface TldrawFrameShapeProps {
   w: number;
 }
 
-export interface TldrawGroupShapeProps { }
+export interface TldrawGroupShapeProps {}
 
 export interface TldrawEmbedShapeProps {
   h: number;
@@ -259,32 +259,32 @@ export interface TldrawLineShapeProps {
 // Generic shape props type
 export type TldrawShapeProps<T extends TldrawShapeType = TldrawShapeType> =
   T extends "geo"
-  ? TldrawGeoShapeProps
-  : T extends "text"
-  ? TldrawTextShapeProps
-  : T extends "arrow"
-  ? TldrawArrowShapeProps
-  : T extends "draw"
-  ? TldrawDrawShapeProps
-  : T extends "highlight"
-  ? TldrawHighlightShapeProps
-  : T extends "note"
-  ? TldrawNoteShapeProps
-  : T extends "frame"
-  ? TldrawFrameShapeProps
-  : T extends "group"
-  ? TldrawGroupShapeProps
-  : T extends "embed"
-  ? TldrawEmbedShapeProps
-  : T extends "bookmark"
-  ? TldrawBookmarkShapeProps
-  : T extends "image"
-  ? TldrawImageShapeProps
-  : T extends "video"
-  ? TldrawVideoShapeProps
-  : T extends "line"
-  ? TldrawLineShapeProps
-  : Record<string, unknown>;
+    ? TldrawGeoShapeProps
+    : T extends "text"
+      ? TldrawTextShapeProps
+      : T extends "arrow"
+        ? TldrawArrowShapeProps
+        : T extends "draw"
+          ? TldrawDrawShapeProps
+          : T extends "highlight"
+            ? TldrawHighlightShapeProps
+            : T extends "note"
+              ? TldrawNoteShapeProps
+              : T extends "frame"
+                ? TldrawFrameShapeProps
+                : T extends "group"
+                  ? TldrawGroupShapeProps
+                  : T extends "embed"
+                    ? TldrawEmbedShapeProps
+                    : T extends "bookmark"
+                      ? TldrawBookmarkShapeProps
+                      : T extends "image"
+                        ? TldrawImageShapeProps
+                        : T extends "video"
+                          ? TldrawVideoShapeProps
+                          : T extends "line"
+                            ? TldrawLineShapeProps
+                            : Record<string, unknown>;
 
 // Base shape interface
 export interface TLBaseShape<Type extends string, Props extends object> {
@@ -307,10 +307,7 @@ export type TLGeoShape = TLBaseShape<"geo", TldrawGeoShapeProps>;
 export type TLTextShape = TLBaseShape<"text", TldrawTextShapeProps>;
 export type TLArrowShape = TLBaseShape<"arrow", TldrawArrowShapeProps>;
 export type TLDrawShape = TLBaseShape<"draw", TldrawDrawShapeProps>;
-export type TLHighlightShape = TLBaseShape<
-  "highlight",
-  TldrawHighlightShapeProps
->;
+export type TLHighlightShape = TLBaseShape<"highlight", TldrawHighlightShapeProps>;
 export type TLNoteShape = TLBaseShape<"note", TldrawNoteShapeProps>;
 export type TLFrameShape = TLBaseShape<"frame", TldrawFrameShapeProps>;
 export type TLGroupShape = TLBaseShape<"group", TldrawGroupShapeProps>;
@@ -356,9 +353,7 @@ export interface MCPShape<T extends TldrawShapeType = TldrawShapeType> {
 }
 
 // Input/Output types
-export interface MCPShapeCreateInput<
-  T extends TldrawShapeType = TldrawShapeType
-> {
+export interface MCPShapeCreateInput<T extends TldrawShapeType = TldrawShapeType> {
   type: T;
   x: number;
   y: number;
@@ -370,9 +365,7 @@ export interface MCPShapeCreateInput<
   parentId?: string;
 }
 
-export interface MCPShapeUpdateInput<
-  T extends TldrawShapeType = TldrawShapeType
-> {
+export interface MCPShapeUpdateInput<T extends TldrawShapeType = TldrawShapeType> {
   id: string;
   type?: T;
   x?: number;
