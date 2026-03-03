@@ -16,64 +16,64 @@ import { z } from "zod";
 
 dotenv.config();
 
-const NEXTJS_SERVER_URL = process.env.NEXTJS_SERVER_URL || "http://localhost:3000";
+const NEXTJS_SERVER_URL = process.env.NEXTJS_SERVER_URL ?? "http://localhost:3000";
 
 let mcpConnected = false;
 
 const logger = {
-  debug: (message: string, data?: any) => {
+  debug: (message: string, data?: unknown) => {
     if (process.env.DEBUG === "true" && mcpConnected) {
       console.error(
         JSON.stringify({
           level: "debug",
           timestamp: new Date().toISOString(),
           logger: "mcp-tldraw-server",
-          message: message,
-          ...(data && { data }),
+          message,
+          ...(data != null && { data }),
         }),
       );
     }
   },
-  info: (message: string, data?: any) => {
+  info: (message: string, data?: unknown) => {
     if (process.env.VERBOSE_LOGS === "true" && mcpConnected) {
       console.error(
         JSON.stringify({
           level: "info",
           timestamp: new Date().toISOString(),
           logger: "mcp-tldraw-server",
-          message: message,
-          ...(data && { data }),
+          message,
+          ...(data != null && { data }),
         }),
       );
     }
   },
-  warn: (message: string, data?: any) => {
+  warn: (message: string, data?: unknown) => {
     if (process.env.VERBOSE_LOGS === "true" && mcpConnected) {
       console.error(
         JSON.stringify({
           level: "warning",
           timestamp: new Date().toISOString(),
           logger: "mcp-tldraw-server",
-          message: message,
-          ...(data && { data }),
+          message,
+          ...(data != null && { data }),
         }),
       );
     }
   },
-  error: (message: string, data?: any) => {
+  error: (message: string, data?: unknown) => {
     console.error(
       JSON.stringify({
         level: "error",
         timestamp: new Date().toISOString(),
         logger: "mcp-tldraw-server",
-        message: message,
-        ...(data && { data }),
+        message,
+        ...(data != null && { data }),
       }),
     );
   },
-  startup: (...args: any[]) => {
+  startup: (...args: unknown[]) => {
     if (process.env.DEBUG === "true") {
-      console.error(`[STARTUP] ${args.join(" ")}`);
+      console.error(`[STARTUP] ${args.map(String).join(" ")}`);
     }
   },
 };
@@ -81,21 +81,15 @@ const logger = {
 import {
   TLDRAW_SHAPE_TYPES,
   type TldrawShapeType,
-  normalizeColor,
-  validateNumber,
-  validateEnum,
-  validateShapeType,
-  createSafeRichText,
   preprocessAIShapeData,
-  getShapeDefaults,
   sanitizeShapeProps,
+  getErrorMessage,
 } from "./lib";
 
 const StrictShapePropsSchema = z
   .object({})
-  .catchall(z.any())
-  .transform((props, ctx) => {
-    // Props will be sanitized by sanitizeShapeProps
+  .catchall(z.unknown())
+  .transform((props) => {
     return props;
   });
 
@@ -174,7 +168,18 @@ function normalizeShapeId(id: string): string {
   return trimmed.startsWith("shape:") ? trimmed : `shape:${trimmed}`;
 }
 
-async function sendToAPI(operation: string, data: any): Promise<any> {
+interface ApiShapeData {
+  id?: string;
+  type?: string;
+  [key: string]: unknown;
+}
+
+interface ApiShapeResponse {
+  shape?: { id?: string };
+  [key: string]: unknown;
+}
+
+async function sendToAPI(operation: string, data: ApiShapeData | ApiShapeData[]): Promise<ApiShapeResponse | null> {
   logger.info(`API ${operation}`);
 
   try {
@@ -182,7 +187,7 @@ async function sendToAPI(operation: string, data: any): Promise<any> {
     let options: RequestInit;
 
     // Normalize shape IDs for update/delete operations
-    if (["update", "delete"].includes(operation) && data?.id) {
+    if (["update", "delete"].includes(operation) && !Array.isArray(data) && data.id) {
       data.id = normalizeShapeId(data.id);
     }
 
@@ -196,19 +201,23 @@ async function sendToAPI(operation: string, data: any): Promise<any> {
         };
         break;
 
-      case "update":
-        url = `${NEXTJS_SERVER_URL}/api/shapes/${data.id}`;
+      case "update": {
+        const updateData = data as ApiShapeData;
+        url = `${NEXTJS_SERVER_URL}/api/shapes/${updateData.id ?? ""}`;
         options = {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
         };
         break;
+      }
 
-      case "delete":
-        url = `${NEXTJS_SERVER_URL}/api/shapes/${data.id}`;
+      case "delete": {
+        const deleteData = data as ApiShapeData;
+        url = `${NEXTJS_SERVER_URL}/api/shapes/${deleteData.id ?? ""}`;
         options = { method: "DELETE" };
         break;
+      }
 
       case "batch_create":
         url = `${NEXTJS_SERVER_URL}/api/shapes/batch`;
@@ -232,13 +241,15 @@ async function sendToAPI(operation: string, data: any): Promise<any> {
       );
     }
 
-    return await response.json();
-  } catch (error: any) {
-    logger.error(`API ${operation} failed: ${error.message}`);
+    return (await response.json()) as ApiShapeResponse;
+  } catch (error: unknown) {
+    logger.error(`API ${operation} failed: ${getErrorMessage(error)}`);
     return null;
   }
 }
 
+// Server is deprecated in favor of McpServer, but we use the low-level API intentionally
+// eslint-disable-next-line @typescript-eslint/no-deprecated
 const server = new Server(
   {
     name: "mcp-tldraw-server",
@@ -327,16 +338,16 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
       case "get_shapes": {
         const response = await fetch(`${NEXTJS_SERVER_URL}/api/shapes`);
-        const rawJson = await response.json();
+        const rawJson: unknown = await response.json();
         const result = MCPShapesResponseSchema.parse(rawJson);
 
         if (result.success && result.shapes) {
-          const summary = result.shapes.map((s) => `${s.type}(${s.x},${s.y})`).join(", ");
+          const summary = result.shapes.map((s) => `${s.type}(${String(s.x)},${String(s.y)})`).join(", ");
           return {
             content: [
               {
                 type: "text",
-                text: `Found ${result.shapes.length} shapes:\n${summary}\n\n${JSON.stringify(result.shapes, null, 2)}`,
+                text: `Found ${String(result.shapes.length)} shapes:\n${summary}\n\n${JSON.stringify(result.shapes, null, 2)}`,
               },
             ],
           };
@@ -345,7 +356,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             content: [
               {
                 type: "text",
-                text: `Error fetching shapes: ${result.error || "Unknown error"}`,
+                text: `Error fetching shapes: ${result.error ?? "Unknown error"}`,
               },
             ],
           };
@@ -355,8 +366,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       default:
         throw new Error(`Unknown tool: ${name}`);
     }
-  } catch (error: any) {
-    logger.error(`[${requestId}] ${error.message}`);
+  } catch (error: unknown) {
+    logger.error(`[${requestId}] ${getErrorMessage(error)}`);
 
     if (error instanceof z.ZodError) {
       const errorDetails = error.issues
@@ -378,7 +389,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       content: [
         {
           type: "text",
-          text: `Error: ${error.message}`,
+          text: `Error: ${getErrorMessage(error)}`,
         },
       ],
       isError: true,
@@ -386,7 +397,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   }
 });
 
-server.setRequestHandler(ListToolsRequestSchema, async () => {
+server.setRequestHandler(ListToolsRequestSchema, () => {
   return {
     tools: [
       {
@@ -622,13 +633,13 @@ async function runServer(): Promise<void> {
 
     logger.startup("MCP server ready");
     process.stdin.resume();
-  } catch (error) {
+  } catch (error: unknown) {
     logger.error("Failed to start MCP server:", error);
     process.exit(1);
   }
 }
 
-process.on("uncaughtException", (error) => {
+process.on("uncaughtException", (error: Error) => {
   logger.error("Uncaught exception:", {
     error: error.message,
     stack: error.stack,
@@ -636,14 +647,14 @@ process.on("uncaughtException", (error) => {
   process.exit(1);
 });
 
-process.on("unhandledRejection", (reason) => {
+process.on("unhandledRejection", (reason: unknown) => {
   logger.error("Unhandled rejection:", { reason: String(reason) });
   process.exit(1);
 });
 
 if (fileURLToPath(import.meta.url) === process.argv[1]) {
-  runServer().catch((error) => {
-    logger.error("Server startup failed:", { error: error.message });
+  runServer().catch((error: unknown) => {
+    logger.error("Server startup failed:", { error: getErrorMessage(error) });
     process.exit(1);
   });
 }

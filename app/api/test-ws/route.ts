@@ -1,7 +1,12 @@
-import { MCPShapeCreateInput } from "@/src/types";
+import type { MCPShapeCreateInput } from "@/src/types";
 import { NextResponse } from "next/server";
+import { getErrorMessage } from "@/src/lib";
 
-const WS_SERVER_URL = process.env.WS_SERVER_URL || "http://localhost:4000";
+const WS_SERVER_URL = process.env.WS_SERVER_URL ?? "http://localhost:4000";
+
+interface BroadcastResult {
+  clientsCount: number;
+}
 
 /**
  * Test endpoint for WebSocket broadcasting
@@ -43,7 +48,7 @@ export async function POST(): Promise<NextResponse> {
       });
 
       if (response.ok) {
-        const result = await response.json();
+        const result = (await response.json()) as BroadcastResult;
 
         return NextResponse.json({
           success: true,
@@ -65,30 +70,30 @@ export async function POST(): Promise<NextResponse> {
           shape: shape,
           wsNotification: {
             success: false,
-            error: `HTTP ${response.status}: ${errorText}`,
+            error: `HTTP ${String(response.status)}: ${errorText}`,
             wsServerUrl: WS_SERVER_URL,
           },
           timestamp: new Date().toISOString(),
         });
       }
-    } catch (fetchError: any) {
+    } catch (fetchError: unknown) {
       return NextResponse.json({
         success: false,
         message: "Shape created but WebSocket server unreachable",
         shape: shape,
         wsNotification: {
           success: false,
-          error: `Network error: ${fetchError.message}`,
+          error: `Network error: ${getErrorMessage(fetchError)}`,
           wsServerUrl: WS_SERVER_URL,
         },
         timestamp: new Date().toISOString(),
       });
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     return NextResponse.json(
       {
         success: false,
-        error: error.message,
+        error: getErrorMessage(error),
         timestamp: new Date().toISOString(),
       },
       { status: 500 },

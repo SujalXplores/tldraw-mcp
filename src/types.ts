@@ -6,7 +6,7 @@ export type TLParentId = string & { __type__: "TLParentId" };
 export type TLAssetId = string & { __type__: "TLAssetId" };
 export type IndexKey = string & { __type__: "IndexKey" };
 export type VecLike = { x: number; y: number; z?: number };
-export type JsonObject = Record<string, any>;
+export type JsonObject = Record<string, unknown>;
 
 export type TldrawShapeType =
   | "geo"
@@ -209,7 +209,7 @@ export interface TldrawFrameShapeProps {
   w: number;
 }
 
-export interface TldrawGroupShapeProps {}
+export type TldrawGroupShapeProps = Record<string, never>;
 
 export interface TldrawEmbedShapeProps {
   h: number;

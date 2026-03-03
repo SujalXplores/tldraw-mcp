@@ -14,6 +14,7 @@
     "format:check": "prettier --check \"src/**/*.ts\" \"app/**/*.{ts,tsx}\" \"components/**/*.tsx\" \"server/**/*.ts\"",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "check": "pnpm lint && pnpm typecheck && pnpm test"
   },
   "dependencies": {
@@ -38,6 +39,8 @@
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@types/ws": "8.18.1",
+    "@typescript-eslint/eslint-plugin": "8.56.1",
+    "@typescript-eslint/parser": "8.56.1",
     "autoprefixer": "10.4.27",
     "concurrently": "9.2.1",
     "cross-env": "10.1.0",
@@ -47,7 +50,9 @@
     "postcss": "8.5.8",
     "prettier": "3.8.1",
     "tailwindcss": "4.2.1",
-    "typescript": "5.9.3"
+    "ts-jest": "29.4.6",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.56.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

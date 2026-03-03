@@ -125,67 +125,65 @@ export function createTldrawShapePartial(localShape: LocalTLShape): TldrawTLShap
 }
 
 /**
- * Utility functions for working with IDs
+ * Ensure a shape ID has the proper format for Tldraw
  */
-export class IdConverter {
-  /**
-   * Ensure a shape ID has the proper format for Tldraw
-   */
-  static ensureTldrawShapeId(id: string): TldrawShapeId {
-    if (!id.startsWith("shape:")) {
-      return `shape:${id}` as TldrawShapeId;
-    }
-    return id as TldrawShapeId;
+export function ensureTldrawShapeId(id: string): TldrawShapeId {
+  if (!id.startsWith("shape:")) {
+    return `shape:${id}` as TldrawShapeId;
   }
-
-  /**
-   * Extract the raw ID from a Tldraw shape ID
-   */
-  static extractRawId(id: TldrawShapeId): string {
-    const idStr = id as string;
-    return idStr.startsWith("shape:") ? idStr.slice(6) : idStr;
-  }
-
-  /**
-   * Generate a random shape ID for Tldraw
-   */
-  static generateTldrawShapeId(): TldrawShapeId {
-    const randomId = Math.random().toString(36).substr(2, 9);
-    return `shape:${randomId}` as TldrawShapeId;
-  }
-
-  /**
-   * Ensure a parent ID has the proper format for Tldraw
-   */
-  static ensureTldrawParentId(id: string): TldrawParentId {
-    if (!id.startsWith("page:") && !id.startsWith("shape:")) {
-      return `page:${id}` as TldrawParentId;
-    }
-    return id as TldrawParentId;
-  }
-
-  /**
-   * Generate a valid index key for Tldraw positioning
-   */
-  static generateTldrawIndexKey(): TldrawIndexKey {
-    // This is a simplified version - Tldraw uses fractional indexing
-    return `a${Math.random().toString(36).substr(2, 8)}` as TldrawIndexKey;
-  }
+  return id as TldrawShapeId;
 }
 
 /**
- * Type guards for checking ID formats
+ * Extract the raw ID from a Tldraw shape ID
  */
-export class IdValidator {
-  static isValidTldrawShapeId(id: string): id is TldrawShapeId {
-    return typeof id === "string" && id.startsWith("shape:");
-  }
+export function extractRawId(id: TldrawShapeId): string {
+  const idStr = id as string;
+  return idStr.startsWith("shape:") ? idStr.slice(6) : idStr;
+}
 
-  static isValidTldrawParentId(id: string): id is TldrawParentId {
-    return typeof id === "string" && (id.startsWith("page:") || id.startsWith("shape:"));
-  }
+/**
+ * Generate a random shape ID for Tldraw
+ */
+export function generateTldrawShapeId(): TldrawShapeId {
+  const randomId = Math.random().toString(36).substring(2, 11);
+  return `shape:${randomId}` as TldrawShapeId;
+}
 
-  static isValidTldrawIndexKey(key: string): key is TldrawIndexKey {
-    return typeof key === "string" && key.length > 0;
+/**
+ * Ensure a parent ID has the proper format for Tldraw
+ */
+export function ensureTldrawParentId(id: string): TldrawParentId {
+  if (!id.startsWith("page:") && !id.startsWith("shape:")) {
+    return `page:${id}` as TldrawParentId;
   }
+  return id as TldrawParentId;
+}
+
+/**
+ * Generate a valid index key for Tldraw positioning
+ */
+export function generateTldrawIndexKey(): TldrawIndexKey {
+  return `a${Math.random().toString(36).substring(2, 10)}` as TldrawIndexKey;
+}
+
+/**
+ * Type guard: checks if a string is a valid Tldraw shape ID
+ */
+export function isValidTldrawShapeId(id: string): id is TldrawShapeId {
+  return typeof id === "string" && id.startsWith("shape:");
+}
+
+/**
+ * Type guard: checks if a string is a valid Tldraw parent ID
+ */
+export function isValidTldrawParentId(id: string): id is TldrawParentId {
+  return typeof id === "string" && (id.startsWith("page:") || id.startsWith("shape:"));
+}
+
+/**
+ * Type guard: checks if a string is a valid Tldraw index key
+ */
+export function isValidTldrawIndexKey(key: string): key is TldrawIndexKey {
+  return typeof key === "string" && key.length > 0;
 }

@@ -1,6 +1,6 @@
 import { WebSocketServer, WebSocket } from "ws";
-import { Server as HttpServer } from "http";
-import { MCPWebSocketMessage } from "../types";
+import type { Server as HttpServer, IncomingMessage } from "http";
+import type { MCPWebSocketMessage } from "../types";
 import logger from "./logger";
 
 /**
@@ -26,8 +26,8 @@ export class WebSocketService {
     return this.wss;
   }
 
-  private handleConnection(ws: WebSocket, request: any): void {
-    const userAgent = request.headers["user-agent"] || "";
+  private handleConnection(ws: WebSocket, request: IncomingMessage): void {
+    const userAgent = request.headers["user-agent"] ?? "";
     const isBrowser =
       userAgent.includes("Mozilla") ||
       userAgent.includes("Chrome") ||
@@ -39,11 +39,11 @@ export class WebSocketService {
     }
 
     this.browserClients.add(ws);
-    logger.info(`[WS] Browser connected (total: ${this.browserClients.size})`);
+    logger.info(`[WS] Browser connected (total: ${String(this.browserClients.size)})`);
 
     ws.on("close", () => {
       this.browserClients.delete(ws);
-      logger.info(`[WS] Browser disconnected (total: ${this.browserClients.size})`);
+      logger.info(`[WS] Browser disconnected (total: ${String(this.browserClients.size)})`);
     });
 
     ws.on("error", (error) => {
@@ -82,7 +82,7 @@ export class WebSocketService {
     });
 
     deadClients.forEach((client) => this.browserClients.delete(client));
-    logger.info(`[WS] Broadcast ${message.type} to ${sentCount} client(s)`);
+    logger.info(`[WS] Broadcast ${message.type} to ${String(sentCount)} client(s)`);
   }
 
   private sendToClient(client: WebSocket, message: MCPWebSocketMessage): void {
@@ -99,11 +99,11 @@ export class WebSocketService {
     return this.browserClients.size;
   }
 
-  getStatus() {
+  getStatus(): { initialized: boolean; browserClientsCount: number; serverReady: boolean } {
     return {
-      initialized: !!this.wss,
+      initialized: this.wss !== null,
       browserClientsCount: this.browserClients.size,
-      serverReady: !!this.wss && !!this.httpServer?.listening,
+      serverReady: this.wss !== null && (this.httpServer?.listening === true),
     };
   }
 

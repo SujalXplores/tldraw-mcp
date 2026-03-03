@@ -1,6 +1,6 @@
 // API route for shape CRUD operations
-import { NextRequest, NextResponse } from "next/server";
-import type { MCPShapeResponse, MCPShapesResponse } from "@/src/types";
+import { type NextRequest, NextResponse } from "next/server";
+import type { MCPShapeCreateInput, MCPShapeResponse, MCPShapesResponse } from "@/src/types";
 import { shapeStorage } from "@/src/services/singleton";
 import {
   preprocessAIShapeData,
@@ -9,6 +9,7 @@ import {
   sanitizeRichText,
   getShapeDefaults,
   notifyWebSocketServer,
+  getErrorMessage,
 } from "@/src/lib";
 
 /**
@@ -24,12 +25,12 @@ export async function GET(): Promise<NextResponse<MCPShapesResponse>> {
       count: shapes.length,
       timestamp: new Date().toISOString(),
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("[API] Error fetching shapes:", error);
     return NextResponse.json(
       {
         success: false,
-        error: error.message || "Failed to fetch shapes",
+        error: getErrorMessage(error) ?? "Failed to fetch shapes",
         shapes: [],
         count: 0,
         timestamp: new Date().toISOString(),
@@ -46,7 +47,7 @@ export async function POST(
   request: NextRequest,
 ): Promise<NextResponse<MCPShapeResponse>> {
   try {
-    const rawBody = await request.json();
+    const rawBody: unknown = await request.json();
     const processedBody = preprocessAIShapeData(rawBody);
 
     if (
@@ -58,14 +59,16 @@ export async function POST(
         {
           success: false,
           error: "Missing required fields: type, x, y",
-          shape: {} as any,
+          shape: undefined as unknown as MCPShapeResponse["shape"],
           timestamp: new Date().toISOString(),
         },
         { status: 400 },
       );
     }
 
-    const shape = await shapeStorage.createShape(processedBody as any);
+    const shape = await shapeStorage.createShape(
+      processedBody as unknown as MCPShapeCreateInput,
+    );
     await notifyWebSocketServer({
       type: "shape_created",
       timestamp: new Date().toISOString(),
@@ -76,7 +79,7 @@ export async function POST(
       { success: true, shape, timestamp: new Date().toISOString() },
       { status: 201 },
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("[API] Error creating shape:", error);
 
     // Create a safe fallback shape so AI doesn't break the canvas
@@ -113,8 +116,8 @@ export async function POST(
       return NextResponse.json(
         {
           success: false,
-          error: error.message || "Failed to create shape",
-          shape: {} as any,
+          error: getErrorMessage(error) ?? "Failed to create shape",
+          shape: undefined as unknown as MCPShapeResponse["shape"],
           timestamp: new Date().toISOString(),
         },
         { status: 500 },

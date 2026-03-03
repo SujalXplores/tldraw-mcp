@@ -1,8 +1,10 @@
 import { createServer } from "http";
 import { webSocketService } from "../src/services/singleton";
 import logger from "../src/services/logger";
+import type { MCPWebSocketMessage } from "../src/types";
+import { getErrorMessage } from "../src/lib";
 
-const port = parseInt(process.env.WS_PORT || "4000", 10);
+const port = parseInt(process.env.WS_PORT ?? "4000", 10);
 
 const server = createServer((req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -17,10 +19,10 @@ const server = createServer((req, res) => {
 
   if (req.method === "POST" && req.url === "/broadcast") {
     let body = "";
-    req.on("data", (chunk) => (body += chunk.toString()));
+    req.on("data", (chunk: Buffer) => (body += chunk.toString()));
     req.on("end", () => {
       try {
-        const data = JSON.parse(body);
+        const data = JSON.parse(body) as MCPWebSocketMessage;
         webSocketService.broadcast(data);
         const status = webSocketService.getStatus();
 
@@ -33,10 +35,10 @@ const server = createServer((req, res) => {
             timestamp: new Date().toISOString(),
           }),
         );
-      } catch (error: any) {
+      } catch (error: unknown) {
         logger.error("[WS] Broadcast error:", error);
         res.writeHead(400, { "Content-Type": "application/json" });
-        res.end(JSON.stringify({ success: false, error: error.message }));
+        res.end(JSON.stringify({ success: false, error: getErrorMessage(error) }));
       }
     });
     return;
@@ -61,9 +63,9 @@ const server = createServer((req, res) => {
 webSocketService.initialize(server);
 
 server.listen(port, () => {
-  logger.info(`WebSocket server running on ws://localhost:${port}`);
-  logger.info(`  POST http://localhost:${port}/broadcast`);
-  logger.info(`  GET  http://localhost:${port}/status`);
+  logger.info(`WebSocket server running on ws://localhost:${String(port)}`);
+  logger.info(`  POST http://localhost:${String(port)}/broadcast`);
+  logger.info(`  GET  http://localhost:${String(port)}/status`);
 });
 
 function shutdown() {

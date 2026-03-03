@@ -1,4 +1,5 @@
 export * from "./constants";
+export * from "./errors";
 export * from "./validation";
 export * from "./rich-text";
 export * from "./shape-defaults";

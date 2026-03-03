@@ -1,4 +1,4 @@
-import type { TLShape } from "tldraw";
+import type { TLShape, TLShapeId, IndexKey, TLParentId } from "tldraw";
 import type { MCPShape, TldrawShapeType } from "../types";
 import { getShapeDefaults } from "../lib/shape-defaults";
 import { sanitizeShapeProps } from "../lib/shape-sanitizer";
@@ -24,23 +24,24 @@ export class ShapeConverterService {
       const safeOpacity = validateNumber(mcpShape.opacity, 0, 1, 1);
       const sanitizedProps = sanitizeShapeProps(safeType, mcpShape.props as Record<string, unknown>);
 
-      const tldrawShape: TLShape = {
-        id: safeId as any,
-        typeName: "shape",
+      // Constructed from validated data - cast needed for discriminated union compatibility
+      const tldrawShape = {
+        id: safeId as TLShapeId,
+        typeName: "shape" as const,
         type: safeType,
         x: safeX,
         y: safeY,
         rotation: safeRotation,
-        index: (mcpShape.index || "a1") as any,
-        parentId: (mcpShape.parentId || "page:page") as any,
-        isLocked: Boolean(mcpShape.isLocked),
+        index: (mcpShape.index ?? "a1") as IndexKey,
+        parentId: (mcpShape.parentId ?? "page:page") as TLParentId,
+        isLocked: mcpShape.isLocked,
         opacity: safeOpacity,
-        props: sanitizedProps as any,
+        props: sanitizedProps,
         meta: mcpShape.meta && typeof mcpShape.meta === "object" ? mcpShape.meta : {},
-      };
+      } as unknown as TLShape;
 
       return tldrawShape;
-    } catch (error) {
+    } catch (error: unknown) {
       console.error("[Converter] Error converting MCP shape:", error);
       return this.createFallbackShape();
     }
@@ -58,20 +59,20 @@ export class ShapeConverterService {
     mcpShapes.forEach((shape, index) => {
       try {
         if (!shape || typeof shape !== "object") {
-          console.error(`[Converter] Skipping invalid shape at index ${index}`);
+          console.error(`[Converter] Skipping invalid shape at index ${String(index)}`);
           errorCount++;
           return;
         }
         convertedShapes.push(this.toTldrawShape(shape));
-      } catch (error) {
-        console.error(`[Converter] Failed to convert shape ${index}:`, error);
+      } catch (error: unknown) {
+        console.error(`[Converter] Failed to convert shape ${String(index)}:`, error);
         errorCount++;
       }
     });
 
     if (errorCount > 0) {
       console.warn(
-        `[Converter] Batch conversion: ${convertedShapes.length} ok, ${errorCount} failed`,
+        `[Converter] Batch conversion: ${String(convertedShapes.length)} ok, ${String(errorCount)} failed`,
       );
     }
 
@@ -80,24 +81,26 @@ export class ShapeConverterService {
 
   private createFallbackShape(): TLShape {
     return {
-      id: `fallback-${Date.now()}` as any,
-      typeName: "shape",
+      id: `fallback-${Date.now()}` as TLShapeId,
+      typeName: "shape" as const,
       type: "geo",
       x: 100,
       y: 100,
       rotation: 0,
-      index: "a1" as any,
-      parentId: "page:page" as any,
+      index: "a1" as IndexKey,
+      parentId: "page:page" as TLParentId,
       isLocked: false,
       opacity: 1,
-      props: getShapeDefaults("geo") as any,
+      props: getShapeDefaults("geo"),
       meta: {},
-    };
+    } as unknown as TLShape;
   }
 
   fromTldrawShape(tldrawShape: TLShape): MCPShape {
     try {
-      const mcpShape: MCPShape = {
+      // Cast needed: TLShape uses branded/discriminated union props,
+      // while MCPShape uses our simplified prop interfaces
+      return {
         id: tldrawShape.id,
         type: tldrawShape.type as TldrawShapeType,
         typeName: "shape",
@@ -108,13 +111,11 @@ export class ShapeConverterService {
         parentId: tldrawShape.parentId,
         isLocked: tldrawShape.isLocked,
         opacity: tldrawShape.opacity,
-        props: tldrawShape.props,
-        meta: tldrawShape.meta,
+        props: tldrawShape.props as unknown as MCPShape["props"],
+        meta: tldrawShape.meta as Record<string, unknown>,
         updatedAt: new Date().toISOString(),
-      };
-
-      return mcpShape;
-    } catch (error) {
+      } as MCPShape;
+    } catch (error: unknown) {
       console.error("[Converter] Error converting Tldraw shape:", error);
       throw error;
     }
@@ -124,8 +125,8 @@ export class ShapeConverterService {
     return tldrawShapes.map((shape, index) => {
       try {
         return this.fromTldrawShape(shape);
-      } catch (error) {
-        console.error(`[Converter] Failed to convert shape ${index}:`, error);
+      } catch (error: unknown) {
+        console.error(`[Converter] Failed to convert shape ${String(index)}:`, error);
         throw error;
       }
     });
@@ -136,32 +137,32 @@ export class ShapeConverterService {
       const validType = validateShapeType(mcpShape.type);
       const repairedProps = sanitizeShapeProps(validType, mcpShape.props as Record<string, unknown>);
 
-      const repairedShape: MCPShape = {
+      const repairedShape = {
         id: typeof mcpShape.id === "string" ? mcpShape.id : `shape:${Date.now()}`,
         type: validType,
-        typeName: "shape",
+        typeName: "shape" as const,
         x: validateNumber(mcpShape.x, -10000, 10000, 100),
         y: validateNumber(mcpShape.y, -10000, 10000, 100),
         rotation: validateNumber(mcpShape.rotation, 0, 2 * Math.PI, 0),
-        index: mcpShape.index || "a1",
-        parentId: mcpShape.parentId || "page:page",
-        isLocked: Boolean(mcpShape.isLocked),
+        index: mcpShape.index ?? "a1",
+        parentId: mcpShape.parentId ?? "page:page",
+        isLocked: mcpShape.isLocked,
         opacity: validateNumber(mcpShape.opacity, 0, 1, 1),
         props: repairedProps,
         meta: mcpShape.meta && typeof mcpShape.meta === "object" ? mcpShape.meta : {},
         createdAt: mcpShape.createdAt,
-        updatedAt: mcpShape.updatedAt || new Date().toISOString(),
+        updatedAt: mcpShape.updatedAt ?? new Date().toISOString(),
         version: mcpShape.version,
-      };
+      } as MCPShape;
 
       return repairedShape;
-    } catch (error) {
+    } catch (error: unknown) {
       console.error("[Converter] Error repairing shape:", error);
 
       return {
-        id: mcpShape.id || `fallback-${Date.now()}`,
+        id: mcpShape.id ?? `fallback-${Date.now()}`,
         type: "geo",
-        typeName: "shape",
+        typeName: "shape" as const,
         x: 100,
         y: 100,
         rotation: 0,
@@ -172,7 +173,7 @@ export class ShapeConverterService {
         props: getShapeDefaults("geo"),
         meta: {},
         updatedAt: new Date().toISOString(),
-      };
+      } as MCPShape;
     }
   }
 }

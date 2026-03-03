@@ -31,7 +31,7 @@ export function preprocessAIShapeData(
 
   // Convert text→richText for shapes that use richText
   if (["text", "geo", "note"].includes(type) && props.text && !props.richText) {
-    props.richText = createSafeRichText(String(props.text));
+    props.richText = createSafeRichText(String(props.text as string | number));
     delete props.text;
   }
 
@@ -42,7 +42,7 @@ export function preprocessAIShapeData(
 
   // For arrows, ensure text is a plain string
   if (type === "arrow" && props.text && typeof props.text !== "string") {
-    props.text = String(props.text);
+    props.text = String(props.text as string | number);
   }
 
   processed.props = sanitizeShapeProps(type, props);

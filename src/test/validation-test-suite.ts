@@ -1,7 +1,8 @@
 // Shape validation test suite
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 
 import { ShapeConverterService } from "../services/shape-converter";
-import { MCPShape } from "../types";
+import type { MCPShape } from "../types";
 
 /**
  * Test suite for shape validation and AI input sanitization
@@ -14,6 +15,7 @@ export class ValidationTestSuite {
     details: string;
   }> = [];
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   async runAllTests(): Promise<void> {
     console.log("Starting validation tests...");
 
@@ -34,7 +36,7 @@ export class ValidationTestSuite {
   private testValidShapes(): void {
     console.log("Testing valid shapes...");
 
-    const validShapes: MCPShape[] = [
+    const validShapes = [
       {
         id: "shape:test1",
         type: "geo",
@@ -88,17 +90,17 @@ export class ValidationTestSuite {
           arrowheadEnd: "arrow",
         },
       },
-    ];
+    ] as unknown as MCPShape[];
 
     try {
       const converted = this.converter.toTldrawShapes(validShapes);
       this.addResult(
         "Valid shapes conversion",
         converted.length === 3,
-        `Converted ${converted.length}/3 valid shapes`,
+        `Converted ${String(converted.length)}/3 valid shapes`,
       );
-    } catch (error) {
-      this.addResult("Valid shapes conversion", false, `Error: ${error}`);
+    } catch (error: unknown) {
+      this.addResult("Valid shapes conversion", false, `Error: ${String(error)}`);
     }
   }
 
@@ -117,7 +119,7 @@ export class ValidationTestSuite {
 
     invalidColorShapes.forEach(({ color, expected }) => {
       try {
-        const shape: MCPShape = {
+        const shape = {
           id: `test-color-${Date.now()}`,
           type: "geo",
           typeName: "shape",
@@ -130,18 +132,18 @@ export class ValidationTestSuite {
           opacity: 1,
           meta: {},
           props: { color, geo: "rectangle", w: 100, h: 100 },
-        };
+        } as MCPShape;
 
         const converted = this.converter.toTldrawShape(shape);
         const actualColor = (converted.props as any).color;
 
         this.addResult(
-          `Color mapping: ${color} → ${expected}`,
+          `Color mapping: ${String(color)} → ${expected}`,
           actualColor === expected,
-          `Got: ${actualColor}, Expected: ${expected}`,
+          `Got: ${String(actualColor)}, Expected: ${expected}`,
         );
-      } catch (error) {
-        this.addResult(`Color mapping: ${color}`, false, `Error: ${error}`);
+      } catch (error: unknown) {
+        this.addResult(`Color mapping: ${String(color)}`, false, `Error: ${String(error)}`);
       }
     });
   }
@@ -184,16 +186,16 @@ export class ValidationTestSuite {
           opacity: 1,
           meta: {},
           ...shape,
-          x: shape.x || 100,
-          y: shape.y || 100,
+          x: (shape as any).x ?? 100,
+          y: (shape as any).y ?? 100,
         } as MCPShape;
 
         const converted = this.converter.toTldrawShape(testShape);
         const hasValidProps = this.validateShapeProps(converted);
 
         this.addResult(name, hasValidProps, expected);
-      } catch (error) {
-        this.addResult(name, false, `Error: ${error}`);
+      } catch (error: unknown) {
+        this.addResult(name, false, `Error: ${String(error)}`);
       }
     });
   }
@@ -208,7 +210,7 @@ export class ValidationTestSuite {
 
     invalidTypes.forEach((type) => {
       try {
-        const shape: MCPShape = {
+        const shape = {
           id: `test-type-${Date.now()}`,
           type: type as any,
           typeName: "shape",
@@ -221,7 +223,7 @@ export class ValidationTestSuite {
           opacity: 1,
           meta: {},
           props: {},
-        };
+        } as MCPShape;
 
         const converted = this.converter.toTldrawShape(shape);
         const isValidType = [
@@ -241,12 +243,12 @@ export class ValidationTestSuite {
         ].includes(converted.type);
 
         this.addResult(
-          `Invalid type: ${type}`,
+          `Invalid type: ${String(type)}`,
           isValidType,
           `Converted to: ${converted.type}`,
         );
-      } catch (error) {
-        this.addResult(`Invalid type: ${type}`, false, `Error: ${error}`);
+      } catch (error: unknown) {
+        this.addResult(`Invalid type: ${String(type)}`, false, `Error: ${String(error)}`);
       }
     });
   }
@@ -268,7 +270,7 @@ export class ValidationTestSuite {
     invalidCoords.forEach((coords, index) => {
       try {
         const shape: MCPShape = {
-          id: `test-coords-${index}`,
+          id: `test-coords-${String(index)}`,
           type: "geo",
           typeName: "shape",
           rotation: 0,
@@ -295,13 +297,13 @@ export class ValidationTestSuite {
         this.addResult(
           `Invalid coords: ${JSON.stringify(coords)}`,
           hasValidCoords,
-          `Result: x=${converted.x}, y=${converted.y}`,
+          `Result: x=${String(converted.x)}, y=${String(converted.y)}`,
         );
-      } catch (error) {
+      } catch (error: unknown) {
         this.addResult(
           `Invalid coords: ${JSON.stringify(coords)}`,
           false,
-          `Error: ${error}`,
+          `Error: ${String(error)}`,
         );
       }
     });
@@ -324,8 +326,8 @@ export class ValidationTestSuite {
 
     invalidProps.forEach((props, index) => {
       try {
-        const shape: MCPShape = {
-          id: `test-props-${index}`,
+        const shape = {
+          id: `test-props-${String(index)}`,
           type: "geo",
           typeName: "shape",
           x: 100,
@@ -337,18 +339,18 @@ export class ValidationTestSuite {
           opacity: 1,
           meta: {},
           props: props as any,
-        };
+        } as MCPShape;
 
         const converted = this.converter.toTldrawShape(shape);
-        const hasValidProps = converted.props && typeof converted.props === "object";
+        const hasValidProps = converted.props != null && typeof converted.props === "object";
 
         this.addResult(
           `Invalid props: ${typeof props}`,
           hasValidProps,
           `Result: ${JSON.stringify(converted.props)}`,
         );
-      } catch (error) {
-        this.addResult(`Invalid props: ${typeof props}`, false, `Error: ${error}`);
+      } catch (error: unknown) {
+        this.addResult(`Invalid props: ${typeof props}`, false, `Error: ${String(error)}`);
       }
     });
   }
@@ -371,7 +373,7 @@ export class ValidationTestSuite {
 
     textTests.forEach(({ text, richText, expected }) => {
       try {
-        const shape: MCPShape = {
+        const shape = {
           id: `test-text-${Date.now()}`,
           type: "text",
           typeName: "shape",
@@ -384,16 +386,15 @@ export class ValidationTestSuite {
           opacity: 1,
           meta: {},
           props: richText ? { richText } : { text },
-        };
+        } as MCPShape;
 
         const converted = this.converter.toTldrawShape(shape);
         const hasRichText =
-          (converted.props as any).richText &&
-          (converted.props as any).richText.type === "doc";
+          (converted.props as any).richText?.type === "doc";
 
-        this.addResult(`Text conversion: ${text || "richText"}`, hasRichText, expected);
-      } catch (error) {
-        this.addResult(`Text conversion: ${text}`, false, `Error: ${error}`);
+        this.addResult(`Text conversion: ${text ?? "richText"}`, hasRichText, expected);
+      } catch (error: unknown) {
+        this.addResult(`Text conversion: ${String(text)}`, false, `Error: ${String(error)}`);
       }
     });
   }
@@ -424,7 +425,7 @@ export class ValidationTestSuite {
 
     arrowTests.forEach(({ name, props, expected }) => {
       try {
-        const shape: MCPShape = {
+        const shape = {
           id: `test-arrow-${Date.now()}`,
           type: "arrow",
           typeName: "shape",
@@ -437,7 +438,7 @@ export class ValidationTestSuite {
           opacity: 1,
           meta: {},
           props,
-        };
+        } as unknown as MCPShape;
 
         const converted = this.converter.toTldrawShape(shape);
         const hasValidArrow =
@@ -448,10 +449,10 @@ export class ValidationTestSuite {
         this.addResult(
           name,
           hasValidArrow === expected,
-          `Arrow props: ${JSON.stringify(converted.props as any, null, 2)}`,
+          `Arrow props: ${JSON.stringify(converted.props, null, 2)}`,
         );
-      } catch (error) {
-        this.addResult(name, false, `Error: ${error}`);
+      } catch (error: unknown) {
+        this.addResult(name, false, `Error: ${String(error)}`);
       }
     });
   }
@@ -480,10 +481,10 @@ export class ValidationTestSuite {
       this.addResult(
         "Batch processing with mixed inputs",
         hasResults,
-        `Processed ${converted.length} shapes from ${mixedShapes.length} inputs`,
+        `Processed ${String(converted.length)} shapes from ${String(mixedShapes.length)} inputs`,
       );
-    } catch (error) {
-      this.addResult("Batch processing", false, `Error: ${error}`);
+    } catch (error: unknown) {
+      this.addResult("Batch processing", false, `Error: ${String(error)}`);
     }
   }
 
@@ -514,10 +515,10 @@ export class ValidationTestSuite {
       this.addResult(
         "Error recovery fallback",
         isValidFallback,
-        `Created fallback: ${converted.type} at (${converted.x}, ${converted.y})`,
+        `Created fallback: ${converted.type} at (${String(converted.x)}, ${String(converted.y)})`,
       );
-    } catch (error) {
-      this.addResult("Error recovery", false, `Failed to recover: ${error}`);
+    } catch (error: unknown) {
+      this.addResult("Error recovery", false, `Failed to recover: ${String(error)}`);
     }
   }
 
@@ -525,7 +526,7 @@ export class ValidationTestSuite {
    * Validate that shape props are safe for Tldraw
    */
   private validateShapeProps(shape: any): boolean {
-    if (!shape || !shape.props) return false;
+    if (!shape?.props) return false;
 
     // Basic validation - props should be an object
     if (typeof shape.props !== "object") return false;
@@ -571,7 +572,7 @@ export class ValidationTestSuite {
     const passed = this.testResults.filter((r) => r.passed).length;
     const total = this.testResults.length;
 
-    console.log(`\nResults: ${passed}/${total} passed`);
+    console.log(`\nResults: ${String(passed)}/${String(total)} passed`);
 
     if (passed === total) {
       console.log("All tests passed.");

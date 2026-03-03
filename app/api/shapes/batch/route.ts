@@ -1,10 +1,11 @@
-import { NextRequest, NextResponse } from "next/server";
-import type { MCPShapesResponse } from "@/src/types";
+import { type NextRequest, NextResponse } from "next/server";
+import type { MCPShapeCreateInput, MCPShapesResponse } from "@/src/types";
 import { shapeStorage } from "@/src/services/singleton";
 import {
   preprocessAIBatchData,
   createSafeRichText,
   notifyWebSocketServer,
+  getErrorMessage,
 } from "@/src/lib";
 
 /**
@@ -14,7 +15,8 @@ export async function POST(
   request: NextRequest,
 ): Promise<NextResponse<MCPShapesResponse>> {
   try {
-    const { shapes: rawShapesToCreate } = await request.json();
+    const body = (await request.json()) as { shapes?: unknown[] };
+    const rawShapesToCreate: unknown = body.shapes;
 
     if (!Array.isArray(rawShapesToCreate)) {
       return NextResponse.json(
@@ -44,7 +46,9 @@ export async function POST(
       );
     }
 
-    const createdShapes = await shapeStorage.batchCreateShapes(processedShapes as any);
+    const createdShapes = await shapeStorage.batchCreateShapes(
+      processedShapes as unknown as MCPShapeCreateInput[],
+    );
     await notifyWebSocketServer({
       type: "shapes_batch_created",
       timestamp: new Date().toISOString(),
@@ -60,7 +64,7 @@ export async function POST(
       },
       { status: 201 },
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("[API] Error batch creating shapes:", error);
 
     // Fallback: create error indicator shapes
@@ -119,11 +123,11 @@ export async function POST(
         },
         { status: 201 },
       );
-    } catch (fallbackError) {
+    } catch {
       return NextResponse.json(
         {
           success: false,
-          error: error.message || "Failed to create shapes",
+          error: getErrorMessage(error) ?? "Failed to create shapes",
           shapes: [],
           count: 0,
           timestamp: new Date().toISOString(),

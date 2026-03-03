@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Tldraw, TLShapeId, useEditor, type Editor } from "tldraw";
+import { Tldraw, type TLShapeId, useEditor, type Editor } from "tldraw";
 import "tldraw/tldraw.css";
 import { ShapeConverterService } from "../src/services/shape-converter";
 import type { MCPShape, MCPWebSocketMessage } from "../src/types";
@@ -10,8 +10,13 @@ import type { MCPShape, MCPWebSocketMessage } from "../src/types";
 interface TldrawControllerProps {
   onEditorReady?: (editor: Editor) => void;
   isConnected: boolean;
-  clearCanvas: () => void;
+  clearCanvas: () => void | Promise<void>;
   isLoading?: boolean;
+}
+
+interface ShapesApiResponse {
+  success: boolean;
+  shapes?: MCPShape[];
 }
 
 function TldrawController({
@@ -45,7 +50,7 @@ function TldrawController({
       </div>
 
       <button
-        onClick={clearCanvas}
+        onClick={() => void clearCanvas()}
         className="z-9999 w-full mt-3 px-3 py-2 bg-red-500 dark:bg-red-800 text-white text-sm hover:bg-red-700 transition-colors disabled:opacity-50 rounded-md"
         disabled={!editor || isLoading}
       >
@@ -58,7 +63,7 @@ function TldrawController({
 export default function TldrawCanvas() {
   const [editor, setEditor] = useState<Editor | null>(null);
   const [isConnected, setIsConnected] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [_isLoading, _setIsLoading] = useState(false);
 
   const converterService = useRef(new ShapeConverterService());
   const websocketRef = useRef<WebSocket | null>(null);
@@ -98,7 +103,7 @@ export default function TldrawCanvas() {
             }
             break;
         }
-      } catch (error) {
+      } catch (error: unknown) {
         console.error("[Canvas] Error processing AI message:", error);
       }
     },
@@ -114,7 +119,7 @@ export default function TldrawCanvas() {
       return;
     }
 
-    const wsUrl = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:4000";
+    const wsUrl = process.env.NEXT_PUBLIC_WS_URL ?? "ws://localhost:4000";
     websocketRef.current = new WebSocket(wsUrl);
 
     websocketRef.current.onopen = () => {
@@ -122,12 +127,12 @@ export default function TldrawCanvas() {
       setIsConnected(true);
     };
 
-    websocketRef.current.onmessage = (event) => {
+    websocketRef.current.onmessage = (event: MessageEvent) => {
       if (!mountedRef.current) return;
       try {
-        const data: MCPWebSocketMessage = JSON.parse(event.data);
+        const data = JSON.parse(event.data as string) as MCPWebSocketMessage;
         handleWebSocketMessage(data);
-      } catch (error) {
+      } catch (error: unknown) {
         console.error("[Canvas] Error parsing AI message:", error);
       }
     };
@@ -177,7 +182,7 @@ export default function TldrawCanvas() {
     try {
       // Clear both local canvas and AI-created shapes from backend
       const response = await fetch("/api/shapes");
-      const result = await response.json();
+      const result = (await response.json()) as ShapesApiResponse;
 
       if (result.success && result.shapes?.length) {
         const deletePromises = result.shapes.map((shape: MCPShape) =>
@@ -189,7 +194,7 @@ export default function TldrawCanvas() {
       const allShapeIds = editor.getCurrentPageShapeIds();
       editor.deleteShapes(Array.from(allShapeIds));
       router.refresh();
-    } catch (error) {
+    } catch (error: unknown) {
       console.error("[Canvas] Error clearing canvas:", error);
       const allShapeIds = editor.getCurrentPageShapeIds();
       editor.deleteShapes(Array.from(allShapeIds));
@@ -202,7 +207,7 @@ export default function TldrawCanvas() {
 
   return (
     <div className="w-full h-screen relative bg-gray-50">
-      {isLoading && (
+      {_isLoading && (
         <div className="absolute inset-0 z-50 flex items-center justify-center bg-white/80">
           <div className="text-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto mb-2" />
@@ -216,7 +221,7 @@ export default function TldrawCanvas() {
           onEditorReady={setEditor}
           isConnected={isConnected}
           clearCanvas={clearCanvas}
-          isLoading={isLoading}
+          isLoading={_isLoading}
         />
       </Tldraw>
     </div>
