@@ -2568,3 +2568,87 @@
 2025-08-21 02:45:41 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
 2025-08-21 02:53:35 [info]: 
 🔄 Received SIGINT, shutting down gracefully... 
+2026-03-03 10:25:58 [info]: 🏭 [Singleton] Creating singleton instances... 
+2026-03-03 10:25:58 [info]: ✅ [Singleton] Instances created: 
+2026-03-03 10:25:58 [info]: 📦 shapeStorage: true 
+2026-03-03 10:25:58 [info]: 🔌 webSocketService: true 
+2026-03-03 10:25:58 [info]: 🚀 Initializing WebSocket server... 
+2026-03-03 10:25:58 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2026-03-03 10:25:58 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2026-03-03 10:25:58 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2026-03-03 10:25:58 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2026-03-03 10:25:58 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2026-03-03 10:25:58 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2026-03-03 10:26:30 [info]: 🏭 [Singleton] Creating singleton instances... 
+2026-03-03 10:26:30 [info]: ✅ [Singleton] Instances created: 
+2026-03-03 10:26:30 [info]: 📦 shapeStorage: true 
+2026-03-03 10:26:30 [info]: 🔌 webSocketService: true 
+2026-03-03 10:26:30 [info]: 🚀 Initializing WebSocket server... 
+2026-03-03 10:26:30 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2026-03-03 10:26:30 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2026-03-03 10:26:30 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2026-03-03 10:26:30 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2026-03-03 10:26:30 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2026-03-03 10:26:30 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2026-03-03 10:27:19 [info]: 🏭 [Singleton] Creating singleton instances... 
+2026-03-03 10:27:19 [info]: ✅ [Singleton] Instances created: 
+2026-03-03 10:27:19 [info]: 📦 shapeStorage: true 
+2026-03-03 10:27:19 [info]: 🔌 webSocketService: true 
+2026-03-03 10:27:19 [info]: 🚀 Initializing WebSocket server... 
+2026-03-03 10:27:19 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2026-03-03 10:27:19 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2026-03-03 10:27:19 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2026-03-03 10:27:19 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2026-03-03 10:27:19 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2026-03-03 10:27:19 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2026-03-03 10:32:44 [info]: 🏭 [Singleton] Creating singleton instances... 
+2026-03-03 10:32:44 [info]: ✅ [Singleton] Instances created: 
+2026-03-03 10:32:44 [info]: 📦 shapeStorage: true 
+2026-03-03 10:32:44 [info]: 🔌 webSocketService: true 
+2026-03-03 10:32:44 [info]: 🚀 Initializing WebSocket server... 
+2026-03-03 10:32:44 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2026-03-03 10:32:44 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2026-03-03 10:32:44 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2026-03-03 10:32:44 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2026-03-03 10:32:44 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2026-03-03 10:32:44 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2026-03-03 10:40:40 [info]: 🏭 [Singleton] Creating singleton instances... 
+2026-03-03 10:40:40 [info]: ✅ [Singleton] Instances created: 
+2026-03-03 10:40:40 [info]: 📦 shapeStorage: true 
+2026-03-03 10:40:40 [info]: 🔌 webSocketService: true 
+2026-03-03 10:40:40 [info]: 🚀 Initializing WebSocket server... 
+2026-03-03 10:40:40 [info]: [WebSocket] Initializing WebSocket server for browser clients... 
+2026-03-03 10:40:40 [info]: [WebSocket] ✅ WebSocket server initialized for AI → Browser communication 
+2026-03-03 10:40:40 [info]: 📡 WebSocket server running on ws://localhost:4000 
+2026-03-03 10:40:40 [info]: 🌐 HTTP broadcast: POST http://localhost:4000/broadcast 
+2026-03-03 10:40:40 [info]: 📊 HTTP status: GET http://localhost:4000/status 
+2026-03-03 10:40:40 [info]: 🔌 Initial status: {"initialized":true,"browserClientsCount":0,"serverReady":true}
+2026-03-03 10:40:41 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2026-03-03 10:40:41 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2026-03-03 10:40:41 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2026-03-03 10:40:52 [info]: [WebSocket] ❌ Browser client disconnected (code: 1001). Total: 0 
+2026-03-03 10:40:53 [info]: [WebSocket] ✅ Browser client connected. Total: 1 
+2026-03-03 10:40:53 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2026-03-03 10:40:53 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2026-03-03 10:41:24 [info]: [WebSocket] ✅ Browser client connected. Total: 2 
+2026-03-03 10:41:24 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2026-03-03 10:41:24 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 
+2026-03-03 10:44:25 [info]: 🏭 [Singleton] Creating singleton instances... 
+2026-03-03 10:44:25 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2026-03-03 10:44:25 [info]: ✅ [Singleton] Instances created: 
+2026-03-03 10:44:25 [info]: 📦 shapeStorage: true 
+2026-03-03 10:44:25 [info]: 🔌 webSocketService: true 
+2026-03-03 10:44:25 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 2 browsers 
+2026-03-03 10:44:25 [info]: [WebSocket] 📊 AI broadcast complete: 2 browsers received message 
+2026-03-03 10:44:25 [info]: [WebSocket] ✅ HTTP broadcast sent to 2 browsers 
+2026-03-03 10:44:38 [info]: [WebSocket] 📨 HTTP broadcast request: shape_created 
+2026-03-03 10:44:38 [info]: [WebSocket] 📡 Broadcasting AI message: shape_created to 2 browsers 
+2026-03-03 10:44:38 [info]: [WebSocket] 📊 AI broadcast complete: 2 browsers received message 
+2026-03-03 10:44:38 [info]: [WebSocket] ✅ HTTP broadcast sent to 2 browsers 
+2026-03-03 10:45:00 [info]: [WebSocket] 📨 HTTP broadcast request: shapes_batch_created 
+2026-03-03 10:45:00 [info]: [WebSocket] 📡 Broadcasting AI message: shapes_batch_created to 2 browsers 
+2026-03-03 10:45:00 [info]: [WebSocket] 📊 AI broadcast complete: 2 browsers received message 
+2026-03-03 10:45:00 [info]: [WebSocket] ✅ HTTP broadcast sent to 2 browsers 
+2026-03-03 10:46:54 [info]: [WebSocket] ✅ Browser client connected. Total: 3 
+2026-03-03 10:46:54 [info]: [WebSocket] 📨 Sending initial shapes message to new browser 
+2026-03-03 10:46:54 [info]: [WebSocket] 📤 Sent initial_shapes to browser client 

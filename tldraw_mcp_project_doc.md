@@ -56,7 +56,7 @@ tldraw-mcp-project/
 │   └── 📁 types/
 │       └── index.ts              # Main TypeScript definitions
 ├── 📄 .env.local                 # Environment variables
-├── 📄 .env.template              # Environment template
+├── 📄 .env.example               # Environment example
 ├── 📄 eslint.config.mjs          # ESLint configuration
 ├── 📄 next-env.d.ts              # Next.js types
 ├── 📄 next.config.ts             # Next.js configuration

@@ -2,10 +2,10 @@
   "name": "tldraw-mcp",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbo",
     "dev:ws": "tsx watch server/ws-server.ts",
     "frontend": "npm run dev && npm run dev:ws",
-    "canvas": "concurrently \"npm run dev\" \"npm run dev:ws\" \"npm run mcp-server\"",
+    "canvas": "concurrently \"pnpm dev\" \"pnpm dev:ws\" \"pnpm mcp-server\"",
     "server": "set DANGEROUSLY_OMIT_AUTH=true && npx @modelcontextprotocol/inspector tsx src/mcp-server.ts",
     "build": "next build",
     "lint": "next lint",
@@ -17,6 +17,7 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.0.0",
     "dotenv": "16.4.0",
+    "nanoid": "5.1.6",
     "next": "15.0.0",
     "node-fetch": "3.3.0",
     "react": "18.3.0",
@@ -45,5 +46,13 @@
     "postcss": "8.5.6",
     "tailwindcss": "4",
     "typescript": "5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "core-js",
+      "esbuild",
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }
