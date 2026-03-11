@@ -29,7 +29,9 @@ export class ShapeStorageService implements MCPShapeStorage {
   ): Promise<MCPShape<T>> {
     const id = generateShapeId();
     const now = new Date().toISOString();
-    const defaultsFactory = SHAPE_DEFAULTS[input.type as keyof typeof SHAPE_DEFAULTS];
+    const defaultsFactory = SHAPE_DEFAULTS[input.type as keyof typeof SHAPE_DEFAULTS] as
+      | (() => Record<string, unknown>)
+      | undefined;
     const defaultProps = defaultsFactory ? defaultsFactory() : {};
 
     const shape: MCPShape<T> = {
@@ -82,7 +84,7 @@ export class ShapeStorageService implements MCPShapeStorage {
   async getShape<T extends TldrawShapeType>(
     id: TLShapeId | string,
   ): Promise<MCPShape<T> | null> {
-    return (this.shapes.get(id as string) as MCPShape<T>) ?? null;
+    return (this.shapes.get(id as string) as MCPShape<T> | undefined) ?? null;
   }
 
   // eslint-disable-next-line @typescript-eslint/require-await

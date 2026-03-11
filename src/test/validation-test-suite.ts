@@ -342,7 +342,7 @@ export class ValidationTestSuite {
         } as MCPShape;
 
         const converted = this.converter.toTldrawShape(shape);
-        const hasValidProps = converted.props != null && typeof converted.props === "object";
+        const hasValidProps = (converted.props as unknown) != null && typeof converted.props === "object";
 
         this.addResult(
           `Invalid props: ${typeof props}`,

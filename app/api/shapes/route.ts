@@ -30,7 +30,7 @@ export async function GET(): Promise<NextResponse<MCPShapesResponse>> {
     return NextResponse.json(
       {
         success: false,
-        error: getErrorMessage(error) ?? "Failed to fetch shapes",
+        error: getErrorMessage(error),
         shapes: [],
         count: 0,
         timestamp: new Date().toISOString(),
@@ -116,7 +116,7 @@ export async function POST(
       return NextResponse.json(
         {
           success: false,
-          error: getErrorMessage(error) ?? "Failed to create shape",
+          error: getErrorMessage(error),
           shape: undefined as unknown as MCPShapeResponse["shape"],
           timestamp: new Date().toISOString(),
         },

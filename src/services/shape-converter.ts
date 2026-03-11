@@ -7,7 +7,9 @@ import { validateNumber, validateShapeType } from "../lib/validation";
 export class ShapeConverterService {
   toTldrawShape(mcpShape: MCPShape): TLShape {
     try {
-      if (!mcpShape || typeof mcpShape !== "object") {
+      // Runtime guard: AI data may not match declared types
+      const input = mcpShape as unknown;
+      if (!input || typeof input !== "object") {
         console.error("[Converter] Cannot convert null/undefined shape");
         return this.createFallbackShape();
       }
@@ -32,12 +34,12 @@ export class ShapeConverterService {
         x: safeX,
         y: safeY,
         rotation: safeRotation,
-        index: (mcpShape.index ?? "a1") as IndexKey,
-        parentId: (mcpShape.parentId ?? "page:page") as TLParentId,
+        index: ((mcpShape.index as string | undefined) ?? "a1") as IndexKey,
+        parentId: ((mcpShape.parentId as string | undefined) ?? "page:page") as TLParentId,
         isLocked: mcpShape.isLocked,
         opacity: safeOpacity,
         props: sanitizedProps,
-        meta: mcpShape.meta && typeof mcpShape.meta === "object" ? mcpShape.meta : {},
+        meta: (mcpShape.meta as unknown) && typeof mcpShape.meta === "object" ? mcpShape.meta : {},
       } as unknown as TLShape;
 
       return tldrawShape;
@@ -48,7 +50,8 @@ export class ShapeConverterService {
   }
 
   toTldrawShapes(mcpShapes: MCPShape[]): TLShape[] {
-    if (!Array.isArray(mcpShapes)) {
+    // Runtime guard: AI data may not match declared types
+    if (!Array.isArray(mcpShapes as unknown)) {
       console.error("[Converter] Invalid shapes array:", typeof mcpShapes);
       return [];
     }
@@ -58,7 +61,8 @@ export class ShapeConverterService {
 
     mcpShapes.forEach((shape, index) => {
       try {
-        if (!shape || typeof shape !== "object") {
+        // Runtime guard: AI data may contain null entries
+        if (!(shape as unknown) || typeof (shape as unknown) !== "object") {
           console.error(`[Converter] Skipping invalid shape at index ${String(index)}`);
           errorCount++;
           return;
@@ -144,12 +148,12 @@ export class ShapeConverterService {
         x: validateNumber(mcpShape.x, -10000, 10000, 100),
         y: validateNumber(mcpShape.y, -10000, 10000, 100),
         rotation: validateNumber(mcpShape.rotation, 0, 2 * Math.PI, 0),
-        index: mcpShape.index ?? "a1",
-        parentId: mcpShape.parentId ?? "page:page",
+        index: (mcpShape.index as string | undefined) ?? "a1",
+        parentId: (mcpShape.parentId as string | undefined) ?? "page:page",
         isLocked: mcpShape.isLocked,
         opacity: validateNumber(mcpShape.opacity, 0, 1, 1),
         props: repairedProps,
-        meta: mcpShape.meta && typeof mcpShape.meta === "object" ? mcpShape.meta : {},
+        meta: (mcpShape.meta as unknown) && typeof mcpShape.meta === "object" ? mcpShape.meta : {},
         createdAt: mcpShape.createdAt,
         updatedAt: mcpShape.updatedAt ?? new Date().toISOString(),
         version: mcpShape.version,
@@ -160,7 +164,7 @@ export class ShapeConverterService {
       console.error("[Converter] Error repairing shape:", error);
 
       return {
-        id: mcpShape.id ?? `fallback-${Date.now()}`,
+        id: (mcpShape.id as string | undefined) ?? `fallback-${Date.now()}`,
         type: "geo",
         typeName: "shape" as const,
         x: 100,

@@ -37,7 +37,7 @@ export async function GET(
     return NextResponse.json(
       {
         success: false,
-        error: getErrorMessage(error) ?? "Failed to fetch shape",
+        error: getErrorMessage(error),
         shape: undefined as unknown as MCPShapeResponse["shape"],
         timestamp: new Date().toISOString(),
       },
@@ -87,7 +87,7 @@ export async function PUT(
     return NextResponse.json(
       {
         success: false,
-        error: getErrorMessage(error) ?? "Failed to update shape",
+        error: getErrorMessage(error),
         shape: undefined as unknown as MCPShapeResponse["shape"],
         timestamp: new Date().toISOString(),
       },
@@ -135,7 +135,7 @@ export async function DELETE(
     return NextResponse.json(
       {
         success: false,
-        error: getErrorMessage(error) ?? "Failed to delete shape",
+        error: getErrorMessage(error),
         timestamp: new Date().toISOString(),
       },
       { status: 500 },
