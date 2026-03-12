@@ -136,20 +136,9 @@ describe("preprocessAIShapeData", () => {
     expect(typeof result.props).toBe("object");
   });
 
-  // ─── arrow text conversion ──────────────────────────────────
+  // ─── arrow text→richText conversion (tldraw v4) ──────────
 
-  it("converts non-string arrow text to string", () => {
-    const result = preprocessAIShapeData({
-      type: "arrow",
-      x: 0,
-      y: 0,
-      props: { text: 42 },
-    });
-    const props = result.props as Record<string, unknown>;
-    expect(props.text).toBe("42");
-  });
-
-  it("leaves string arrow text as-is", () => {
+  it("converts text prop to richText for arrow shapes", () => {
     const result = preprocessAIShapeData({
       type: "arrow",
       x: 0,
@@ -157,7 +146,8 @@ describe("preprocessAIShapeData", () => {
       props: { text: "label" },
     });
     const props = result.props as Record<string, unknown>;
-    expect(props.text).toBe("label");
+    expect(props.text).toBeUndefined();
+    expect(props.richText).toBeDefined();
   });
 
   // ─── props sanitization ──────────────────────────────────────

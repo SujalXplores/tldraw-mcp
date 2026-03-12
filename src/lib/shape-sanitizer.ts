@@ -43,6 +43,8 @@ export function sanitizeShapeProps(
       sanitized.w = validateNumber(props.w, 1, 2000, 100);
       if (props.richText && typeof props.richText === "object") {
         sanitized.richText = sanitizeRichText(props.richText);
+      } else {
+        sanitized.richText = createSafeRichText("");
       }
       break;
 
@@ -102,7 +104,11 @@ export function sanitizeShapeProps(
           y: validateNumber(e.y, -5000, 5000, 100),
         };
       }
-      if (typeof props.text === "string") sanitized.text = props.text;
+      if (props.richText && typeof props.richText === "object") {
+        sanitized.richText = sanitizeRichText(props.richText);
+      } else {
+        sanitized.richText = createSafeRichText("");
+      }
       break;
 
     case "draw":
@@ -113,6 +119,8 @@ export function sanitizeShapeProps(
       sanitized.isPen =
         typeof props.isPen === "boolean" ? props.isPen : false;
       sanitized.scale = validateNumber(props.scale, 0.1, 10, 1);
+      sanitized.scaleX = validateNumber(props.scaleX, -10, 10, 1);
+      sanitized.scaleY = validateNumber(props.scaleY, -10, 10, 1);
       sanitized.segments = Array.isArray(props.segments) ? props.segments : [];
       sanitized.size = validateEnum(props.size, TLDRAW_SIZES, "m");
       if (type === "draw") {

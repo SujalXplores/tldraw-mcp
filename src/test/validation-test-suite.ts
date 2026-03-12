@@ -386,7 +386,7 @@ export class ValidationTestSuite {
           opacity: 1,
           meta: {},
           props: richText ? { richText } : { text },
-        } as MCPShape;
+        } as unknown as MCPShape;
 
         const converted = this.converter.toTldrawShape(shape);
         const hasRichText =

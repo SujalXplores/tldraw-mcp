@@ -404,7 +404,7 @@ server.setRequestHandler(ListToolsRequestSchema, () => {
         name: "create_shape",
         description: `Create a shape on the Tldraw v4 canvas.
 
-Text/Note shapes use richText; arrows use plain text. Invalid inputs are auto-corrected (colors mapped, coords clamped, missing props filled).
+Text/Note/Arrow shapes use richText for labels. Invalid inputs are auto-corrected (colors mapped, coords clamped, missing props filled).
 
 Prefer geo shapes with richText labels over separate text shapes.
 
@@ -451,7 +451,7 @@ Example: {"type": "geo", "x": 100, "y": 100, "props": {"geo": "rectangle", "w": 
             },
             props: {
               type: "object",
-              description: `Shape-specific properties. Geo: geo, w, h, color, fill, dash, richText (for labels). Text: richText (required), color, font. Arrow: start/end {x,y}, text (string). Note: richText, color. All props auto-validated.`,
+              description: `Shape-specific properties. Geo: geo, w, h, color, fill, dash, richText (for labels). Text: richText (required), color, font. Arrow: start/end {x,y}, richText (for labels), color, dash. Note: richText, color. All props auto-validated.`,
               additionalProperties: true,
             },
             meta: {

@@ -40,9 +40,12 @@ export function preprocessAIShapeData(
     props.richText = createSafeRichText("Text");
   }
 
-  // For arrows, ensure text is a plain string
-  if (type === "arrow" && props.text && typeof props.text !== "string") {
-    props.text = String(props.text as string | number);
+  // For arrows, convert text→richText (tldraw v4 uses richText for arrow labels)
+  if (type === "arrow" && props.text && !props.richText) {
+    props.richText = createSafeRichText(String(props.text as string | number));
+    delete props.text;
+  } else if (type === "arrow" && props.text) {
+    delete props.text;
   }
 
   processed.props = sanitizeShapeProps(type, props);

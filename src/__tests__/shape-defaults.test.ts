@@ -29,6 +29,9 @@ describe("getShapeDefaults", () => {
     expect(d.growY).toBe(0);
     expect(d.scale).toBe(1);
     expect(d.url).toBe("");
+    expect(d.richText).toBeDefined();
+    const rt = d.richText as { type: string; content: unknown[] };
+    expect(rt.type).toBe("doc");
   });
 
   // ─── text ────────────────────────────────────────────────────
@@ -59,7 +62,10 @@ describe("getShapeDefaults", () => {
     expect(d.end).toEqual({ x: 100, y: 100 });
     expect(d.kind).toBe("arc");
     expect(d.labelPosition).toBe(0.5);
-    expect(d.text).toBe("");
+    expect(d.text).toBeUndefined();
+    expect(d.richText).toBeDefined();
+    const rt = d.richText as { type: string; content: unknown[] };
+    expect(rt.type).toBe("doc");
   });
 
   // ─── draw ────────────────────────────────────────────────────
@@ -72,6 +78,8 @@ describe("getShapeDefaults", () => {
     expect(d.isPen).toBe(false);
     expect(d.segments).toEqual([]);
     expect(d.size).toBe("m");
+    expect(d.scaleX).toBe(1);
+    expect(d.scaleY).toBe(1);
   });
 
   // ─── highlight ───────────────────────────────────────────────
@@ -80,6 +88,8 @@ describe("getShapeDefaults", () => {
     const d = getShapeDefaults("highlight");
     expect(d.color).toBe("yellow");
     expect(d.segments).toEqual([]);
+    expect(d.scaleX).toBe(1);
+    expect(d.scaleY).toBe(1);
   });
 
   // ─── note ────────────────────────────────────────────────────
