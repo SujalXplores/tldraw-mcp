@@ -5,7 +5,7 @@ import {
   SHAPE_TYPE_ALIASES,
   type TldrawColor,
   type TldrawShapeType,
-} from "./constants";
+} from "./constants.js";
 
 /** Normalizes a color value to a valid tldraw color, with alias mapping */
 export function normalizeColor(color: unknown): TldrawColor {

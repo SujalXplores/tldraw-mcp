@@ -1,0 +1,33 @@
+{
+  "name": "io.github.YOUR_GITHUB_USERNAME/tldraw-mcp",
+  "description": "MCP server for AI-powered Tldraw v4 canvas control with automatic validation, AI hallucination correction, rich text support, and real-time WebSocket sync",
+  "status": "active",
+  "repository": {
+    "url": "https://github.com/YOUR_GITHUB_USERNAME/tldraw-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registry_type": "npm",
+      "registry_base_url": "https://registry.npmjs.org",
+      "identifier": "tldraw-mcp",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environment_variables": [
+        {
+          "name": "NEXTJS_SERVER_URL",
+          "description": "URL of the Next.js frontend server (default: http://localhost:3000)",
+          "required": false
+        },
+        {
+          "name": "DEBUG",
+          "description": "Enable debug logging (true/false)",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

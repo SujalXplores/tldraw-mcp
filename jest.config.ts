@@ -7,6 +7,7 @@ const config: Config = {
   testMatch: ["**/__tests__/**/*.test.ts"],
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/$1",
+    "^(\\.{1,2}/.*)\\.js$": "$1",
   },
   transformIgnorePatterns: [
     "node_modules/(?!.*\\.pnpm|nanoid)",

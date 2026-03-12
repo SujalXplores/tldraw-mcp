@@ -1,8 +1,8 @@
 import type { TLShape, TLShapeId, IndexKey, TLParentId } from "tldraw";
-import type { MCPShape, TldrawShapeType } from "../types";
-import { getShapeDefaults } from "../lib/shape-defaults";
-import { sanitizeShapeProps } from "../lib/shape-sanitizer";
-import { validateNumber, validateShapeType } from "../lib/validation";
+import type { MCPShape, TldrawShapeType } from "../types.js";
+import { getShapeDefaults } from "../lib/shape-defaults.js";
+import { sanitizeShapeProps } from "../lib/shape-sanitizer.js";
+import { validateNumber, validateShapeType } from "../lib/validation.js";
 
 export class ShapeConverterService {
   toTldrawShape(mcpShape: MCPShape): TLShape {

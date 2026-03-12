@@ -6,8 +6,8 @@ import type {
   MCPShapeStorage,
   TldrawShapeType,
   TLShapeId,
-} from "../types";
-import { SHAPE_DEFAULTS } from "../types";
+} from "../types.js";
+import { SHAPE_DEFAULTS } from "../types.js";
 
 const nanoid = customAlphabet("abcdefghijklmnopqrstuvwxyz0123456789", 8);
 

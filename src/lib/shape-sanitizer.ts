@@ -7,10 +7,10 @@ import {
   TLDRAW_GEO_TYPES,
   TLDRAW_SIZES,
   type TldrawShapeType,
-} from "./constants";
-import { normalizeColor, validateEnum, validateNumber } from "./validation";
-import { createSafeRichText, sanitizeRichText } from "./rich-text";
-import { getShapeDefaults } from "./shape-defaults";
+} from "./constants.js";
+import { normalizeColor, validateEnum, validateNumber } from "./validation.js";
+import { createSafeRichText, sanitizeRichText } from "./rich-text.js";
+import { getShapeDefaults } from "./shape-defaults.js";
 
 /** Sanitizes shape props for a given type, applying defaults and validation */
 export function sanitizeShapeProps(

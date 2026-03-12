@@ -84,7 +84,7 @@ import {
   preprocessAIShapeData,
   sanitizeShapeProps,
   getErrorMessage,
-} from "./lib";
+} from "./lib/index.js";
 
 const StrictShapePropsSchema = z
   .object({})
@@ -652,7 +652,14 @@ process.on("unhandledRejection", (reason: unknown) => {
   process.exit(1);
 });
 
-if (fileURLToPath(import.meta.url) === process.argv[1]) {
+// Auto-start: works both as direct execution and via npx/bin
+const isDirectRun =
+  process.argv[1] !== undefined &&
+  (fileURLToPath(import.meta.url) === process.argv[1] ||
+    process.argv[1].endsWith("tldraw-mcp") ||
+    process.argv[1].endsWith("mcp-server.js"));
+
+if (isDirectRun) {
   runServer().catch((error: unknown) => {
     logger.error("Server startup failed:", { error: getErrorMessage(error) });
     process.exit(1);

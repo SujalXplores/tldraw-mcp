@@ -9,7 +9,7 @@ import type {
 } from "tldraw";
 
 // Our local types (simplified for API use)
-import type { IndexKey, TLParentId, TLShapeId, TLShape as LocalTLShape } from "./types";
+import type { IndexKey, TLParentId, TLShapeId, TLShape as LocalTLShape } from "./types.js";
 
 /**
  * Convert Tldraw IndexKey to backend string representation

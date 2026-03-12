@@ -40,3 +40,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# MCP build output
+/dist
+
+# MCP Registry tokens
+.mcpregistry_github_token
+.mcpregistry_registry_token

@@ -1,307 +1,190 @@
 # tldraw-mcp
 
-An MCP (Model Context Protocol) server that bridges AI language models and [Tldraw](https://tldraw.dev/), enabling programmatic creation, manipulation, and management of canvas shapes through natural language or structured tool calls.
+MCP server for AI-powered [Tldraw](https://tldraw.com) v4 canvas control. Create, update, and delete shapes on a real-time whiteboard through any MCP-compatible client.
 
----
+## Features
 
-![Banner Picture](https://i.postimg.cc/LXBV3FGs/image.png)
+- 13 shape types: geo, text, arrow, draw, highlight, image, video, embed, bookmark, frame, note, line, group
+- AI hallucination correction — auto-fixes invalid colors, coordinates, missing props, text→richText conversion
+- 150+ color mappings (CSS names, hex, RGB all normalized to Tldraw palette)
+- Batch operations (up to 50 shapes at once)
+- Real-time WebSocket sync to the browser canvas
+- Strict Zod validation with helpful error messages
+- 216 tests, 100% coverage
 
-## Highlights
+## Tools
 
-- **Unrestricted local generation** — no API limits, no quotas, fully offline-capable.
-- **Tldraw v3 canvas** — backed by a production-grade open-source drawing library.
-- **MCP-compliant** — works with any MCP client (Claude Desktop, custom agents, CLI tools).
-- **End-to-end type safety** — Zod 4 schemas + strict TypeScript (`strictNullChecks`, `noImplicitAny`, `noUncheckedIndexedAccess`).
-- **AI-safe validation** — automatic correction of malformed AI data (color mapping, text-to-richText conversion, coordinate clamping).
-- **100% test coverage** — 217 tests across 10 suites covering all statements, branches, functions, and lines.
+| Tool | Description |
+|------|-------------|
+| `create_shape` | Create a shape on the canvas |
+| `batch_create_shapes` | Create up to 50 shapes at once |
+| `update_shape` | Update an existing shape by ID |
+| `delete_shape` | Delete a shape by ID |
+| `get_shapes` | Get all shapes on the canvas |
 
----
+## Prerequisites
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Testing](#testing)
-- [Tech Stack](#tech-stack)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-
----
-
-## Overview
-
-tldraw-mcp is a developer-first tool for AI-enhanced diagramming. It combines Tldraw's flexible canvas with an MCP server to enable real-time, programmable shape generation from AI agents or code.
-
-> **Note:** Multi-user collaboration is not supported. This is a local-first, single-user tool.
-
----
-
-## Architecture
-
-![Architecture Diagram](https://i.postimg.cc/DZfGF3JR/image.png)
-
-| Layer | Technology | Role |
-|-------|-----------|------|
-| Frontend | Next.js 16 (App Router) | Tldraw canvas + WebSocket client |
-| API | Next.js Route Handlers | Shape CRUD with AI data preprocessing |
-| MCP Server | Node.js + stdio transport | AI tool interface (create, update, delete, get shapes) |
-| Real-time | WebSocket (ws) | Broadcasts shape mutations to browser clients |
-| Validation | Zod 4 | Schema validation with automatic fallback/correction |
-
----
-
-## Project Structure
-
-```
-tldraw-mcp/
-├── app/                          # Next.js App Router
-│   ├── api/
-│   │   ├── shapes/               # Shape CRUD endpoints
-│   │   │   ├── route.ts          #   GET /api/shapes, POST /api/shapes
-│   │   │   ├── [id]/route.ts     #   GET/PUT/DELETE /api/shapes/:id
-│   │   │   └── batch/route.ts    #   POST /api/shapes/batch
-│   │   └── test-ws/route.ts      # WebSocket test endpoint
-│   ├── layout.tsx
-│   └── page.tsx
-├── components/
-│   └── TldrawCanvas.tsx          # Tldraw canvas with real-time sync
-├── server/
-│   └── ws-server.ts              # Standalone WebSocket server
-├── src/
-│   ├── mcp-server.ts             # MCP stdio server entry point
-│   ├── types.ts                  # Shared type definitions & shape defaults
-│   ├── frontend-types-bridge.ts  # Tldraw ↔ MCP type conversions
-│   ├── lib/                      # Shared utility modules
-│   │   ├── constants.ts          #   Shape types, colors, geo types, enums
-│   │   ├── validation.ts         #   Color/number/enum/shape-type validators
-│   │   ├── rich-text.ts          #   Rich text creation & sanitization
-│   │   ├── shape-defaults.ts     #   Default props per shape type
-│   │   ├── shape-sanitizer.ts    #   Type-specific prop sanitization
-│   │   ├── shape-preprocessor.ts #   AI data normalization (single & batch)
-│   │   ├── ws-notify.ts          #   WebSocket server notification
-│   │   ├── errors.ts             #   Type-safe error message extraction
-│   │   └── index.ts              #   Barrel re-export
-│   ├── services/
-│   │   ├── shape-storage.ts      #   In-memory shape CRUD + batch ops
-│   │   ├── shape-converter.ts    #   MCP ↔ Tldraw shape conversion
-│   │   ├── websocket.ts          #   WebSocket connection management
-│   │   ├── logger.ts             #   Winston file + console logger
-│   │   └── singleton.ts          #   Service singleton pattern
-│   └── __tests__/                # Test suite (217 tests, 100% coverage)
-├── jest.config.ts
-├── tsconfig.json
-├── tsconfig.test.json
-└── eslint.config.mjs
-```
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js >= 18 (recommended: 24+, see `.nvmrc`)
-- pnpm
-
-### Installation
+The MCP server communicates with a Next.js frontend that renders the Tldraw canvas. You need both running:
 
 ```bash
-git clone https://github.com/SujalXplores/tldraw-mcp.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/tldraw-mcp.git
 cd tldraw-mcp
 pnpm install
+cp .env.example .env
+pnpm dev:all    # starts Next.js + WebSocket server + MCP server
 ```
 
-### Environment Variables
+Then configure your MCP client to connect to the server (see below).
 
-Copy `.env.example` to `.env.local` and adjust as needed:
+## Client Setup
 
-```env
-# Next.js
-NEXTJS_SERVER_URL=http://localhost:3000
-PORT=3000
+### Claude Code
 
-# MCP Server
-ENABLE_CANVAS_SYNC=true
-MCP_TRANSPORT_MODE=stdio
-
-# Development
-NODE_ENV=development
-DEBUG=false
-
-# WebSocket
-NEXT_PUBLIC_WS_URL=ws://localhost:4000
-WS_PORT=4000
-WS_SERVER_URL=http://localhost:4000
+```bash
+claude mcp add tldraw-mcp -- npx tldraw-mcp
 ```
 
-### MCP Client Configuration
-
-Add this to your MCP client configuration (e.g., Claude Desktop, Cursor):
+Or add to your project's `.mcp.json`:
 
 ```json
 {
   "mcpServers": {
-    "tldraw-canvas": {
-      "command": "tsx",
-      "args": ["/absolute/path/to/tldraw-mcp/src/mcp-server.ts"],
+    "tldraw-mcp": {
+      "command": "npx",
+      "args": ["-y", "tldraw-mcp"],
       "env": {
-        "NEXTJS_SERVER_URL": "http://localhost:3000",
-        "ENABLE_CANVAS_SYNC": "true"
+        "NEXTJS_SERVER_URL": "http://localhost:3000"
       }
     }
   }
 }
 ```
 
-### Running Locally
+### VS Code (GitHub Copilot)
 
-```bash
-pnpm dev:all
+Add to `.vscode/mcp.json` in your workspace:
+
+```json
+{
+  "servers": {
+    "tldraw-mcp": {
+      "command": "npx",
+      "args": ["-y", "tldraw-mcp"],
+      "env": {
+        "NEXTJS_SERVER_URL": "http://localhost:3000"
+      }
+    }
+  }
+}
 ```
 
-This starts all three processes concurrently:
+Or open the Command Palette → `MCP: Add Server` and enter the details.
 
-| Service | URL |
-|---------|-----|
-| Frontend | http://localhost:3000 |
-| WebSocket Server | ws://localhost:4000 |
-| MCP Server | stdio (attach via MCP client) |
+### Cursor
 
-### Scripts
+Add to `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global):
 
-| Script | Description |
-|--------|-------------|
-| `pnpm dev` | Start Next.js frontend (Turbopack) |
-| `pnpm dev:ws` | Start WebSocket server (watch mode) |
-| `pnpm dev:mcp` | Run MCP server standalone |
-| `pnpm dev:all` | Start all services concurrently |
-| `pnpm inspect` | Launch MCP Inspector with the server |
-| `pnpm build` | Production build |
-| `pnpm lint` | Run ESLint (strict type-checked rules) |
-| `pnpm typecheck` | Run TypeScript type checking |
-| `pnpm format` | Format code with Prettier |
-| `pnpm format:check` | Check formatting (CI-friendly) |
-| `pnpm test` | Run tests |
-| `pnpm test:watch` | Run tests in watch mode |
-| `pnpm test:coverage` | Run tests with coverage report |
-| `pnpm check` | Run lint + typecheck + test (all-in-one) |
-
----
-
-## Usage
-
-1. Start the frontend and draw manually using the Tldraw canvas.
-2. Connect an MCP client to generate or edit shapes programmatically.
-3. Use the `/broadcast` and `/status` HTTP endpoints on the WebSocket server for debugging.
-
-### MCP Tools
-
-The MCP server exposes the following tools to AI clients:
-
-| Tool | Description |
-|------|-------------|
-| `create_shape` | Create a single shape on the canvas |
-| `create_shapes_batch` | Create multiple shapes at once (up to 50) |
-| `get_shape` | Retrieve a shape by ID |
-| `get_all_shapes` | List all shapes on the canvas |
-| `update_shape` | Update an existing shape's properties |
-| `delete_shape` | Remove a shape from the canvas |
-| `delete_all_shapes` | Clear the entire canvas |
-
-### Supported Shape Types
-
-`text` · `geo` · `draw` · `arrow` · `line` · `note` · `frame` · `image` · `bookmark` · `embed` · `video` · `highlight` · `group`
-
-Each shape type supports type-specific props with automatic defaults and AI-safe sanitization (e.g., mapping `"red"` → `"light-red"`, converting plain text to rich text format).
-
----
-
-## Testing
-
-The project uses [Jest](https://jestjs.io/) with [ts-jest](https://kulshekhar.github.io/ts-jest/) for testing.
-
-```bash
-pnpm test              # Run all tests
-pnpm test:watch        # Run in watch mode
-pnpm test:coverage     # Run with coverage report
+```json
+{
+  "mcpServers": {
+    "tldraw-mcp": {
+      "command": "npx",
+      "args": ["-y", "tldraw-mcp"],
+      "env": {
+        "NEXTJS_SERVER_URL": "http://localhost:3000"
+      }
+    }
+  }
+}
 ```
 
-### Coverage
+### Kiro
 
-**217 tests** across **10 suites** with **100% coverage** on all metrics:
+Add to `.kiro/settings/mcp.json` (workspace) or `~/.kiro/settings/mcp.json` (global):
 
-| Metric | Coverage |
-|--------|----------|
-| Statements | 100% |
-| Branches | 100% |
-| Functions | 100% |
-| Lines | 100% |
+```json
+{
+  "mcpServers": {
+    "tldraw-mcp": {
+      "command": "npx",
+      "args": ["-y", "tldraw-mcp"],
+      "env": {
+        "NEXTJS_SERVER_URL": "http://localhost:3000"
+      }
+    }
+  }
+}
+```
 
-### Test Suites
+### Local Development (without npm)
 
-| Suite | Tests | What it covers |
-|-------|-------|---------------|
-| `constants` | 15 | Shape types, colors, geo types, enums, aliases |
-| `validation` | 24 | Color normalization, number/enum/shape-type validation |
-| `rich-text` | 22 | Rich text creation, sanitization, edge cases |
-| `shape-defaults` | 15 | Default props for all 13 shape types |
-| `shape-sanitizer` | 44 | Type-specific prop sanitization, URL handling |
-| `shape-preprocessor` | 22 | AI data normalization, batch processing |
-| `shape-storage` | 31 | CRUD lifecycle, batch operations, versioning |
-| `shape-converter` | 35 | MCP ↔ Tldraw conversion, validate & repair |
-| `ws-notify` | 8 | WebSocket notification, env configuration |
-| `errors` | 4 | Type-safe error message extraction |
+If you're running from source instead of the published package:
 
----
+```json
+{
+  "mcpServers": {
+    "tldraw-mcp": {
+      "command": "npx",
+      "args": ["tsx", "src/mcp-server.ts"],
+      "cwd": "/path/to/tldraw-mcp",
+      "env": {
+        "NEXTJS_SERVER_URL": "http://localhost:3000"
+      }
+    }
+  }
+}
+```
 
-## Tech Stack
+## Environment Variables
 
-| Category | Technology |
-|----------|-----------|
-| Framework | [Next.js 16](https://nextjs.org/) |
-| Canvas | [Tldraw v3](https://tldraw.dev/) |
-| Language | [TypeScript 5.9](https://typescriptlang.org/) (strict mode) |
-| Validation | [Zod 4](https://zod.dev/) |
-| Real-time | [ws](https://github.com/websockets/ws) |
-| Logging | [Winston](https://github.com/winstonjs/winston) |
-| Styling | [Tailwind CSS v4](https://tailwindcss.com/) |
-| Testing | [Jest 30](https://jestjs.io/) + [ts-jest](https://kulshekhar.github.io/ts-jest/) |
-| Linting | [ESLint 9](https://eslint.org/) + [typescript-eslint](https://typescript-eslint.io/) (strict type-checked) |
-| Formatting | [Prettier](https://prettier.io/) |
-| AI Protocol | [MCP SDK](https://modelcontextprotocol.io/) |
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `NEXTJS_SERVER_URL` | `http://localhost:3000` | URL of the Next.js frontend |
+| `DEBUG` | `false` | Enable debug logging to stderr |
+| `VERBOSE_LOGS` | `false` | Enable info/warn logging |
+| `WS_PORT` | `4000` | WebSocket server port |
 
----
+## Example Usage
 
-## Contributing
+Once connected, ask your AI assistant:
 
-Contributions are welcome. Please open issues or submit PRs.
+> "Draw a blue rectangle at position 200, 100 with the label 'Hello World'"
 
-1. Fork the repo
-2. Create a branch (`git checkout -b feature/your-feature`)
-3. Run checks before committing:
+> "Create a flowchart with 3 boxes connected by arrows"
+
+> "Add a sticky note that says 'TODO: review this'"
+
+The AI will use the MCP tools to create shapes on the canvas in real time.
+
+## Development
+
+```bash
+pnpm dev:all          # Run everything (Next.js + WS + MCP)
+pnpm test             # Run tests
+pnpm test:coverage    # Run tests with coverage
+pnpm check            # Lint + typecheck + test
+pnpm build:mcp        # Build MCP server for publishing
+pnpm inspect          # Open MCP Inspector for testing tools
+```
+
+## Publishing
+
+1. Update version in `package.json` and `server.json`
+2. Run `pnpm check` to verify everything passes
+3. Tag and push:
    ```bash
-   pnpm check   # lint + typecheck + test
+   git tag v1.0.0
+   git push origin v1.0.0
    ```
-4. Commit (`git commit -m 'Add feature'`)
-5. Push (`git push origin feature/your-feature`)
-6. Open a PR
+4. GitHub Actions will publish to npm automatically (requires `NPM_TOKEN` secret)
 
----
+To publish to the MCP Registry:
+```bash
+brew install mcp-publisher   # or build from source
+mcp-publisher login github
+mcp-publisher publish
+```
 
 ## License
 
-[MIT](LICENSE)
-
----
-
-## Contact
-
-- **Sujal Shah** — [GitHub](https://github.com/SujalXplores)
-
----
-
-> **Disclaimer:** This is an experimental, local-first project. Multi-user collaboration and production deployments are not yet supported.
+MIT

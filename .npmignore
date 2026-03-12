@@ -1,0 +1,43 @@
+# Source files (dist is published instead)
+src/
+server/
+app/
+components/
+public/
+logs/
+
+# Config files
+.env
+.env.*
+!.env.example
+.editorconfig
+.prettierrc
+.prettierignore
+.nvmrc
+.npmrc
+tsconfig.json
+tsconfig.build.json
+tsconfig.test.json
+tsconfig.tsbuildinfo
+jest.config.ts
+eslint.config.mjs
+postcss.config.mjs
+next.config.ts
+next-env.d.ts
+
+# Dev/build tooling
+scripts/
+.vscode/
+.next/
+.git/
+.github/
+coverage/
+node_modules/
+
+# Docs (README is included via files field)
+tldraw_mcp_project_doc.md
+
+# Misc
+*.log
+.DS_Store
+*.pem

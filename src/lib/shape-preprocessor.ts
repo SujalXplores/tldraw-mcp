@@ -1,8 +1,8 @@
-import type { TldrawShapeType } from "./constants";
-import { createSafeRichText } from "./rich-text";
-import { getShapeDefaults } from "./shape-defaults";
-import { sanitizeShapeProps } from "./shape-sanitizer";
-import { validateShapeType } from "./validation";
+import type { TldrawShapeType } from "./constants.js";
+import { createSafeRichText } from "./rich-text.js";
+import { getShapeDefaults } from "./shape-defaults.js";
+import { sanitizeShapeProps } from "./shape-sanitizer.js";
+import { validateShapeType } from "./validation.js";
 
 /**
  * Preprocesses raw AI shape data into a valid tldraw-compatible structure.

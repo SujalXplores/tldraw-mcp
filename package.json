@@ -1,6 +1,52 @@
 {
   "name": "tldraw-mcp",
   "version": "1.0.0",
+  "description": "MCP server for AI-powered Tldraw v4 canvas control with automatic validation, rich text support, and real-time sync",
+  "type": "module",
+  "bin": {
+    "tldraw-mcp": "./dist/mcp-server.js"
+  },
+  "main": "./dist/mcp-server.js",
+  "exports": {
+    ".": {
+      "import": "./dist/mcp-server.js",
+      "types": "./dist/mcp-server.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "server.json"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "tldraw",
+    "canvas",
+    "ai",
+    "drawing",
+    "whiteboard",
+    "claude",
+    "cursor",
+    "vscode",
+    "kiro",
+    "shapes",
+    "diagram"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "homepage": "",
+  "bugs": {
+    "url": ""
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "next dev --turbo",
     "dev:ws": "tsx watch server/ws-server.ts",
@@ -8,6 +54,8 @@
     "dev:all": "concurrently \"pnpm dev\" \"pnpm dev:ws\" \"pnpm dev:mcp\"",
     "inspect": "cross-env DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector tsx src/mcp-server.ts",
     "build": "next build",
+    "build:mcp": "tsc -p tsconfig.build.json && node scripts/postbuild.js",
+    "prepublishOnly": "pnpm run build:mcp",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write \"src/**/*.ts\" \"app/**/*.{ts,tsx}\" \"components/**/*.tsx\" \"server/**/*.ts\"",
@@ -21,15 +69,16 @@
     "@modelcontextprotocol/sdk": "1.27.1",
     "dotenv": "17.3.1",
     "nanoid": "5.1.6",
-    "next": "16.1.6",
     "node-fetch": "3.3.2",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "tldraw": "4.4.1",
-    "tsx": "4.21.0",
     "winston": "3.19.0",
     "ws": "8.19.0",
     "zod": "4.3.6"
+  },
+  "optionalDependencies": {
+    "next": "16.1.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "tldraw": "4.4.1"
   },
   "devDependencies": {
     "@modelcontextprotocol/inspector": "0.21.1",
@@ -51,6 +100,7 @@
     "prettier": "3.8.1",
     "tailwindcss": "4.2.1",
     "ts-jest": "29.4.6",
+    "tsx": "4.21.0",
     "typescript": "5.9.3",
     "typescript-eslint": "8.57.0"
   },

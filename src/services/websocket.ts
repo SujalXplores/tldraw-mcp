@@ -1,7 +1,7 @@
 import { WebSocketServer, WebSocket } from "ws";
 import type { Server as HttpServer, IncomingMessage } from "http";
-import type { MCPWebSocketMessage } from "../types";
-import logger from "./logger";
+import type { MCPWebSocketMessage } from "../types.js";
+import logger from "./logger.js";
 
 /**
  * Manages WebSocket connections for broadcasting shape mutations to browser clients.

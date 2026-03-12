@@ -1,5 +1,5 @@
-import type { TldrawShapeType } from "./constants";
-import { createSafeRichText } from "./rich-text";
+import type { TldrawShapeType } from "./constants.js";
+import { createSafeRichText } from "./rich-text.js";
 
 /** Returns the default props for a given tldraw shape type */
 export function getShapeDefaults(
