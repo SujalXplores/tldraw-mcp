@@ -346,9 +346,8 @@ export class ValidationTestSuite {
         } as MCPShape;
 
         const converted = this.converter.toTldrawShape(shape);
-        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-        const hasValidProps =
-          converted.props != null && typeof converted.props === "object";
+        const propsValue = converted.props as unknown;
+        const hasValidProps = propsValue !== null && typeof propsValue === "object";
 
         this.addResult(
           `Invalid props: ${typeof props}`,
@@ -396,7 +395,7 @@ export class ValidationTestSuite {
           opacity: 1,
           meta: {},
           props: richText ? { richText } : { text },
-        } as MCPShape;
+        } as unknown as MCPShape;
 
         const converted = this.converter.toTldrawShape(shape);
         const hasRichText = (converted.props as any).richText?.type === "doc";

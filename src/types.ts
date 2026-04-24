@@ -124,7 +124,7 @@ export interface TldrawGeoShapeProps {
   growY: number;
   h: number;
   labelColor: TldrawColor;
-  richText?: TLRichText;
+  richText: TLRichText;
   scale: number;
   size: TldrawSize;
   url: string;
@@ -156,10 +156,10 @@ export interface TldrawArrowShapeProps {
   kind: "arc" | "elbow";
   labelColor: TldrawColor;
   labelPosition: number;
+  richText: TLRichText;
   scale: number;
   size: TldrawSize;
   start: VecLike;
-  text: string;
 }
 
 export interface TldrawHighlightShapeProps {
@@ -167,6 +167,8 @@ export interface TldrawHighlightShapeProps {
   isComplete: boolean;
   isPen: boolean;
   scale: number;
+  scaleX: number;
+  scaleY: number;
   segments: TldrawDrawShapeSegment[];
   size: TldrawSize;
 }
@@ -186,6 +188,8 @@ export interface TldrawDrawShapeProps {
   isClosed: boolean;
   isPen: boolean;
   scale: number;
+  scaleX: number;
+  scaleY: number;
 }
 
 export interface TldrawNoteShapeProps {
@@ -259,32 +263,32 @@ export interface TldrawLineShapeProps {
 // Generic shape props type
 export type TldrawShapeProps<T extends TldrawShapeType = TldrawShapeType> =
   T extends "geo"
-    ? TldrawGeoShapeProps
-    : T extends "text"
-      ? TldrawTextShapeProps
-      : T extends "arrow"
-        ? TldrawArrowShapeProps
-        : T extends "draw"
-          ? TldrawDrawShapeProps
-          : T extends "highlight"
-            ? TldrawHighlightShapeProps
-            : T extends "note"
-              ? TldrawNoteShapeProps
-              : T extends "frame"
-                ? TldrawFrameShapeProps
-                : T extends "group"
-                  ? TldrawGroupShapeProps
-                  : T extends "embed"
-                    ? TldrawEmbedShapeProps
-                    : T extends "bookmark"
-                      ? TldrawBookmarkShapeProps
-                      : T extends "image"
-                        ? TldrawImageShapeProps
-                        : T extends "video"
-                          ? TldrawVideoShapeProps
-                          : T extends "line"
-                            ? TldrawLineShapeProps
-                            : Record<string, unknown>;
+  ? TldrawGeoShapeProps
+  : T extends "text"
+  ? TldrawTextShapeProps
+  : T extends "arrow"
+  ? TldrawArrowShapeProps
+  : T extends "draw"
+  ? TldrawDrawShapeProps
+  : T extends "highlight"
+  ? TldrawHighlightShapeProps
+  : T extends "note"
+  ? TldrawNoteShapeProps
+  : T extends "frame"
+  ? TldrawFrameShapeProps
+  : T extends "group"
+  ? TldrawGroupShapeProps
+  : T extends "embed"
+  ? TldrawEmbedShapeProps
+  : T extends "bookmark"
+  ? TldrawBookmarkShapeProps
+  : T extends "image"
+  ? TldrawImageShapeProps
+  : T extends "video"
+  ? TldrawVideoShapeProps
+  : T extends "line"
+  ? TldrawLineShapeProps
+  : Record<string, unknown>;
 
 // Base shape interface
 export interface TLBaseShape<Type extends string, Props extends object> {
@@ -445,6 +449,15 @@ export const SHAPE_DEFAULTS = {
     growY: 0,
     h: 100,
     labelColor: "black",
+    richText: {
+      type: "doc",
+      content: [
+        {
+          type: "paragraph",
+          content: [{ type: "text", text: "", styles: [] }],
+        },
+      ],
+    },
     scale: 1,
     size: "m",
     url: "",
@@ -484,10 +497,18 @@ export const SHAPE_DEFAULTS = {
     kind: "arc",
     labelColor: "black",
     labelPosition: 0.5,
+    richText: {
+      type: "doc",
+      content: [
+        {
+          type: "paragraph",
+          content: [{ type: "text", text: "", styles: [] }],
+        },
+      ],
+    },
     scale: 1,
     size: "m",
     start: { x: 0, y: 0 },
-    text: "",
   }),
 
   draw: (): TldrawDrawShapeProps => ({
@@ -500,6 +521,8 @@ export const SHAPE_DEFAULTS = {
     isClosed: false,
     isPen: false,
     scale: 1,
+    scaleX: 1,
+    scaleY: 1,
   }),
 
   highlight: (): TldrawHighlightShapeProps => ({
@@ -507,6 +530,8 @@ export const SHAPE_DEFAULTS = {
     isComplete: false,
     isPen: false,
     scale: 1,
+    scaleX: 1,
+    scaleY: 1,
     segments: [],
     size: "m",
   }),

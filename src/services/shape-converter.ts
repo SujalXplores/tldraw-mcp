@@ -165,7 +165,6 @@ export class ShapeConverterService {
         // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         meta: mcpShape.meta && typeof mcpShape.meta === "object" ? mcpShape.meta : {},
         createdAt: mcpShape.createdAt,
-        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         updatedAt: mcpShape.updatedAt ?? new Date().toISOString(),
         version: mcpShape.version,
       } as MCPShape;

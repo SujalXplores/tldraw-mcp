@@ -17,6 +17,7 @@ export function getShapeDefaults(
         growY: 0,
         h: 100,
         labelColor: "black",
+        richText: createSafeRichText(""),
         scale: 1,
         size: "m",
         url: "",
@@ -48,10 +49,10 @@ export function getShapeDefaults(
         kind: "arc",
         labelColor: "black",
         labelPosition: 0.5,
+        richText: createSafeRichText(""),
         scale: 1,
         size: "m",
         start: { x: 0, y: 0 },
-        text: "",
       };
     case "draw":
       return {
@@ -62,6 +63,8 @@ export function getShapeDefaults(
         isComplete: false,
         isPen: false,
         scale: 1,
+        scaleX: 1,
+        scaleY: 1,
         segments: [],
         size: "m",
       };
@@ -71,6 +74,8 @@ export function getShapeDefaults(
         isComplete: false,
         isPen: false,
         scale: 1,
+        scaleX: 1,
+        scaleY: 1,
         segments: [],
         size: "m",
       };

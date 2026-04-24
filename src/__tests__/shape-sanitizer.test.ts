@@ -152,7 +152,6 @@ describe("sanitizeShapeProps", () => {
         kind: "elbow",
         start: { x: 10, y: 20 },
         end: { x: 200, y: 300 },
-        text: "label",
       });
       expect(result.arrowheadEnd).toBe("triangle");
       expect(result.arrowheadStart).toBe("diamond");
@@ -161,7 +160,7 @@ describe("sanitizeShapeProps", () => {
       expect(result.kind).toBe("elbow");
       expect(result.start).toEqual({ x: 10, y: 20 });
       expect(result.end).toEqual({ x: 200, y: 300 });
-      expect(result.text).toBe("label");
+      expect(result.text).toBeUndefined();
     });
 
     it("clamps start/end coordinates", () => {
