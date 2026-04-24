@@ -1,9 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "rootDir": ".",
+    "moduleResolution": "bundler",
+    "ignoreDeprecations": "6.0",
     "noUncheckedIndexedAccess": false
   },
-  "include": [
-    "src/**/__tests__/**/*.ts"
-  ]
+  "include": ["src/**/__tests__/**/*.ts"]
 }

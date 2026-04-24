@@ -127,7 +127,7 @@ export async function POST(
       return NextResponse.json(
         {
           success: false,
-          error: getErrorMessage(error) ?? "Failed to create shapes",
+          error: getErrorMessage(error),
           shapes: [],
           count: 0,
           timestamp: new Date().toISOString(),

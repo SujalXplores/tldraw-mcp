@@ -28,7 +28,7 @@ function TldrawController({
   const editor = useEditor();
 
   useEffect(() => {
-    if (editor && onEditorReady) {
+    if (onEditorReady) {
       onEditorReady(editor);
     }
   }, [editor, onEditorReady]);
@@ -52,7 +52,7 @@ function TldrawController({
       <button
         onClick={() => void clearCanvas()}
         className="z-9999 w-full mt-3 px-3 py-2 bg-red-500 dark:bg-red-800 text-white text-sm hover:bg-red-700 transition-colors disabled:opacity-50 rounded-md"
-        disabled={!editor || isLoading}
+        disabled={isLoading}
       >
         Clear All
       </button>
@@ -141,7 +141,7 @@ export default function TldrawCanvas() {
       if (!mountedRef.current) return;
       setIsConnected(false);
 
-      if (event.code !== 1000 && mountedRef.current) {
+      if (event.code !== 1000) {
         setTimeout(() => {
           if (mountedRef.current) connectWebSocketRef.current();
         }, 3000);

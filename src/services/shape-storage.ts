@@ -29,7 +29,8 @@ export class ShapeStorageService implements MCPShapeStorage {
   ): Promise<MCPShape<T>> {
     const id = generateShapeId();
     const now = new Date().toISOString();
-    const defaultsFactory = SHAPE_DEFAULTS[input.type as keyof typeof SHAPE_DEFAULTS];
+    const defaultsFactory = SHAPE_DEFAULTS[input.type];
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     const defaultProps = defaultsFactory ? defaultsFactory() : {};
 
     const shape: MCPShape<T> = {
@@ -50,7 +51,7 @@ export class ShapeStorageService implements MCPShapeStorage {
       version: 1,
     };
 
-    this.shapes.set(id, shape as MCPShape);
+    this.shapes.set(id, shape);
     return shape;
   }
 
@@ -58,7 +59,7 @@ export class ShapeStorageService implements MCPShapeStorage {
   async updateShape<T extends TldrawShapeType>(
     input: MCPShapeUpdateInput<T>,
   ): Promise<MCPShape<T> | null> {
-    const existing = this.shapes.get(input.id as unknown as string);
+    const existing = this.shapes.get(input.id);
     if (!existing) return null;
 
     const updated: MCPShape<T> = {
@@ -69,20 +70,21 @@ export class ShapeStorageService implements MCPShapeStorage {
       version: (existing.version ?? 1) + 1,
     } as MCPShape<T>;
 
-    this.shapes.set(input.id as unknown as string, updated as MCPShape);
+    this.shapes.set(input.id, updated);
     return updated;
   }
 
   // eslint-disable-next-line @typescript-eslint/require-await
   async deleteShape(id: TLShapeId | string): Promise<boolean> {
-    return this.shapes.delete(id as string);
+    return this.shapes.delete(id);
   }
 
   // eslint-disable-next-line @typescript-eslint/require-await
   async getShape<T extends TldrawShapeType>(
     id: TLShapeId | string,
   ): Promise<MCPShape<T> | null> {
-    return (this.shapes.get(id as string) as MCPShape<T>) ?? null;
+    const shape = this.shapes.get(id);
+    return shape ? (shape as MCPShape<T>) : null;
   }
 
   // eslint-disable-next-line @typescript-eslint/require-await

@@ -12,6 +12,7 @@ const eslintConfig = tseslint.config(
         projectService: {
           allowDefaultProject: ["eslint.config.mjs", "postcss.config.mjs"],
         },
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         tsconfigRootDir: import.meta.dirname,
       },
     },
@@ -76,3 +77,4 @@ const eslintConfig = tseslint.config(
 );
 
 export default eslintConfig;
+

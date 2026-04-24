@@ -143,7 +143,11 @@ export class ValidationTestSuite {
           `Got: ${String(actualColor)}, Expected: ${expected}`,
         );
       } catch (error: unknown) {
-        this.addResult(`Color mapping: ${String(color)}`, false, `Error: ${String(error)}`);
+        this.addResult(
+          `Color mapping: ${String(color)}`,
+          false,
+          `Error: ${String(error)}`,
+        );
       }
     });
   }
@@ -342,7 +346,9 @@ export class ValidationTestSuite {
         } as MCPShape;
 
         const converted = this.converter.toTldrawShape(shape);
-        const hasValidProps = converted.props != null && typeof converted.props === "object";
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+        const hasValidProps =
+          converted.props != null && typeof converted.props === "object";
 
         this.addResult(
           `Invalid props: ${typeof props}`,
@@ -350,7 +356,11 @@ export class ValidationTestSuite {
           `Result: ${JSON.stringify(converted.props)}`,
         );
       } catch (error: unknown) {
-        this.addResult(`Invalid props: ${typeof props}`, false, `Error: ${String(error)}`);
+        this.addResult(
+          `Invalid props: ${typeof props}`,
+          false,
+          `Error: ${String(error)}`,
+        );
       }
     });
   }
@@ -389,12 +399,15 @@ export class ValidationTestSuite {
         } as MCPShape;
 
         const converted = this.converter.toTldrawShape(shape);
-        const hasRichText =
-          (converted.props as any).richText?.type === "doc";
+        const hasRichText = (converted.props as any).richText?.type === "doc";
 
         this.addResult(`Text conversion: ${text ?? "richText"}`, hasRichText, expected);
       } catch (error: unknown) {
-        this.addResult(`Text conversion: ${String(text)}`, false, `Error: ${String(error)}`);
+        this.addResult(
+          `Text conversion: ${String(text)}`,
+          false,
+          `Error: ${String(error)}`,
+        );
       }
     });
   }

@@ -8,9 +8,7 @@ import { validateShapeType } from "./validation";
  * Preprocesses raw AI shape data into a valid tldraw-compatible structure.
  * Handles text→richText conversion, missing props, and type normalization.
  */
-export function preprocessAIShapeData(
-  rawData: unknown,
-): Record<string, unknown> {
+export function preprocessAIShapeData(rawData: unknown): Record<string, unknown> {
   if (!rawData || typeof rawData !== "object") {
     return { type: "geo", x: 100, y: 100, props: getShapeDefaults("geo") };
   }
@@ -30,8 +28,12 @@ export function preprocessAIShapeData(
   const type = processed.type as TldrawShapeType;
 
   // Convert text→richText for shapes that use richText
-  if (["text", "geo", "note"].includes(type) && props.text && !props.richText) {
-    props.richText = createSafeRichText(String(props.text as string | number));
+  if (
+    ["text", "geo", "note"].includes(type) &&
+    (typeof props.text === "string" || typeof props.text === "number") &&
+    !props.richText
+  ) {
+    props.richText = createSafeRichText(String(props.text));
     delete props.text;
   }
 
@@ -41,8 +43,8 @@ export function preprocessAIShapeData(
   }
 
   // For arrows, ensure text is a plain string
-  if (type === "arrow" && props.text && typeof props.text !== "string") {
-    props.text = String(props.text as string | number);
+  if (type === "arrow" && typeof props.text === "number") {
+    props.text = String(props.text);
   }
 
   processed.props = sanitizeShapeProps(type, props);
@@ -50,15 +52,12 @@ export function preprocessAIShapeData(
 }
 
 /** Preprocesses an array of raw AI shape data */
-export function preprocessAIBatchData(
-  rawShapes: unknown[],
-): Record<string, unknown>[] {
+export function preprocessAIBatchData(rawShapes: unknown[]): Record<string, unknown>[] {
   if (!Array.isArray(rawShapes)) return [];
 
   return rawShapes
     .filter(
-      (shape): shape is Record<string, unknown> =>
-        shape !== null && shape !== undefined,
+      (shape): shape is Record<string, unknown> => shape !== null && shape !== undefined,
     )
     .map((shape, index) => {
       try {

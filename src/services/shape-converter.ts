@@ -1,5 +1,5 @@
 import type { TLShape, TLShapeId, IndexKey, TLParentId } from "tldraw";
-import type { MCPShape, TldrawShapeType } from "../types";
+import type { MCPShape } from "../types";
 import { getShapeDefaults } from "../lib/shape-defaults";
 import { sanitizeShapeProps } from "../lib/shape-sanitizer";
 import { validateNumber, validateShapeType } from "../lib/validation";
@@ -7,6 +7,7 @@ import { validateNumber, validateShapeType } from "../lib/validation";
 export class ShapeConverterService {
   toTldrawShape(mcpShape: MCPShape): TLShape {
     try {
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       if (!mcpShape || typeof mcpShape !== "object") {
         console.error("[Converter] Cannot convert null/undefined shape");
         return this.createFallbackShape();
@@ -22,7 +23,10 @@ export class ShapeConverterService {
       const safeY = validateNumber(mcpShape.y, -10000, 10000, 100);
       const safeRotation = validateNumber(mcpShape.rotation, 0, 2 * Math.PI, 0);
       const safeOpacity = validateNumber(mcpShape.opacity, 0, 1, 1);
-      const sanitizedProps = sanitizeShapeProps(safeType, mcpShape.props as Record<string, unknown>);
+      const sanitizedProps = sanitizeShapeProps(
+        safeType,
+        mcpShape.props as Record<string, unknown>,
+      );
 
       // Constructed from validated data - cast needed for discriminated union compatibility
       const tldrawShape = {
@@ -32,11 +36,14 @@ export class ShapeConverterService {
         x: safeX,
         y: safeY,
         rotation: safeRotation,
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         index: (mcpShape.index ?? "a1") as IndexKey,
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         parentId: (mcpShape.parentId ?? "page:page") as TLParentId,
         isLocked: mcpShape.isLocked,
         opacity: safeOpacity,
         props: sanitizedProps,
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         meta: mcpShape.meta && typeof mcpShape.meta === "object" ? mcpShape.meta : {},
       } as unknown as TLShape;
 
@@ -58,6 +65,7 @@ export class ShapeConverterService {
 
     mcpShapes.forEach((shape, index) => {
       try {
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         if (!shape || typeof shape !== "object") {
           console.error(`[Converter] Skipping invalid shape at index ${String(index)}`);
           errorCount++;
@@ -102,7 +110,7 @@ export class ShapeConverterService {
       // while MCPShape uses our simplified prop interfaces
       return {
         id: tldrawShape.id,
-        type: tldrawShape.type as TldrawShapeType,
+        type: tldrawShape.type,
         typeName: "shape",
         x: tldrawShape.x,
         y: tldrawShape.y,
@@ -112,9 +120,9 @@ export class ShapeConverterService {
         isLocked: tldrawShape.isLocked,
         opacity: tldrawShape.opacity,
         props: tldrawShape.props as unknown as MCPShape["props"],
-        meta: tldrawShape.meta as Record<string, unknown>,
+        meta: tldrawShape.meta,
         updatedAt: new Date().toISOString(),
-      } as MCPShape;
+      };
     } catch (error: unknown) {
       console.error("[Converter] Error converting Tldraw shape:", error);
       throw error;
@@ -135,7 +143,10 @@ export class ShapeConverterService {
   validateAndRepair(mcpShape: MCPShape): MCPShape {
     try {
       const validType = validateShapeType(mcpShape.type);
-      const repairedProps = sanitizeShapeProps(validType, mcpShape.props as Record<string, unknown>);
+      const repairedProps = sanitizeShapeProps(
+        validType,
+        mcpShape.props as Record<string, unknown>,
+      );
 
       const repairedShape = {
         id: typeof mcpShape.id === "string" ? mcpShape.id : `shape:${Date.now()}`,
@@ -144,13 +155,17 @@ export class ShapeConverterService {
         x: validateNumber(mcpShape.x, -10000, 10000, 100),
         y: validateNumber(mcpShape.y, -10000, 10000, 100),
         rotation: validateNumber(mcpShape.rotation, 0, 2 * Math.PI, 0),
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         index: mcpShape.index ?? "a1",
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         parentId: mcpShape.parentId ?? "page:page",
         isLocked: mcpShape.isLocked,
         opacity: validateNumber(mcpShape.opacity, 0, 1, 1),
         props: repairedProps,
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         meta: mcpShape.meta && typeof mcpShape.meta === "object" ? mcpShape.meta : {},
         createdAt: mcpShape.createdAt,
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         updatedAt: mcpShape.updatedAt ?? new Date().toISOString(),
         version: mcpShape.version,
       } as MCPShape;
@@ -160,6 +175,7 @@ export class ShapeConverterService {
       console.error("[Converter] Error repairing shape:", error);
 
       return {
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         id: mcpShape.id ?? `fallback-${Date.now()}`,
         type: "geo",
         typeName: "shape" as const,

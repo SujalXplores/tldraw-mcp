@@ -1,6 +1,10 @@
 // API route for shape CRUD operations
 import { type NextRequest, NextResponse } from "next/server";
-import type { MCPShapeCreateInput, MCPShapeResponse, MCPShapesResponse } from "@/src/types";
+import type {
+  MCPShapeCreateInput,
+  MCPShapeResponse,
+  MCPShapesResponse,
+} from "@/src/types";
 import { shapeStorage } from "@/src/services/singleton";
 import {
   preprocessAIShapeData,
@@ -30,7 +34,7 @@ export async function GET(): Promise<NextResponse<MCPShapesResponse>> {
     return NextResponse.json(
       {
         success: false,
-        error: getErrorMessage(error) ?? "Failed to fetch shapes",
+        error: getErrorMessage(error),
         shapes: [],
         count: 0,
         timestamp: new Date().toISOString(),
@@ -91,9 +95,7 @@ export async function POST(
         props: {
           ...getShapeDefaults("geo"),
           color: "red",
-          richText: sanitizeRichText(
-            createSafeRichText("Error - AI data was invalid"),
-          ),
+          richText: sanitizeRichText(createSafeRichText("Error - AI data was invalid")),
         },
       });
 
@@ -116,7 +118,7 @@ export async function POST(
       return NextResponse.json(
         {
           success: false,
-          error: getErrorMessage(error) ?? "Failed to create shape",
+          error: getErrorMessage(error),
           shape: undefined as unknown as MCPShapeResponse["shape"],
           timestamp: new Date().toISOString(),
         },
