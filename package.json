@@ -18,41 +18,41 @@
     "check": "pnpm lint && pnpm typecheck && pnpm test"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "1.27.1",
-    "dotenv": "17.3.1",
-    "nanoid": "5.1.6",
-    "next": "16.1.6",
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "dotenv": "17.4.2",
+    "nanoid": "5.1.9",
+    "next": "16.2.4",
     "node-fetch": "3.3.2",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "tldraw": "4.4.0",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
+    "tldraw": "4.5.10",
     "tsx": "4.21.0",
     "winston": "3.19.0",
-    "ws": "8.19.0",
+    "ws": "8.20.0",
     "zod": "4.3.6"
   },
   "devDependencies": {
-    "@modelcontextprotocol/inspector": "0.21.1",
-    "@tailwindcss/postcss": "4.2.1",
+    "@modelcontextprotocol/inspector": "0.21.2",
+    "@tailwindcss/postcss": "4.2.4",
     "@types/jest": "30.0.0",
-    "@types/node": "25.3.3",
+    "@types/node": "25.6.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@types/ws": "8.18.1",
-    "@typescript-eslint/eslint-plugin": "8.56.1",
-    "@typescript-eslint/parser": "8.56.1",
-    "autoprefixer": "10.4.27",
+    "@typescript-eslint/eslint-plugin": "8.59.0",
+    "@typescript-eslint/parser": "8.59.0",
+    "autoprefixer": "10.5.0",
     "concurrently": "9.2.1",
     "cross-env": "10.1.0",
-    "eslint": "9.39.3",
-    "eslint-config-next": "16.1.6",
-    "jest": "30.2.0",
-    "postcss": "8.5.8",
-    "prettier": "3.8.1",
-    "tailwindcss": "4.2.1",
-    "ts-jest": "29.4.6",
-    "typescript": "5.9.3",
-    "typescript-eslint": "8.56.1"
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.4",
+    "jest": "30.3.0",
+    "postcss": "8.5.10",
+    "prettier": "3.8.3",
+    "tailwindcss": "4.2.4",
+    "ts-jest": "29.4.9",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.59.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -63,3 +63,4 @@
     ]
   }
 }
+
